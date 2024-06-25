@@ -1,11 +1,10 @@
-
 # Virtual environment
 venv/
 __pycache__/
 
 # Python bytecode
 *.py[cod]
-*.class
+*$py.class
 
 # Packages
 *.egg
@@ -82,4 +81,3 @@ staticfiles/
 media/
 
 # Add any other files or directories specific to your project that should be ignored
-
