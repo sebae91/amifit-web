@@ -1,0 +1,110 @@
+/* This is the start of the animations.css file */
+/* Last revised by your AI friend: 2026-03-12 */
+
+/* ─── Keyframes ──────────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 25%, transparent); }
+  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-accent) 0%, transparent); }
+}
+
+/* Language word cycling */
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Hero glow pulse on CTA ──────────────────────────────────────── */
+.hero__cta .app-store-badge:hover img {
+  filter: brightness(1.05);
+}
+
+/* ─── Scroll-driven: subtle scale on section entrance ─────────────── */
+@supports (animation-timeline: scroll()) {
+  .scroll-fade {
+    animation: fade-in-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+/* ─── Pricing card: featured glow ────────────────────────────────── */
+.pricing-card--featured {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+/* ─── Pill drop animation (used by Matter.js fallback state) ─────── */
+@keyframes pill-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applied to static pills in reduced-motion mode */
+@media (prefers-reduced-motion: no-preference) {
+  .pills-static .pill--static {
+    animation: pill-drop 0.4s ease both;
+  }
+}
+
+/* Staggered delay for static pills */
+.pills-static .pill--static:nth-child(1)  { animation-delay: 0.0s; }
+.pills-static .pill--static:nth-child(2)  { animation-delay: 0.05s; }
+.pills-static .pill--static:nth-child(3)  { animation-delay: 0.1s; }
+.pills-static .pill--static:nth-child(4)  { animation-delay: 0.15s; }
+.pills-static .pill--static:nth-child(5)  { animation-delay: 0.2s; }
+.pills-static .pill--static:nth-child(6)  { animation-delay: 0.25s; }
+.pills-static .pill--static:nth-child(7)  { animation-delay: 0.3s; }
+.pills-static .pill--static:nth-child(8)  { animation-delay: 0.35s; }
+.pills-static .pill--static:nth-child(9)  { animation-delay: 0.4s; }
+.pills-static .pill--static:nth-child(10) { animation-delay: 0.45s; }
+.pills-static .pill--static:nth-child(11) { animation-delay: 0.5s; }
+.pills-static .pill--static:nth-child(12) { animation-delay: 0.55s; }
+.pills-static .pill--static:nth-child(13) { animation-delay: 0.6s; }
+.pills-static .pill--static:nth-child(14) { animation-delay: 0.65s; }
+.pills-static .pill--static:nth-child(15) { animation-delay: 0.7s; }
+.pills-static .pill--static:nth-child(16) { animation-delay: 0.75s; }
+.pills-static .pill--static:nth-child(17) { animation-delay: 0.8s; }
+.pills-static .pill--static:nth-child(18) { animation-delay: 0.85s; }
+.pills-static .pill--static:nth-child(19) { animation-delay: 0.9s; }
+.pills-static .pill--static:nth-child(20) { animation-delay: 0.95s; }
+
+/* ─── Page transition (View Transitions API) ─────────────────────── */
+@keyframes slide-in-right {
+  from { transform: translateX(32px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes slide-out-left {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-32px); opacity: 0; }
+}
+
+::view-transition-old(root) {
+  animation: 250ms ease slide-out-left;
+}
+
+::view-transition-new(root) {
+  animation: 250ms ease slide-in-right;
+}
+
+/* This is the end of the animations.css file */

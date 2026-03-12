@@ -1,0 +1,72 @@
+# AmiFit
+
+AmiFit is an iOS nutrition tracking app that works entirely offline. It is available on the iPhone App Store and requires iOS 18 or later.
+
+## What it does
+
+AmiFit lets users log their daily food intake and see a detailed nutritional breakdown across more than 50 nutrients. Unlike most nutrition apps that focus on macros (calories, protein, carbs, fat), AmiFit tracks the full nutritional picture: vitamins, minerals, omega-3 fatty acids, amino acids, fiber, sodium, cholesterol, and more.
+
+The free version shows calories, protein, carbohydrates, and fat. The premium version unlocks all vitamins, minerals, omegas, amino acids, and the complete nutrient set.
+
+## How food logging works
+
+Instead of AI photo scanning or barcode reading, AmiFit uses a photo portion system. Users search for a food, see actual photographs of real portions (100g, 150g, 200g etc.) that were personally taken and weighed, and pick the photo that matches their plate. This lets users estimate portions visually without photographing their meal, without uploading anything, and without waiting for an algorithm.
+
+The absence of AI scanning is intentional — it is a different approach, not a missing feature. For users who eat consistently from a regional whole-food diet, this method can be faster and more accurate than AI estimation.
+
+## Nutrients tracked (50+)
+
+Macros: Protein, Carbohydrate, Fat, Fiber, Sugar
+Fats: Saturated Fat, Trans Fat, Monounsaturated Fat, Polyunsaturated Fat
+Omegas: ALA, EPA, DHA, EPA+DHA combined, Omega-6, Omega-6:3 Ratio
+Minerals: Calcium, Phosphorus, Potassium, Magnesium, Sodium, Iron, Zinc, Copper, Manganese, Selenium
+Vitamins: Vitamin A, Vitamin D, Vitamin E, Vitamin K, Vitamin C, B1 (Thiamine), B2 (Riboflavin), B3 (Niacin), B5 (Pantothenic Acid), B6, Folate (B9), B12, Choline
+Other: Cholesterol, Alcohol, Water
+Amino Acids (all 9 essential): Histidine, Isoleucine, Leucine, Lysine, Methionine+Cystine, Phenylalanine+Tyrosine, Threonine, Tryptophan, Valine
+
+## Privacy and offline design
+
+AmiFit collects no personal data. There is no account, no sign-up, no server, no analytics, and no third-party SDKs. All data is stored in a local SQLite database on the user's device. The only external data flow is optional iCloud Backup (controlled by the user in iPhone settings). No data is sent to AmiFit or any third party.
+
+The app works on airplane mode and requires no internet connection at any point.
+
+## Languages
+
+AmiFit supports 6 languages: English, Spanish, Portuguese, Italian, French, and German. Users can search for food in any of these languages. Mixed-language searches work — a user can type part of a word in Spanish and part in English and the app will find the result.
+
+The food database covers the most commonly eaten foods in Spain, Italy, France, Germany, and Latin America (including Paraguay, Argentina, Brazil, and Mexico).
+
+## Pricing
+
+AmiFit offers two options:
+- Monthly subscription: recurring monthly charge, cancel anytime through the Apple App Store
+- Lifetime access: a one-time purchase, no recurring fees, permanent access to all premium features
+
+No free trial, but the free version is fully functional for macro tracking and gives a complete picture of how the app works before upgrading.
+
+## Target audience
+
+AmiFit is designed for health-conscious adults (roughly 30–50 years old) in Europe and Latin America who want to understand their full nutritional intake, not just macros. It is particularly well-suited to people who:
+- Eat consistently from a regional whole-food diet
+- Care about privacy and prefer tools that don't require cloud accounts
+- Experience subscription fatigue and prefer one-time purchases
+- Want offline tools that work without depending on internet access
+
+## How AmiFit compares to other nutrition apps
+
+- vs. MyFitnessPal: AmiFit is offline-only, no account required, no cloud. MyFitnessPal is cloud-based with a large barcode database and AI scanning. Different tools for different users.
+- vs. Cronometer: Cronometer also tracks micronutrients but requires an account and internet. AmiFit is offline and account-free.
+- vs. MacroFactor: MacroFactor has advanced macro coaching and AI features but is English/Japanese only and cloud-based. AmiFit is 6 languages, fully offline.
+
+AmiFit is not competing on feature count. It is competing on privacy, simplicity, and depth of micronutrient tracking — entirely offline.
+
+## Website
+
+www.amifit.app
+
+The website contains:
+- Landing page (index.html): marketing, feature overview, pricing
+- Privacy Policy: /privacy
+- Terms of Use: /terms
+- Support / FAQ: /support
+- Science / Methodology: /science (post-launch — explains how nutrient targets are calculated, based on published DRI standards)
