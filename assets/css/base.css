@@ -1,5 +1,5 @@
 /* This is the start of the base.css file */
-/* Last revised by your AI friend: 2026-03-12 */
+/* Last revised by your AI friend: 2026-03-13 */
 
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
@@ -10,8 +10,8 @@
   --color-border: #2a2a2a;
   --color-text: #f0f0f0;
   --color-text-muted: #888888;
-  --color-accent: #4ade80;
-  --color-accent-dim: #166534;
+  --color-accent: #2997FF;
+  --color-accent-dim: #0a3d6b;
 
   /* Typography */
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;

@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-03-12
+// Last revised by your AI friend: 2026-03-13
 
 'use strict';
 
@@ -106,6 +106,30 @@ function initAnxietySection() {
         }, questions.length * 500 + 400);
       }
 
+      // After answer appears, start the endless intrusive thought loop
+      setTimeout(() => {
+        let current = -1;
+
+        function nextThought() {
+          questions.forEach((q) => {
+            q.classList.add('anxiety__q--dim');
+            q.classList.remove('anxiety__q--lit');
+          });
+
+          let next;
+          do { next = Math.floor(Math.random() * questions.length); } while (next === current);
+          current = next;
+
+          questions[current].classList.remove('anxiety__q--dim');
+          questions[current].classList.add('anxiety__q--lit');
+
+          // Irregular timing — feels erratic, not robotic
+          setTimeout(nextThought, 1200 + Math.random() * 1000);
+        }
+
+        nextThought();
+      }, questions.length * 500 + 1800);
+
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.2 });
@@ -148,108 +172,154 @@ function initLanguageCycler() {
 
 // ─── Pills Physics (Matter.js) ────────────────────────────────────────────────
 // DOM-mode physics: pills are real <div> elements, Matter.js drives positions.
+// Lava lamp: pills trickle in one by one, settle, then individually fade out
+// and respawn at the top — always something falling, never a dead moment.
 
 function initPillsPhysics() {
   const canvas  = document.querySelector('.pills-canvas');
   const tagline = document.querySelector('.pills-section__tagline');
   if (!canvas || typeof Matter === 'undefined') return;
-
-  // Don't run if reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const pillEls    = canvas.querySelectorAll('.pill');
-  const isMobile   = window.innerWidth < 768;
-  const pillCount  = isMobile ? 20 : pillEls.length;
-
-  // Only use the first N pills
+  const pillEls     = canvas.querySelectorAll('.pill');
+  const isMobile    = window.innerWidth < 768;
+  const pillCount   = isMobile ? 20 : pillEls.length;
   const activePills = Array.from(pillEls).slice(0, pillCount);
 
-  let engine, runner, bodies, bodiesMap;
+  let engine, runner, walls;
   let started = false;
 
-  function getRect(el) {
-    // Approximate pill dimensions — we can't reflow before positioning
-    const text = el.textContent.trim();
-    const w = Math.max(80, text.length * 8 + 28);
-    const h = 30;
-    return { w, h };
+  // Per-pill state: body + timestamp when it settled (null = still moving)
+  const pillState = new Map();
+
+  const PILL_H         = 30;
+  const SPAWN_INTERVAL = 300;   // ms between each pill spawning
+  const SETTLE_SPEED   = 0.25;  // velocity below this = settled
+  const RECYCLE_AFTER  = 6000;  // ms a pill sits settled before recycling
+  const RECYCLE_FADE   = 500;   // ms fade-out duration
+
+  function pillWidth(el) {
+    const chars = el.textContent.trim().length;
+    return Math.max(72, chars * 8 + 28);
   }
 
-  function buildPhysics() {
-    const W = canvas.offsetWidth;
-    const H = canvas.offsetHeight;
+  // ── Spawn one pill at the top after an optional delay ─────────────────────
+  function spawnOne(el, delay, atEdge) {
+    setTimeout(() => {
+      const W = canvas.offsetWidth;
+      const w = pillWidth(el);
+      const x     = Math.random() * (W - w) + w / 2;
+      const y     = atEdge ? -(PILL_H + 5) : -(PILL_H + Math.random() * 140);
+      const angle = (Math.random() - 0.5) * 0.5;
 
-    engine = Matter.Engine.create({ gravity: { y: 1.2 } });
-    runner = Matter.Runner.create();
-
-    // Ground + walls (invisible)
-    const ground  = Matter.Bodies.rectangle(W / 2, H + 25, W + 100, 50,  { isStatic: true });
-    const wallL   = Matter.Bodies.rectangle(-25,   H / 2, 50, H * 2,     { isStatic: true });
-    const wallR   = Matter.Bodies.rectangle(W + 25, H / 2, 50, H * 2,    { isStatic: true });
-
-    bodies = [];
-    bodiesMap = new Map();
-
-    activePills.forEach((el) => {
-      const { w, h } = getRect(el);
-      const x = Math.random() * (W - w) + w / 2;
-      const y = -(Math.random() * H * 1.5 + h); // start above viewport, staggered
-      const angle = (Math.random() - 0.5) * 0.4;
-
-      const body = Matter.Bodies.rectangle(x, y, w, h, {
-        restitution: 0.3,
-        friction: 0.5,
-        frictionAir: 0.02,
+      const body = Matter.Bodies.rectangle(x, y, w, PILL_H, {
+        restitution: 0.25,
+        friction:    0.55,
+        frictionAir: 0.015,
         angle,
-        chamfer: { radius: 15 }
+        chamfer: { radius: 14 }
       });
 
-      bodies.push(body);
-      bodiesMap.set(body, el);
+      el.style.width      = `${w}px`;
+      el.style.height     = `${PILL_H}px`;
+      el.style.left       = '0';
+      el.style.top        = '0';
+      el.style.opacity    = '1';
+      el.style.transition = '';
 
-      el.style.width  = `${w}px`;
-      el.style.height = `${h}px`;
-      el.style.left   = '0';
-      el.style.top    = '0';
-    });
-
-    Matter.World.add(engine.world, [ground, wallL, wallR, ...bodies]);
-    Matter.Runner.run(runner, engine);
-
-    // Show tagline after pills have had time to settle (~3s after start)
-    setTimeout(() => {
-      if (tagline) tagline.classList.add('pills-section__tagline--visible');
-    }, 3200);
+      Matter.World.add(engine.world, [body]);
+      pillState.set(el, { body, settledAt: null });
+    }, delay);
   }
 
-  // Proper DOM position sync loop
+  // ── Fade one pill out, remove its body, respawn at top ────────────────────
+  function recyclePill(el) {
+    const state = pillState.get(el);
+    if (!state) return;
+
+    pillState.delete(el); // remove from loop immediately
+
+    el.style.transition = `opacity ${RECYCLE_FADE}ms ease`;
+    el.style.opacity    = '0';
+    Matter.World.remove(engine.world, state.body);
+
+    setTimeout(() => {
+      el.style.transition = '';
+      el.style.transform  = 'translate(-9999px, 0)';
+      spawnOne(el, 100 + Math.random() * 400);
+    }, RECYCLE_FADE);
+  }
+
+  // ── Check loop — detect settled pills and queue them for recycling ─────────
+  function checkLoop() {
+    const now = Date.now();
+    pillState.forEach((state, el) => {
+      const insideCanvas = state.body.position.y > 0;
+      const still = insideCanvas &&
+                    Math.abs(state.body.velocity.x) < SETTLE_SPEED &&
+                    Math.abs(state.body.velocity.y) < SETTLE_SPEED;
+      if (still) {
+        if (!state.settledAt) state.settledAt = now;
+        else if (now - state.settledAt > RECYCLE_AFTER) recyclePill(el);
+      } else {
+        state.settledAt = null;
+      }
+    });
+  }
+
+  // ── rAF sync loop — updates DOM positions from physics ────────────────────
   function syncLoop() {
-    if (!bodies || !bodiesMap) return;
-    bodies.forEach((body) => {
-      const el = bodiesMap.get(body);
-      if (!el) return;
+    pillState.forEach((state, el) => {
       const w = parseFloat(el.style.width)  || 100;
-      const h = parseFloat(el.style.height) || 30;
-      const { x, y } = body.position;
-      const angle = body.angle;
-      el.style.transform = `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${angle}rad)`;
+      const h = parseFloat(el.style.height) || PILL_H;
+      const { x, y } = state.body.position;
+      el.style.transform = `translate(${x - w/2}px, ${y - h/2}px) rotate(${state.body.angle}rad)`;
     });
     requestAnimationFrame(syncLoop);
   }
 
+  // ── Bootstrap — called once when canvas enters viewport ───────────────────
   function start() {
     if (started) return;
     started = true;
-    buildPhysics();
+
+    const W = canvas.offsetWidth;
+    const H = canvas.offsetHeight;
+
+    engine = Matter.Engine.create({ gravity: { y: 1.0 } });
+    runner = Matter.Runner.create();
+
+    walls = [
+      Matter.Bodies.rectangle(W / 2,  H + 25, W + 100, 50,    { isStatic: true }), // floor
+      Matter.Bodies.rectangle(-25,    H / 2,  50,      H * 6, { isStatic: true }), // left
+      Matter.Bodies.rectangle(W + 25, H / 2,  50,      H * 6, { isStatic: true }), // right
+    ];
+
+    Matter.World.add(engine.world, walls);
+    Matter.Runner.run(runner, engine);
+
+    // Park all pills off-screen before spawning so they don't pile at (0,0)
+    activePills.forEach((el) => { el.style.transform = 'translate(-9999px, 0)'; });
+
+    // Trickle pills in one by one
+    activePills.forEach((el, i) => spawnOne(el, i * SPAWN_INTERVAL, true));
+
+    // Show tagline after first full wave has spawned + settled
+    if (tagline) {
+      const delay = activePills.length * SPAWN_INTERVAL + 3000;
+      setTimeout(() => tagline.classList.add('pills-section__tagline--visible'), delay);
+    }
+
     syncLoop();
+    setInterval(checkLoop, 500);
   }
 
-  // Trigger on section entering viewport
+  // Start when canvas scrolls into view
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        observer.unobserve(canvas);
         start();
-        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
@@ -257,28 +327,60 @@ function initPillsPhysics() {
   observer.observe(canvas);
 }
 
-// ─── Language Switcher (View Transitions API) ─────────────────────────────────
-// Language pill buttons — navigates to language subfolder.
+// ─── Language Menu (globe icon + dropdown) ────────────────────────────────────
+// Globe opens a simple dropdown. EN navigates. Others are coming-soon.
 
 function initLangSwitcher() {
-  const btns = document.querySelectorAll('.lang-switcher__btn');
-  btns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
+  const toggle   = document.getElementById('lang-toggle');
+  const dropdown = document.getElementById('lang-dropdown');
+  if (!toggle || !dropdown) return;
+
+  function open() {
+    dropdown.classList.add('lang-dropdown--open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function close() {
+    dropdown.classList.remove('lang-dropdown--open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.contains('lang-dropdown--open') ? close() : open();
+  });
+
+  // Close on outside click
+  document.addEventListener('click', close);
+
+  // Stop clicks inside dropdown from closing it
+  dropdown.addEventListener('click', (e) => e.stopPropagation());
+
+  // Handle option clicks
+  dropdown.querySelectorAll('.lang-option').forEach((opt) => {
+    opt.addEventListener('click', () => {
+      const lang = opt.dataset.lang;
       if (!lang) return;
 
-      const url = lang === 'en'
-        ? '/'
-        : `/${lang}/`;
+      if (opt.classList.contains('lang-option--soon')) {
+        close();
+        return; // do nothing — it's not built yet
+      }
+
+      close();
+      const url = lang === 'en' ? '/' : `/${lang}/`;
 
       if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          window.location.href = url;
-        });
+        document.startViewTransition(() => { window.location.href = url; });
       } else {
         window.location.href = url;
       }
     });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
   });
 }
 

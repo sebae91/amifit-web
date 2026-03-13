@@ -1,5 +1,5 @@
 <!-- This is the start of the index.html file -->
-<!-- Last revised by your AI friend: 2026-03-12 -->
+<!-- Last revised by your AI friend: 2026-03-13 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +29,12 @@
   <!-- Apple Smart App Banner (replace APP_ID with real App Store ID when live) -->
   <!-- <meta name="apple-itunes-app" content="app-id=APP_ID"> -->
 
+  <!-- ••• -->
+  <!-- You're inspecting. Good. -->
+  <!-- No frameworks. No tracking. No external calls. One physics engine, hosted locally. -->
+  <!-- Built for iPhone. Obsessed about it. -->
+  <!-- ••• -->
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/icon.png">
 
@@ -47,7 +53,7 @@
         "name": "AmiFit",
         "operatingSystem": "iOS",
         "applicationCategory": "HealthApplication",
-        "description": "Offline nutrition tracker for iPhone. Tracks vitamins, minerals, omega-3 fatty acids, amino acids and more. No account required. No data leaves your device. Available in English, Spanish, French, German, Italian and Portuguese.",
+        "description": "Offline micronutrient tracker for iPhone. Tracks vitamins, minerals, omega-3 fatty acids, amino acids and more. No account required. No data leaves your device. Available in English, Spanish, French, German, Italian and Portuguese.",
         "inLanguage": ["en", "es", "fr", "de", "it", "pt"],
         "url": "https://www.amifit.app",
         "offers": [
@@ -125,14 +131,24 @@
         </a>
 
         <div class="nav__right">
-          <nav class="lang-switcher" aria-label="Language selector">
-            <button class="lang-switcher__btn lang-switcher__btn--active" data-lang="en" aria-label="English" aria-current="true">EN</button>
-            <button class="lang-switcher__btn" data-lang="es" aria-label="Español">ES</button>
-            <button class="lang-switcher__btn" data-lang="fr" aria-label="Français">FR</button>
-            <button class="lang-switcher__btn" data-lang="de" aria-label="Deutsch">DE</button>
-            <button class="lang-switcher__btn" data-lang="it" aria-label="Italiano">IT</button>
-            <button class="lang-switcher__btn" data-lang="pt" aria-label="Português">PT</button>
-          </nav>
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <!-- Globe icon — pure inline SVG, no external dependency -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option lang-option--active" data-lang="en" role="option" aria-selected="true">English</button>
+              <button class="lang-option lang-option--soon" data-lang="es" role="option" aria-selected="false" aria-disabled="true">Español</button>
+              <button class="lang-option lang-option--soon" data-lang="fr" role="option" aria-selected="false" aria-disabled="true">Français</button>
+              <button class="lang-option lang-option--soon" data-lang="de" role="option" aria-selected="false" aria-disabled="true">Deutsch</button>
+              <button class="lang-option lang-option--soon" data-lang="it" role="option" aria-selected="false" aria-disabled="true">Italiano</button>
+              <button class="lang-option lang-option--soon" data-lang="pt" role="option" aria-selected="false" aria-disabled="true">Português</button>
+            </div>
+          </div>
 
           <a href="#download" class="btn btn--primary">Download</a>
         </div>
@@ -144,47 +160,193 @@
 
     <!-- ─── Hero ──────────────────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-headline">
-      <p class="hero__eyebrow">Built for iPhone</p>
-      <h1 class="hero__headline" id="hero-headline">
-        You probably have a nutrient gap.<br>
-        You just don't know which one.
-      </h1>
-      <p class="hero__sub">
-        No account. No internet. Download, log a day, find out in minutes.
-      </p>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Offline micronutrient tracker for iPhone</p>
+        <h1 class="hero__headline" id="hero-headline">
+          You probably have a nutrient gap.<br>
+          You just don't know which one.
+        </h1>
+        <p class="hero__sub">
+          Track vitamins, minerals, omega&#8209;3 — and the Omega&#8209;6:3 ratio most apps have never heard of.
+          No account. Entirely offline.
+        </p>
 
-      <div class="hero__cta" id="download">
-        <!-- Replace href with real App Store link when live -->
-        <a href="#" class="app-store-badge" aria-label="Download AmiFit on the App Store">
-          <img
-            src="assets/img/app-store-badge.svg"
-            alt="Download on the App Store"
-            width="180"
-            height="52"
-            loading="eager"
-            onerror="this.parentElement.innerHTML='<span class=\'btn btn--primary\'>Download on the App Store</span>'"
-          >
-        </a>
+        <div class="hero__cta-row" id="download">
+          <!-- Replace href with real App Store link when live -->
+          <a href="#" class="app-store-badge" aria-label="Download AmiFit on the App Store">
+            <img
+              src="assets/img/app-store-badge.svg"
+              alt="Download on the App Store"
+              width="180"
+              height="52"
+              loading="eager"
+              onerror="this.parentElement.innerHTML='<span class=\'btn btn--primary\'>Download on the App Store</span>'"
+            >
+          </a>
+          <!-- QR code placeholder — unhide when App Store link is ready -->
+          <div class="hero__qr" aria-hidden="true" title="Scan to download">
+            <img src="assets/img/qr-code.png" alt="QR code to download AmiFit" hidden>
+          </div>
+        </div>
+
       </div>
 
-      <div class="hero__typewriter-wrap" aria-live="polite" aria-atomic="true">
-        <span class="hero__typewriter" id="typewriter"></span>
-      </div>
-    </section>
+      <!-- Physics canvas — pills are real DOM elements, positioned by Matter.js -->
+      <div class="pills-canvas" aria-label="Interactive display of all nutrients tracked by AmiFit" role="img">
 
-    <!-- ─── Anxiety Spike ──────────────────────────────────────────────── -->
+        <!-- Macros -->
+        <div class="pill" style="--pill-color:#FBBF24">Protein</div>
+        <div class="pill" style="--pill-color:#C084FC">Carbohydrate</div>
+        <div class="pill" style="--pill-color:#F472B6">Fat</div>
+        <div class="pill" style="--pill-color:#FBBF24">Fiber</div>
+        <div class="pill" style="--pill-color:#22D3EE">Sugar</div>
+
+        <!-- Fats -->
+        <div class="pill" style="--pill-color:#818CF8">Saturated Fat</div>
+        <div class="pill" style="--pill-color:#34D399">Trans Fat</div>
+        <div class="pill" style="--pill-color:#60A5FA">Monounsaturated Fat</div>
+        <div class="pill" style="--pill-color:#4ADE80">Polyunsaturated Fat</div>
+
+        <!-- Omegas -->
+        <div class="pill" style="--pill-color:#F87171">ALA</div>
+        <div class="pill" style="--pill-color:#2DD4BF">EPA</div>
+        <div class="pill" style="--pill-color:#FB923C">DHA</div>
+        <div class="pill" style="--pill-color:#C084FC">EPA + DHA</div>
+        <div class="pill" style="--pill-color:#FBBF24">Omega-6</div>
+        <div class="pill" style="--pill-color:#22D3EE">Omega-6:3 Ratio</div>
+
+        <!-- Minerals -->
+        <div class="pill" style="--pill-color:#F472B6">Calcium</div>
+        <div class="pill" style="--pill-color:#818CF8">Phosphorus</div>
+        <div class="pill" style="--pill-color:#34D399">Potassium</div>
+        <div class="pill" style="--pill-color:#60A5FA">Magnesium</div>
+        <div class="pill" style="--pill-color:#4ADE80">Sodium</div>
+        <div class="pill" style="--pill-color:#F87171">Iron</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Zinc</div>
+        <div class="pill" style="--pill-color:#FB923C">Copper</div>
+        <div class="pill" style="--pill-color:#C084FC">Manganese</div>
+        <div class="pill" style="--pill-color:#FBBF24">Selenium</div>
+
+        <!-- Vitamins -->
+        <div class="pill" style="--pill-color:#22D3EE">Vitamin A</div>
+        <div class="pill" style="--pill-color:#F472B6">Vitamin D</div>
+        <div class="pill" style="--pill-color:#818CF8">Vitamin E</div>
+        <div class="pill" style="--pill-color:#34D399">Vitamin K</div>
+        <div class="pill" style="--pill-color:#60A5FA">Vitamin C</div>
+        <div class="pill" style="--pill-color:#4ADE80">Thiamine (B1)</div>
+        <div class="pill" style="--pill-color:#F87171">Riboflavin (B2)</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Niacin (B3)</div>
+        <div class="pill" style="--pill-color:#FB923C">Pantothenic Acid (B5)</div>
+        <div class="pill" style="--pill-color:#C084FC">B6</div>
+        <div class="pill" style="--pill-color:#FBBF24">Folate (B9)</div>
+        <div class="pill" style="--pill-color:#22D3EE">B12</div>
+        <div class="pill" style="--pill-color:#F472B6">Choline</div>
+
+        <!-- Other -->
+        <div class="pill" style="--pill-color:#818CF8">Cholesterol</div>
+        <div class="pill" style="--pill-color:#34D399">Alcohol</div>
+        <div class="pill" style="--pill-color:#60A5FA">Water</div>
+
+        <!-- Amino Acids -->
+        <div class="pill" style="--pill-color:#22D3EE">Histidine</div>
+        <div class="pill" style="--pill-color:#F472B6">Isoleucine</div>
+        <div class="pill" style="--pill-color:#818CF8">Leucine</div>
+        <div class="pill" style="--pill-color:#34D399">Lysine</div>
+        <div class="pill" style="--pill-color:#60A5FA">Methionine+Cystine</div>
+        <div class="pill" style="--pill-color:#4ADE80">Phenylalanine+Tyrosine</div>
+        <div class="pill" style="--pill-color:#F87171">Threonine</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Tryptophan</div>
+        <div class="pill" style="--pill-color:#FB923C">Valine</div>
+      </div>
+
+      <!-- Reduced motion fallback: static grid -->
+      <div class="pills-static container" aria-hidden="true">
+        <div class="pill pill--static" style="--pill-color:#F472B6">Vitamin D</div>
+        <div class="pill pill--static" style="--pill-color:#60A5FA">Magnesium</div>
+        <div class="pill pill--static" style="--pill-color:#22D3EE">B12</div>
+        <div class="pill pill--static" style="--pill-color:#F87171">Iron</div>
+        <div class="pill pill--static" style="--pill-color:#F472B6">Calcium</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">EPA</div>
+        <div class="pill pill--static" style="--pill-color:#FB923C">DHA</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">Zinc</div>
+        <div class="pill pill--static" style="--pill-color:#34D399">Potassium</div>
+        <div class="pill pill--static" style="--pill-color:#60A5FA">Vitamin C</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Fiber</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Folate (B9)</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Selenium</div>
+        <div class="pill pill--static" style="--pill-color:#F472B6">Choline</div>
+        <div class="pill pill--static" style="--pill-color:#818CF8">Leucine</div>
+        <div class="pill pill--static" style="--pill-color:#34D399">Lysine</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">Tryptophan</div>
+        <div class="pill pill--static" style="--pill-color:#4ADE80">Sodium</div>
+        <div class="pill pill--static" style="--pill-color:#818CF8">Cholesterol</div>
+        <div class="pill pill--static" style="--pill-color:#F87171">ALA</div>
+      </div>
+
+      <div class="pills-section__header container">
+        <h2 class="pills-section__headline" id="pills-headline">
+          Macros are the past. Micros are the future.
+        </h2>
+        <div class="hero__typewriter-wrap" aria-live="polite" aria-atomic="true">
+          <span class="hero__typewriter" id="typewriter"></span>
+        </div>
+      </div>
+
+    </section><!-- end .hero -->
+
+    <!-- ─── The Questions ────────────────────────────────────────────────── -->
+    <!-- These are the thoughts I have. Popping in my head. -->
     <section class="anxiety" aria-labelledby="anxiety-headline">
       <div class="container">
         <h2 class="sr-only" id="anxiety-headline">Do you know your nutrient intake?</h2>
         <div class="anxiety__questions" role="list">
+          <p class="anxiety__q" role="listitem">What's your Omega-6 to Omega-3 ratio right now?</p>
           <p class="anxiety__q" role="listitem">Do you know your magnesium intake from yesterday?</p>
-          <p class="anxiety__q" role="listitem">What's your Omega-3 to Omega-6 ratio right now?</p>
           <p class="anxiety__q" role="listitem">Are you getting enough B12 this week?</p>
           <p class="anxiety__q" role="listitem">How much iron did you get today?</p>
           <p class="anxiety__q" role="listitem">Is your Vitamin D anywhere close to the daily goal?</p>
         </div>
         <p class="anxiety__answer">
           AmiFit tells you. In minutes.<br>No account. No internet.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── Omega Callout ──────────────────────────────────────────────── -->
+    <section class="omega-callout" aria-labelledby="omega-headline">
+      <div class="container">
+        <span class="section-label reveal">Omega tracking</span>
+        <h2 class="omega-callout__headline reveal" id="omega-headline">
+          Most apps don't track omega&#8209;3 at all.
+        </h2>
+        <p class="omega-callout__sub reveal">AmiFit tracks five.</p>
+
+        <div class="omega-callout__metrics reveal" aria-label="Five omega metrics tracked by AmiFit">
+          <div class="omega-metric">
+            <span class="omega-metric__name">EPA</span>
+            <span class="omega-metric__desc">Eicosapentaenoic acid</span>
+          </div>
+          <div class="omega-metric">
+            <span class="omega-metric__name">DHA</span>
+            <span class="omega-metric__desc">Docosahexaenoic acid</span>
+          </div>
+          <div class="omega-metric">
+            <span class="omega-metric__name">ALA</span>
+            <span class="omega-metric__desc">Alpha-linolenic acid</span>
+          </div>
+          <div class="omega-metric">
+            <span class="omega-metric__name">EPA + DHA</span>
+            <span class="omega-metric__desc">Combined daily goal</span>
+          </div>
+          <div class="omega-metric omega-metric--highlight">
+            <span class="omega-metric__name">Omega&#8209;6:3 Ratio</span>
+            <span class="omega-metric__desc">The one that actually matters</span>
+          </div>
+        </div>
+
+        <p class="omega-callout__body reveal">
+          You can eat omega&#8209;3 every day and still have a bad ratio if your omega&#8209;6 intake is too high.
+          AmiFit shows you both — and tells you whether they're actually balanced.
         </p>
       </div>
     </section>
@@ -257,118 +419,6 @@
         </div>
 
         <p class="offline__pull-quote reveal">What I eat stays on my phone.</p>
-      </div>
-    </section>
-
-    <!-- ─── Pills Section ──────────────────────────────────────────────── -->
-    <section class="pills-section" aria-labelledby="pills-headline">
-      <div class="container">
-        <div class="pills-section__header">
-          <p class="pills-section__free-label reveal">
-            Free: Calories &middot; Protein &middot; Carbs &middot; Fat
-          </p>
-          <h2 class="pills-section__headline reveal" id="pills-headline">
-            Macros are NPC behavior.
-          </h2>
-        </div>
-      </div>
-
-      <!-- Physics canvas — pills are real DOM elements, positioned by Matter.js -->
-      <div class="pills-canvas" aria-label="Interactive display of all nutrients tracked by AmiFit" role="img">
-
-        <!-- Macros -->
-        <div class="pill" style="--pill-color:#FBBF24">Protein</div>
-        <div class="pill" style="--pill-color:#C084FC">Carbohydrate</div>
-        <div class="pill" style="--pill-color:#F472B6">Fat</div>
-        <div class="pill" style="--pill-color:#FBBF24">Fiber</div>
-        <div class="pill" style="--pill-color:#22D3EE">Sugar</div>
-
-        <!-- Fats -->
-        <div class="pill" style="--pill-color:#818CF8">Saturated Fat</div>
-        <div class="pill" style="--pill-color:#34D399">Trans Fat</div>
-        <div class="pill" style="--pill-color:#60A5FA">Monounsaturated Fat</div>
-        <div class="pill" style="--pill-color:#4ADE80">Polyunsaturated Fat</div>
-
-        <!-- Omegas -->
-        <div class="pill" style="--pill-color:#F87171">ALA</div>
-        <div class="pill" style="--pill-color:#2DD4BF">EPA</div>
-        <div class="pill" style="--pill-color:#FB923C">DHA</div>
-        <div class="pill" style="--pill-color:#C084FC">EPA + DHA</div>
-        <div class="pill" style="--pill-color:#FBBF24">Omega-6</div>
-        <div class="pill" style="--pill-color:#22D3EE">Omega-6:3 Ratio</div>
-
-        <!-- Minerals -->
-        <div class="pill" style="--pill-color:#F472B6">Calcium</div>
-        <div class="pill" style="--pill-color:#818CF8">Phosphorus</div>
-        <div class="pill" style="--pill-color:#34D399">Potassium</div>
-        <div class="pill" style="--pill-color:#60A5FA">Magnesium</div>
-        <div class="pill" style="--pill-color:#4ADE80">Sodium</div>
-        <div class="pill" style="--pill-color:#F87171">Iron</div>
-        <div class="pill" style="--pill-color:#2DD4BF">Zinc</div>
-        <div class="pill" style="--pill-color:#FB923C">Copper</div>
-        <div class="pill" style="--pill-color:#C084FC">Manganese</div>
-        <div class="pill" style="--pill-color:#FBBF24">Selenium</div>
-
-        <!-- Vitamins -->
-        <div class="pill" style="--pill-color:#22D3EE">Vitamin A</div>
-        <div class="pill" style="--pill-color:#F472B6">Vitamin D</div>
-        <div class="pill" style="--pill-color:#818CF8">Vitamin E</div>
-        <div class="pill" style="--pill-color:#34D399">Vitamin K</div>
-        <div class="pill" style="--pill-color:#60A5FA">Vitamin C</div>
-        <div class="pill" style="--pill-color:#4ADE80">B1 (Thiamine)</div>
-        <div class="pill" style="--pill-color:#F87171">B2 (Riboflavin)</div>
-        <div class="pill" style="--pill-color:#2DD4BF">B3 (Niacin)</div>
-        <div class="pill" style="--pill-color:#FB923C">B5 (Pantothenic Acid)</div>
-        <div class="pill" style="--pill-color:#C084FC">B6</div>
-        <div class="pill" style="--pill-color:#FBBF24">Folate (B9)</div>
-        <div class="pill" style="--pill-color:#22D3EE">B12</div>
-        <div class="pill" style="--pill-color:#F472B6">Choline</div>
-
-        <!-- Other -->
-        <div class="pill" style="--pill-color:#818CF8">Cholesterol</div>
-        <div class="pill" style="--pill-color:#34D399">Alcohol</div>
-        <div class="pill" style="--pill-color:#60A5FA">Water</div>
-
-        <!-- Amino Acids -->
-        <div class="pill" style="--pill-color:#22D3EE">Histidine</div>
-        <div class="pill" style="--pill-color:#F472B6">Isoleucine</div>
-        <div class="pill" style="--pill-color:#818CF8">Leucine</div>
-        <div class="pill" style="--pill-color:#34D399">Lysine</div>
-        <div class="pill" style="--pill-color:#60A5FA">Methionine+Cystine</div>
-        <div class="pill" style="--pill-color:#4ADE80">Phenylalanine+Tyrosine</div>
-        <div class="pill" style="--pill-color:#F87171">Threonine</div>
-        <div class="pill" style="--pill-color:#2DD4BF">Tryptophan</div>
-        <div class="pill" style="--pill-color:#FB923C">Valine</div>
-      </div>
-
-      <!-- Reduced motion fallback: static grid -->
-      <div class="pills-static container" aria-hidden="true">
-        <div class="pill pill--static" style="--pill-color:#F472B6">Vitamin D</div>
-        <div class="pill pill--static" style="--pill-color:#60A5FA">Magnesium</div>
-        <div class="pill pill--static" style="--pill-color:#22D3EE">B12</div>
-        <div class="pill pill--static" style="--pill-color:#F87171">Iron</div>
-        <div class="pill pill--static" style="--pill-color:#F472B6">Calcium</div>
-        <div class="pill pill--static" style="--pill-color:#2DD4BF">EPA</div>
-        <div class="pill pill--static" style="--pill-color:#FB923C">DHA</div>
-        <div class="pill pill--static" style="--pill-color:#2DD4BF">Zinc</div>
-        <div class="pill pill--static" style="--pill-color:#34D399">Potassium</div>
-        <div class="pill pill--static" style="--pill-color:#60A5FA">Vitamin C</div>
-        <div class="pill pill--static" style="--pill-color:#FBBF24">Fiber</div>
-        <div class="pill pill--static" style="--pill-color:#FBBF24">Folate (B9)</div>
-        <div class="pill pill--static" style="--pill-color:#FBBF24">Selenium</div>
-        <div class="pill pill--static" style="--pill-color:#F472B6">Choline</div>
-        <div class="pill pill--static" style="--pill-color:#818CF8">Leucine</div>
-        <div class="pill pill--static" style="--pill-color:#34D399">Lysine</div>
-        <div class="pill pill--static" style="--pill-color:#2DD4BF">Tryptophan</div>
-        <div class="pill pill--static" style="--pill-color:#4ADE80">Sodium</div>
-        <div class="pill pill--static" style="--pill-color:#818CF8">Cholesterol</div>
-        <div class="pill pill--static" style="--pill-color:#F87171">ALA</div>
-      </div>
-
-      <div class="container">
-        <p class="pills-section__tagline" id="pills-tagline">
-          Tracked. Every meal. Offline.
-        </p>
       </div>
     </section>
 
@@ -500,7 +550,7 @@
       </nav>
 
       <div class="footer__legal">
-        <p>&copy; AmiFit 2026. Built for iPhone.</p>
+        <p>&copy; 2025 AmiFit&#8482;. Built for iPhone.</p>
       </div>
     </div>
   </footer>
