@@ -189,11 +189,15 @@ function initPillsPhysics() {
   let engine, runner, walls;
   let started = false;
 
+  // Park pills off-screen immediately so they never show at default CSS position
+  // regardless of whether the IntersectionObserver fires or not
+  activePills.forEach((el) => { el.style.transform = 'translate(-9999px, 0)'; });
+
   // Per-pill state: body + timestamp when it settled (null = still moving)
   const pillState = new Map();
 
   const PILL_H         = 30;
-  const SPAWN_INTERVAL = 300;   // ms between each pill spawning
+  const SPAWN_INTERVAL = 600;   // ms between each pill spawning (slower = no piling)
   const SETTLE_SPEED   = 0.25;  // velocity below this = settled
   const RECYCLE_AFTER  = 6000;  // ms a pill sits settled before recycling
   const RECYCLE_FADE   = 500;   // ms fade-out duration
@@ -298,11 +302,8 @@ function initPillsPhysics() {
     Matter.World.add(engine.world, walls);
     Matter.Runner.run(runner, engine);
 
-    // Park all pills off-screen before spawning so they don't pile at (0,0)
-    activePills.forEach((el) => { el.style.transform = 'translate(-9999px, 0)'; });
-
-    // Trickle pills in one by one
-    activePills.forEach((el, i) => spawnOne(el, i * SPAWN_INTERVAL, true));
+    // Trickle pills in one by one with random y so they don't pile at canvas top
+    activePills.forEach((el, i) => spawnOne(el, i * SPAWN_INTERVAL));
 
     // Show tagline after first full wave has spawned + settled
     if (tagline) {

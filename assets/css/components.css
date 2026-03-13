@@ -321,6 +321,14 @@ main {
 }
 
 /* ─── Graffiti Tag ────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/rock-salt.woff2') format('woff2');
+}
+
 .graffiti {
   font-family: 'Rock Salt', cursive;
   font-size: clamp(2.5rem, 8vw, 6rem);
