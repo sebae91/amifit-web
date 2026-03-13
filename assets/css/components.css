@@ -322,9 +322,9 @@ main {
 
 /* ─── Graffiti Tag ────────────────────────────────────────────────── */
 .graffiti {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Rock Salt', cursive;
   font-size: clamp(2.5rem, 8vw, 6rem);
-  color: var(--color-accent);
+  color: #FF2D78;
   padding: var(--space-6) var(--space-3) var(--space-2);
   transform: rotate(-2deg);
   transform-origin: left center;
