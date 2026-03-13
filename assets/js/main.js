@@ -116,15 +116,12 @@ function initAnxietySection() {
             q.classList.remove('anxiety__q--lit');
           });
 
-          let next;
-          do { next = Math.floor(Math.random() * questions.length); } while (next === current);
-          current = next;
+          current = (current + 1) % questions.length;
 
           questions[current].classList.remove('anxiety__q--dim');
           questions[current].classList.add('anxiety__q--lit');
 
-          // Irregular timing — feels erratic, not robotic
-          setTimeout(nextThought, 1200 + Math.random() * 1000);
+          setTimeout(nextThought, 1800);
         }
 
         nextThought();
@@ -197,7 +194,7 @@ function initPillsPhysics() {
   const pillState = new Map();
 
   const PILL_H         = 30;
-  const SPAWN_INTERVAL = 600;   // ms between each pill spawning (slower = no piling)
+  const SPAWN_INTERVAL = 280;   // ms between each pill spawning
   const SETTLE_SPEED   = 0.25;  // velocity below this = settled
   const RECYCLE_AFTER  = 6000;  // ms a pill sits settled before recycling
   const RECYCLE_FADE   = 500;   // ms fade-out duration
