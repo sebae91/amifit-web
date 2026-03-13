@@ -320,6 +320,19 @@ main {
   animation: blink 1s step-end infinite;
 }
 
+/* ─── Graffiti Tag ────────────────────────────────────────────────── */
+.graffiti {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: var(--color-accent);
+  padding: var(--space-6) var(--space-3) var(--space-2);
+  transform: rotate(-2deg);
+  transform-origin: left center;
+  max-width: max-content;
+  line-height: 1;
+  user-select: none;
+}
+
 /* ─── Anxiety Spike Section ───────────────────────────────────────── */
 .anxiety {
   background-color: var(--color-bg);
