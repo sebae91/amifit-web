@@ -868,6 +868,201 @@ main {
   padding: 14px;
 }
 
+/* ─── Ami Wall ────────────────────────────────────────────────────── */
+.ami-wall {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.wtag {
+  position: absolute;
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* 1 — AmiFit — big outline anchor, left */
+.wtag--1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(3rem, 9vw, 6rem);
+  -webkit-text-stroke: 2px #2997FF;
+  color: transparent;
+  top: 5px;
+  left: 2%;
+  transform: rotate(-3deg);
+}
+
+/* 2 — amigo — sits on top of AmiFit, pink */
+.wtag--2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  color: #FF2D78;
+  top: -4px;
+  left: 6%;
+  transform: rotate(-11deg);
+}
+
+/* 3 — amiga — overlapping center, yellow */
+.wtag--3 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  color: #FBBF24;
+  top: 8px;
+  left: 30%;
+  transform: rotate(8deg);
+}
+
+/* 4 — ami — bottom-left, green */
+.wtag--4 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  color: #4ADE80;
+  bottom: 2px;
+  left: 1%;
+  transform: rotate(-7deg);
+}
+
+/* 5 — amie — top-center, pink, Cabin Sketch */
+.wtag--5 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  color: #FF2D78;
+  top: 2px;
+  left: 44%;
+  transform: rotate(9deg);
+}
+
+/* 6 — amico — bottom-center, blue */
+.wtag--6 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  color: #2997FF;
+  bottom: 0px;
+  left: 38%;
+  transform: rotate(-9deg);
+}
+
+/* 7 — amica — right side, yellow */
+.wtag--7 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  color: #FBBF24;
+  top: 30px;
+  right: 8%;
+  transform: rotate(13deg);
+}
+
+/* 8 — your fit friend. — right, accent, prominent */
+.wtag--8 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  color: var(--color-accent);
+  top: 5px;
+  right: 1%;
+  transform: rotate(-5deg);
+}
+
+/* 9 — not an app that tracks you — mid, faded */
+.wtag--9 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--color-text);
+  opacity: 0.3;
+  top: 38px;
+  left: 24%;
+  transform: rotate(3deg);
+}
+
+/* 10 — a friend that tells you what you're missing — tiny, faded green */
+.wtag--10 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  color: #4ADE80;
+  opacity: 0.5;
+  bottom: 6px;
+  left: 52%;
+  transform: rotate(-5deg);
+}
+
+/* 11 — always there, always offline — tiny pink, bottom-right */
+.wtag--11 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(0.55rem, 1.2vw, 0.85rem);
+  color: #FF2D78;
+  opacity: 0.7;
+  bottom: 4px;
+  right: 2%;
+  transform: rotate(5deg);
+}
+
+/* 12 — just your friend on your phone. — ghost, bottom-center */
+.wtag--12 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  color: var(--color-text);
+  opacity: 0.15;
+  bottom: 0px;
+  left: 22%;
+  transform: rotate(-2deg);
+}
+
+/* 13 — no account. no cloud. no problem. — top, small yellow */
+.wtag--13 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(0.85rem, 1.8vw, 1.3rem);
+  color: #FBBF24;
+  opacity: 0.8;
+  top: 4px;
+  left: 58%;
+  transform: rotate(-7deg);
+}
+
+/* 14 — less app. more life. — center-right, green */
+.wtag--14 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  color: #4ADE80;
+  top: 50px;
+  right: 12%;
+  transform: rotate(-4deg);
+}
+
+/* 15 — what I eat stays on my phone. — faded, mid */
+.wtag--15 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  color: var(--color-text);
+  opacity: 0.2;
+  top: 55px;
+  left: 14%;
+  transform: rotate(4deg);
+}
+
+/* 16 — Track without being tracked. — blue, mid */
+.wtag--16 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(0.7rem, 1.6vw, 1.1rem);
+  color: #2997FF;
+  opacity: 0.55;
+  top: 10px;
+  left: 50%;
+  transform: rotate(-8deg);
+}
+
+/* 17 — The offline app for people who are online enough already. — ghost, bleeds off */
+.wtag--17 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+  color: var(--color-text);
+  opacity: 0.12;
+  bottom: 2px;
+  left: 60%;
+  transform: rotate(2deg);
+}
+
 /* ─── Berlin Wall ─────────────────────────────────────────────────── */
 .berlin-wall {
   position: relative;
