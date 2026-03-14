@@ -101,7 +101,7 @@ main {
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 6px;
-  min-width: 160px;
+  min-width: 120px;
   display: none;
   flex-direction: column;
   gap: 2px;
@@ -138,9 +138,7 @@ main {
 }
 
 .lang-option--active::after {
-  content: '✓';
-  font-size: 11px;
-  color: var(--color-accent);
+  content: '';
 }
 
 .lang-option--soon {
@@ -320,13 +318,29 @@ main {
   animation: blink 1s step-end infinite;
 }
 
-/* ─── Graffiti Tag ────────────────────────────────────────────────── */
+/* ─── Graffiti Fonts ──────────────────────────────────────────────── */
 @font-face {
   font-family: 'Rock Salt';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/rock-salt.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/permanent-marker.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/cabin-sketch.woff2') format('woff2');
 }
 
 .graffiti {
@@ -853,6 +867,61 @@ main {
   border-radius: 12px;
   padding: 14px;
 }
+
+/* ─── Berlin Wall ─────────────────────────────────────────────────── */
+.berlin-wall {
+  position: relative;
+  width: 100%;
+  padding: var(--space-10) 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.tag {
+  display: block;
+  line-height: 1.15;
+  user-select: none;
+}
+
+/* Tag 1 — Rock Salt, pink, left, large, slight tilt left */
+.tag--1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: clamp(2rem, 6vw, 5rem);
+  color: #FF2D78;
+  transform: rotate(-2.5deg);
+  transform-origin: left center;
+  padding-left: var(--space-3);
+  max-width: 80%;
+}
+
+/* Tag 2 — Permanent Marker, yellow, right, medium, tilt right */
+.tag--2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.5rem, 4.5vw, 3.8rem);
+  color: #FBBF24;
+  transform: rotate(1.5deg);
+  transform-origin: right center;
+  text-align: right;
+  padding-right: var(--space-3);
+  align-self: flex-end;
+  max-width: 90%;
+}
+
+/* Tag 3 — Cabin Sketch, green, right-aligned */
+.tag--3 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  color: #4ADE80;
+  transform: rotate(2.5deg);
+  transform-origin: right center;
+  text-align: right;
+  padding-right: var(--space-3);
+  align-self: flex-end;
+  max-width: 90%;
+}
+
 
 /* ─── Final CTA Section ───────────────────────────────────────────── */
 .final-cta {
