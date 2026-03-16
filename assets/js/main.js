@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-03-13
+// Last revised by your AI friend: 2026-03-17
 
 'use strict';
 
@@ -65,21 +65,40 @@ function initTypewriter() {
 
 // ─── Scroll Reveal (IntersectionObserver) ────────────────────────────────────
 // Adds --visible class to .reveal elements when they enter the viewport.
+// If already above viewport on load (refresh while scrolled down), show instantly.
 
 function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length) return;
 
+  function showInstant(el) {
+    el.style.transition = 'none';
+    el.classList.add('reveal--visible');
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (!entry.isIntersecting) return;
+      // Entering from above (scrolling up) or already past — skip animation
+      if (entry.boundingClientRect.top < 0) {
+        showInstant(entry.target);
+      } else {
         entry.target.classList.add('reveal--visible');
-        observer.unobserve(entry.target);
       }
+      observer.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
 
-  elements.forEach((el) => observer.observe(el));
+  // rAF defers until after browser scroll restoration
+  requestAnimationFrame(() => {
+    elements.forEach((el) => {
+      if (el.getBoundingClientRect().bottom < 0) {
+        showInstant(el);
+      } else {
+        observer.observe(el);
+      }
+    });
+  });
 }
 
 // ─── Anxiety Questions (staggered scroll reveal) ──────────────────────────────
@@ -90,81 +109,90 @@ function initAnxietySection() {
   const answer    = document.querySelector('.anxiety__answer');
   if (!questions.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      questions.forEach((q, i) => {
-        setTimeout(() => {
-          q.classList.add('anxiety__q--visible');
-        }, i * 500);
-      });
-
-      if (answer) {
-        setTimeout(() => {
-          answer.classList.add('anxiety__answer--visible');
-        }, questions.length * 500 + 400);
-      }
-
-      // After answer appears, start the endless intrusive thought loop
-      setTimeout(() => {
-        let current = -1;
-
-        function nextThought() {
-          questions.forEach((q) => {
-            q.classList.add('anxiety__q--dim');
-            q.classList.remove('anxiety__q--lit');
-          });
-
-          current = (current + 1) % questions.length;
-
-          questions[current].classList.remove('anxiety__q--dim');
-          questions[current].classList.add('anxiety__q--lit');
-
-          setTimeout(nextThought, 1800);
-        }
-
-        nextThought();
-      }, questions.length * 500 + 1800);
-
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.2 });
-
   const section = document.querySelector('.anxiety');
-  if (section) observer.observe(section);
-}
-
-// ─── Language Word Cycler ────────────────────────────────────────────────────
-// Cycles through "chicken → pollo → poulet → pollo → Hähnchen → frango"
-
-function initLanguageCycler() {
-  const words = document.querySelectorAll('.languages__word[data-lang]');
-  if (!words.length) return;
-
-  let current = 0;
-
-  function showNext() {
-    words.forEach((w) => w.classList.remove('languages__word--active'));
-    words[current].classList.add('languages__word--active');
-    current = (current + 1) % words.length;
-  }
-
-  // Start when section is visible
-  const section = document.querySelector('.languages');
   if (!section) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        showNext();
-        setInterval(showNext, 1200);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
+  // Start the cycling thought loop (runs regardless of how section was revealed)
+  function startThoughtLoop() {
+    let current = -1;
+    function nextThought() {
+      questions.forEach((q) => {
+        q.classList.add('anxiety__q--dim');
+        q.classList.remove('anxiety__q--lit');
+      });
+      current = (current + 1) % questions.length;
+      questions[current].classList.remove('anxiety__q--dim');
+      questions[current].classList.add('anxiety__q--lit');
+      setTimeout(nextThought, 1800);
+    }
+    nextThought();
+  }
 
-  observer.observe(section);
+  // Show everything instantly — no stagger, no transitions
+  const clarification = document.querySelector('.anxiety__clarification');
+  function showInstant() {
+    questions.forEach((q) => {
+      q.style.transition = 'none';
+      q.style.opacity = '1';
+      q.style.transform = 'none';
+      q.classList.add('anxiety__q--visible');
+    });
+    if (answer) {
+      answer.style.transition = 'none';
+      answer.classList.add('anxiety__answer--visible');
+    }
+    if (clarification) {
+      clarification.style.transition = 'none';
+      clarification.style.opacity = '1';
+    }
+    startThoughtLoop();
+  }
+
+  // rAF defers until after browser scroll restoration
+  requestAnimationFrame(() => {
+    // Already above viewport on load — show instantly
+    if (section.getBoundingClientRect().bottom < 0) {
+      showInstant();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        // Scrolled past too fast — show instantly
+        if (entry.boundingClientRect.bottom < 0) {
+          showInstant();
+          observer.unobserve(section);
+          return;
+        }
+
+        // Entering from above (scrolling up) — show instantly
+        if (entry.boundingClientRect.top < 0) {
+          showInstant();
+          observer.unobserve(section);
+          return;
+        }
+
+        // Normal scroll — staggered reveal
+        questions.forEach((q, i) => {
+          setTimeout(() => q.classList.add('anxiety__q--visible'), i * 500);
+        });
+
+        if (answer) {
+          setTimeout(() => {
+            answer.classList.add('anxiety__answer--visible');
+          }, questions.length * 500 + 400);
+        }
+
+        setTimeout(startThoughtLoop, questions.length * 500 + 1800);
+
+        observer.unobserve(section);
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(section);
+  });
 }
 
 // ─── Pills Physics (Matter.js) ────────────────────────────────────────────────
@@ -388,7 +416,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initScrollReveal();
   initAnxietySection();
-  initLanguageCycler();
   initLangSwitcher();
   // Pills physics inits lazily when section enters viewport
   initPillsPhysics();
