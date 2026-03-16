@@ -1,0 +1,140 @@
+<!-- This is the start of the database.html file -->
+<!-- Last revised by your AI friend: 2026-03-17 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the Database Is Built — AmiFit</title>
+  <meta name="description" content="How AmiFit's food database is built — original photography, regional focus, USDA food selection, and AMFT foods.">
+
+  <link rel="canonical" href="https://www.amifit.app/database">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/database">
+  <meta property="og:title"       content="How the Database Is Built — AmiFit">
+  <meta property="og:description" content="How AmiFit's food database is built — original photography, regional focus, USDA food selection, and AMFT foods.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/img/icon.png">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    .legal-page {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+    .legal-page h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-8);
+    }
+    .legal-page h2 {
+      font-size: var(--text-xl);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-2);
+    }
+    .legal-page p,
+    .legal-page li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .legal-page p + p {
+      margin-top: var(--space-3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AmiFit home">
+          <img src="assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option lang-option--active" data-lang="en" role="option" aria-selected="true">English</button>
+              <button class="lang-option lang-option--soon" data-lang="es" role="option" aria-selected="false" aria-disabled="true">Español</button>
+              <button class="lang-option lang-option--soon" data-lang="it" role="option" aria-selected="false" aria-disabled="true">Italiano</button>
+              <button class="lang-option lang-option--soon" data-lang="fr" role="option" aria-selected="false" aria-disabled="true">Français</button>
+              <button class="lang-option lang-option--soon" data-lang="de" role="option" aria-selected="false" aria-disabled="true">Deutsch</button>
+              <button class="lang-option lang-option--soon" data-lang="pt" role="option" aria-selected="false" aria-disabled="true">Português</button>
+            </div>
+          </div>
+          <a href="download.html" class="btn btn--primary">Download</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="legal-page">
+      <h1>How the Database Is Built</h1>
+
+      <h2>Original Photography</h2>
+      <p>Every photo in the app is original — personally photographed and weighed with real portions. No stock images are used. Rather than relying on AI to estimate portion sizes — where you can never be sure if the result is accurate — or weighing every meal on a food scale, the app offers a practical middle ground: real photos of the most common portions with their actual weight. Tap the photo that looks like your portion and the grams are set automatically, then use the portions counter if you had more than one. Or use any photo as a visual guide to compare with your plate and edit the grams up or down. Photos show food as it naturally appears, but the weight reflects only the edible portion — excluding peels, bones, seeds, and other inedible parts.</p>
+
+      <h2>Regional Focus &amp; Languages</h2>
+      <p>The app is built for health-conscious adults in Spain, Italy, France, and Germany. The aim is to cover the most commonly eaten foods in these regions, with support for six languages: English, Spanish, Italian, French, German, and Portuguese. If you are outside these regions and find enough foods for your diet, that's great.</p>
+
+      <h2>USDA Food Selection</h2>
+      <p>All foods marked "USDA" are sourced from the USDA FoodData Central database. For each food, careful analysis was used to select which specific USDA entry best represents that food as commonly consumed in these regions — since the USDA database can contain multiple entries for the same food type with varying nutritional profiles. Most foods come from the SR Legacy data type, which was selected specifically because it provides the most complete micronutrient profiles — including vitamins, minerals, amino acids, and omega-3 and omega-6 fatty acids. A small number come from the Foundation and Survey (FNDDS) data types for foods not available in SR Legacy. Each entry is individually verified for accuracy — an ongoing process. In a few cases where only data for the raw form was available from the USDA, nutritional values were adjusted to reflect the cooked form.</p>
+
+      <h2>AMFT Foods</h2>
+      <p>Foods marked "AMFT" fall into two categories: composite foods made up of multiple ingredients, or packaged foods where nutritional data was obtained from the manufacturer. Composite foods show a complete ingredient breakdown with percentage composition, aiming to reflect how that food is commonly prepared in Spain, Italy, France, and Germany.</p>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="targets.html">How Targets Are Set</a>
+          <a href="database.html">How the Database Is Built</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Contact Us</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/vendor/matter.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the database.html file -->

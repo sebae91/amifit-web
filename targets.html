@@ -1,0 +1,269 @@
+<!-- This is the start of the targets.html file -->
+<!-- Last revised by your AI friend: 2026-03-17 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Targets Are Set — AmiFit</title>
+  <meta name="description" content="How AmiFit sets your nutritional targets — BMR, activity level, macros, amino acids, vitamins, minerals, and more.">
+
+  <link rel="canonical" href="https://www.amifit.app/targets">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/targets">
+  <meta property="og:title"       content="How Targets Are Set — AmiFit">
+  <meta property="og:description" content="How AmiFit sets your nutritional targets — BMR, activity level, macros, amino acids, vitamins, minerals, and more.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/img/icon.png">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    .legal-page {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+    .legal-page h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-8);
+    }
+    .legal-page h2 {
+      font-size: var(--text-xl);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-2);
+    }
+    .legal-page p,
+    .legal-page li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .legal-page p + p {
+      margin-top: var(--space-3);
+    }
+    .legal-page ul {
+      padding-left: var(--space-3);
+      margin-top: var(--space-2);
+      margin-bottom: var(--space-2);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .legal-page .ref {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+    }
+    .legal-page .label {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      font-weight: 500;
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AmiFit home">
+          <img src="assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option lang-option--active" data-lang="en" role="option" aria-selected="true">English</button>
+              <button class="lang-option lang-option--soon" data-lang="es" role="option" aria-selected="false" aria-disabled="true">Español</button>
+              <button class="lang-option lang-option--soon" data-lang="it" role="option" aria-selected="false" aria-disabled="true">Italiano</button>
+              <button class="lang-option lang-option--soon" data-lang="fr" role="option" aria-selected="false" aria-disabled="true">Français</button>
+              <button class="lang-option lang-option--soon" data-lang="de" role="option" aria-selected="false" aria-disabled="true">Deutsch</button>
+              <button class="lang-option lang-option--soon" data-lang="pt" role="option" aria-selected="false" aria-disabled="true">Português</button>
+            </div>
+          </div>
+          <a href="download.html" class="btn btn--primary">Download</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="legal-page">
+      <h1>How Targets Are Set</h1>
+
+      <h2>Basal Metabolic Rate (BMR)</h2>
+      <p>We use the Mifflin-St Jeor equation, which research has found to be more reliable than the Harris-Benedict equation.</p>
+      <p>The equation calculates resting metabolic rate as (weight in kg, height in cm, age in years):</p>
+      <ul>
+        <li>Men: (10 × weight) + (6.25 × height) - (5 × age) + 5</li>
+        <li>Women: (10 × weight) + (6.25 × height) - (5 × age) - 161</li>
+      </ul>
+      <p class="ref">[1] Frankenfield D, Roth-Yousey L, Compher C. Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review. J Am Diet Assoc. 2005;105(5):775-89. doi:10.1016/j.jada.2005.02.005.</p>
+
+      <h2>Activity Level</h2>
+      <p>Your activity level multiplier is applied to your BMR to calculate your Total Daily Energy Expenditure (TDEE).</p>
+      <p>The Institute of Medicine research defines ranges for each activity level. From those ranges, we selected values that are evenly spaced to provide more consistent caloric differences between activity levels:</p>
+      <ul>
+        <li>Not Very Active: 1.3 (from range 1.0–1.39)</li>
+        <li>Lightly Active: 1.5 (from range 1.4–1.59)</li>
+        <li>Active: 1.7 (from range 1.6–1.89)</li>
+        <li>Very Active: 1.9 (from range 1.9–2.5)</li>
+      </ul>
+      <p>The descriptions for each activity level are based on the Institute of Medicine's research definitions and include both scheduled exercise and daily occupational or lifestyle activities.</p>
+      <p>The active calorie ranges are calculated based on your Basal Energy Expenditure (BEE) and represent calories burned through physical activity above your resting metabolic rate. Compare these with your Apple Watch or fitness tracker to determine which activity level best matches your lifestyle.</p>
+      <p class="ref">[2] Brooks GA, Butte NF, Rand WM, Flatt JP, Caballero B. Chronicle of the Institute of Medicine physical activity recommendation: how a physical activity recommendation came to be among dietary recommendations. Am J Clin Nutr. 2004;79(5):921S-930S. doi:10.1093/ajcn/79.5.921S.</p>
+
+      <h2>Pregnancy &amp; Lactation</h2>
+      <p>During pregnancy and lactation, only the "Maintain Weight" goal is available to support natural, healthy body changes — not intentional fat loss or muscle gain.</p>
+      <p class="label">Calorie adjustments automatically applied:</p>
+      <ul>
+        <li>Pregnancy: +380 kcal/day (average of 2nd trimester +285 and 3rd trimester +475)</li>
+        <li>Lactation: +330 kcal/day from food (total cost is 500 kcal: 330 from food + 170 from stored fat)</li>
+      </ul>
+      <p class="ref">[3] Institute of Medicine (US) and National Research Council (US) Committee to Reexamine IOM Pregnancy Weight Guidelines. Weight Gain During Pregnancy: Reexamining the Guidelines. Washington (DC): National Academies Press (US); 2009.</p>
+
+      <h2>Fat Loss Goal (-500 kcal)</h2>
+      <p>When your goal is to lose fat, the app applies a 500 calorie deficit to your total daily energy expenditure. A daily deficit of 500 kcals theoretically results in approximately 0.45 kg of fat loss per week.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Muscle Gain Goal (+5%)</h2>
+      <p>When your goal is to gain muscle, the app applies a 5% calorie surplus to your total daily energy expenditure. Research recommends 10–20% surplus for novice/intermediate lifters and 5–10% for advanced lifters. We use 5% as a conservative approach to minimize fat gain while supporting muscle growth. The app shows green (on track) when you're within 10% of your calorie goal in either direction, meaning your calories will show green all the way up to approximately 15% over your total daily energy expenditure.</p>
+      <p class="ref">[5] Iraki, J., Fitschen, P., Espinar, S., &amp; Helms, E. (2019). Nutrition Recommendations for Bodybuilders in the Off-Season: A Narrative Review. Sports, 7(7), 154.</p>
+
+      <h2>Protein, Carbohydrate &amp; Fat</h2>
+      <p class="label">Protein range: 1.2–2.4 g/kg body weight</p>
+      <p>We use 1.2 g/kg as the minimum because research shows this level supports muscle preservation and satiety better than the RDA (0.8 g/kg). The maximum of 2.4 g/kg reflects where benefits plateau. If you're resistance training during fat loss, consider setting your protein goal to 1.6 g/kg or higher in Custom Calorie &amp; Macro Goals to maximize muscle retention.</p>
+      <p class="label">Carbohydrate range: 45–65% of total calories</p>
+      <p>Based on the Acceptable Macronutrient Distribution Range (AMDR) for adults, set by the Food and Nutrition Board of the Institute of Medicine.</p>
+      <p class="label">Fat range: 20–35% of total calories</p>
+      <p>Based on the Acceptable Macronutrient Distribution Range (AMDR) for adults, set by the Food and Nutrition Board of the Institute of Medicine.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Custom Goal Limits</h2>
+      <p>If a custom calorie goal is set below 800 kcal/day, the app defaults to 800. This is a safety floor, not a recommendation. Very low calorie diets have reported adverse effects and should be medically supervised.</p>
+      <p>You can set custom protein goals between 0.8–4.4 g/kg body weight. The minimum reflects the RDA for general population, while the maximum is based on research showing no adverse effects in resistance-trained individuals consuming very high protein intakes.</p>
+      <p>You can set custom carbohydrate goals between 1–83% and fat goals between 4–84% of total calories. These ranges reflect the extremes observed in research on diets and body composition.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+      <p>The maximum custom calorie goal is 8,500 kcal/day, based on the sustained energy expenditure observed in elite endurance athletes.</p>
+      <p class="ref">[6] Dasa MS, Bu OA, Sandbakk Ø, Rønnestad BR, Plasqui G, Gundersen H, Kristoffersen M. Training volume and total energy expenditure of an Olympic and Ironman world champion: approaching the upper limits of human capabilities. J Appl Physiol. 2024.</p>
+
+      <h2>Fiber (14 g per 1,000 kcal)</h2>
+      <p>The app calculates your fiber target as 14 grams per 1,000 kilocalories of your caloric goal, recommended by the Institute of Medicine.</p>
+      <p class="ref">[7] Korczak R, Slavin JL. Definitions, regulations, and new frontiers for dietary fiber and whole grains. Nutr Rev. 2020;78(Suppl 1):6-12. doi:10.1093/nutrit/nuz061.</p>
+
+      <h2>Essential Amino Acids</h2>
+      <p>The app calculates targets for the 9 essential amino acids based on adult requirements established by the National Research Council:</p>
+      <ul>
+        <li>Histidine: 8–12 mg/kg per day</li>
+        <li>Isoleucine: 10 mg/kg per day</li>
+        <li>Leucine: 14 mg/kg per day</li>
+        <li>Lysine: 12 mg/kg per day</li>
+        <li>Methionine + Cystine: 13 mg/kg per day</li>
+        <li>Phenylalanine + Tyrosine: 14 mg/kg per day</li>
+        <li>Threonine: 7 mg/kg per day</li>
+        <li>Tryptophan: 3.5 mg/kg per day</li>
+        <li>Valine: 10 mg/kg per day</li>
+      </ul>
+      <p>These values represent the highest estimates needed to achieve nitrogen balance in adults and are scaled based on your body weight.</p>
+      <p class="ref">[8] National Research Council (US) Subcommittee on the Tenth Edition of the Recommended Dietary Allowances. Recommended Dietary Allowances: 10th Edition. Washington (DC): National Academies Press (US); 1989. Table 6-1, Estimates of Amino Acid Requirements.</p>
+
+      <h2>Alpha-Linolenic Acid (ALA)</h2>
+      <p>The app calculates ALA targets based on your sex and reproductive status using adequate intake values established by the Institute of Medicine:</p>
+      <ul>
+        <li>Males: 1.6 g/day</li>
+        <li>Females: 1.1 g/day</li>
+        <li>Pregnancy: 1.4 g/day</li>
+        <li>Lactation: 1.3 g/day</li>
+      </ul>
+      <p class="ref">[9] Institute of Medicine, Food and Nutrition Board. Dietary reference intakes for energy, carbohydrate, fiber, fat, fatty acids, cholesterol, protein, and amino acids (macronutrients). Washington, DC: National Academy Press; 2005.</p>
+
+      <h2>Eicosapentaenoic Acid and Docosahexaenoic Acid (EPA and DHA)</h2>
+      <p>The app sets a minimum target of 250 mg/day for EPA and DHA combined for all adults except pregnant women, based on research showing reduced risk of fatal coronary heart disease. Evidence supports intakes between 250–500 mg/day for cardiovascular protection. The maximum is set at 3,000 mg/day, based on the FDA's determination that intakes of up to 3 g/day are safe for the general population.</p>
+      <p class="ref">[10] Harris WS, Mozaffarian D, Lefevre M, et al. Towards establishing dietary reference intakes for eicosapentaenoic and docosahexaenoic acids. J Nutr. 2009;139(4):804S-819S. doi:10.3945/jn.108.101329.</p>
+      <p>For pregnant women, the recommendation increases to 300 mg/day combined EPA+DHA, with at least 200 mg as DHA to support fetal development.</p>
+      <p class="ref">[11] Food and Agriculture Organization of the United Nations. Fats and fatty acids in human nutrition. Report of an expert consultation. FAO Food Nutr Pap 2010;91:1-166.</p>
+
+      <h2>Omega-6 to Omega-3 Ratio (Maximum 4:1)</h2>
+      <p>The app sets a maximum omega-6 to omega-3 ratio of 4:1, based on research showing a 70% decrease in total mortality in cardiovascular disease prevention at this ratio. Western diets typically have ratios of 15–17:1. Research shows that ratios of 10:1 and higher are associated with adverse health consequences.</p>
+      <p>Ratios lower than 4:1 show additional benefits: 2.5:1 reduced cancer cell proliferation, and 2–3:1 suppressed inflammation in rheumatoid arthritis.</p>
+      <p>During human evolution (Paleolithic period), the omega-6 to omega-3 ratio was approximately 0.79:1, nearly balanced at 1:1. The mismatch between modern Western diets (15–17:1) and our evolutionary ratio promotes chronic diseases.</p>
+      <p class="ref">[12] Simopoulos AP. The importance of the omega-6/omega-3 fatty acid ratio in cardiovascular disease and other chronic diseases. Exp Biol Med. 2008;233(6):674-688.</p>
+
+      <h2>Trans Fat (Maximum 1% of Total Calories)</h2>
+      <p>The app sets a maximum trans fat intake of 1% of your total calories, recommended by the World Health Organization (WHO) and Food and Agriculture Organization (FAO).</p>
+      <p class="ref">[13] Wanders AJ, Zock PL, Brouwer IA. Trans Fat Intake and Its Dietary Sources in General Populations Worldwide: A Systematic Review. Nutrients. 2017;9(8):840. doi:10.3390/nu9080840.</p>
+
+      <h2>Vitamins &amp; Minerals</h2>
+      <p>The app calculates your vitamin and mineral targets based on Dietary Reference Intakes (DRIs) established by the Food and Nutrition Board of the National Academies. These values vary by age, sex, and reproductive status (pregnancy/lactation).</p>
+      <p>Maximum values represent Tolerable Upper Intake Levels (UL) — the highest daily intake unlikely to cause adverse health effects. Some nutrients have no established upper limit due to lack of toxicity data.</p>
+      <p>The DRIs include a minimum recommendation for sodium but no established maximum. However, the app does not set sodium goals, as salt usage varies and is difficult to track precisely across recipes. But your sodium intake is still recorded for reference.</p>
+      <p class="ref">[14] Dietary Reference Intakes for Calcium, Phosphorous, Magnesium, Vitamin D, and Fluoride (1997); Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline (1998); Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids (2000); Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc (2001); Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005); Dietary Reference Intakes for Calcium and Vitamin D (2011); and Dietary Reference Intakes for Sodium and Potassium (2019). These reports may be accessed via www.nap.edu.</p>
+
+      <h2>Water</h2>
+      <p>The app sets your total water target based on Adequate Intakes established by the Institute of Medicine, which vary by age, sex, and reproductive status:</p>
+      <ul>
+        <li>Males 14–18: 3.3 L/day</li>
+        <li>Males 19–70+: 3.7 L/day</li>
+        <li>Females 14–18: 2.3 L/day</li>
+        <li>Females 19–70+: 2.7 L/day</li>
+        <li>Pregnancy: 3.0 L/day</li>
+        <li>Lactation: 3.8 L/day</li>
+      </ul>
+      <p>Total water includes all water contained in food, beverages, and drinking water.</p>
+      <p class="ref">[15] Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids (2002/2005) and Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005). These reports may be accessed via www.nap.edu.</p>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="targets.html">How Targets Are Set</a>
+          <a href="database.html">How the Database Is Built</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Contact Us</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/vendor/matter.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the targets.html file -->
