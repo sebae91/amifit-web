@@ -1,0 +1,146 @@
+<!-- This is the start of the es/database.html file -->
+<!-- Last revised by your AI friend: 2026-03-16 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo se construye la base de datos — AmiFit</title>
+  <meta name="description" content="Cómo se construye la base de datos de alimentos de AmiFit — fotografía original, enfoque regional, selección USDA y alimentos AMFT.">
+
+  <link rel="canonical" href="https://www.amifit.app/es/database">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/database">
+  <link rel="alternate" hreflang="es" href="https://www.amifit.app/es/database">
+  <link rel="alternate" hreflang="fr" href="https://www.amifit.app/fr/database">
+  <link rel="alternate" hreflang="de" href="https://www.amifit.app/de/database">
+  <link rel="alternate" hreflang="it" href="https://www.amifit.app/it/database">
+  <link rel="alternate" hreflang="pt" href="https://www.amifit.app/pt/database">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/database">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/es/database">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="Cómo se construye la base de datos — AmiFit">
+  <meta property="og:description" content="Cómo se construye la base de datos de alimentos de AmiFit — fotografía original, enfoque regional, selección USDA y alimentos AMFT.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    .legal-page {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+    .legal-page h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-8);
+    }
+    .legal-page h2 {
+      font-size: var(--text-xl);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-2);
+    }
+    .legal-page p,
+    .legal-page li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .legal-page p + p {
+      margin-top: var(--space-3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AmiFit home">
+          <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
+              <button class="lang-option lang-option--active" data-lang="es" role="option" aria-selected="true">Español</button>
+              <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
+              <button class="lang-option" data-lang="fr" role="option" aria-selected="false">Français</button>
+              <button class="lang-option" data-lang="de" role="option" aria-selected="false">Deutsch</button>
+              <button class="lang-option" data-lang="pt" role="option" aria-selected="false">Português</button>
+            </div>
+          </div>
+          <a href="download.html" class="btn btn--primary">Descargar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="legal-page">
+      <h1>Cómo se construye la base de datos</h1>
+
+      <h2>Fotografía original</h2>
+      <p>Cada foto de la app es original — personalmente fotografiada y pesada con porciones reales. No se utilizan imágenes de stock. En lugar de depender de la IA para estimar el tamaño de las porciones — donde nunca puedes estar seguro de si el resultado es preciso — o pesar cada comida en una balanza de cocina, la app ofrece un punto intermedio práctico: fotos reales de las porciones más comunes con su peso real. Toca la foto que se parezca a tu porción y los gramos se establecen automáticamente, luego usa el contador de porciones si tuviste más de una. O usa cualquier foto como guía visual para comparar con tu plato y ajustar los gramos hacia arriba o hacia abajo. Las fotos muestran los alimentos tal como aparecen naturalmente, pero el peso refleja solo la porción comestible — excluyendo cáscaras, huesos, semillas y otras partes no comestibles.</p>
+
+      <h2>Enfoque regional e idiomas</h2>
+      <p>La app está diseñada para adultos preocupados por la salud en España, Italia, Francia y Alemania. El objetivo es cubrir los alimentos más consumidos en estas regiones, con soporte para seis idiomas: inglés, español, italiano, francés, alemán y portugués. Si estás fuera de estas regiones y encuentras suficientes alimentos para tu dieta, genial.</p>
+
+      <h2>Selección de alimentos USDA</h2>
+      <p>Todos los alimentos marcados como "USDA" provienen de la base de datos USDA FoodData Central. Para cada alimento, se realizó un análisis cuidadoso para seleccionar qué entrada específica del USDA representa mejor ese alimento tal como se consume habitualmente en estas regiones — ya que la base de datos del USDA puede contener múltiples entradas para el mismo tipo de alimento con perfiles nutricionales variados. La mayoría de los alimentos provienen del tipo de datos SR Legacy, que fue seleccionado específicamente porque proporciona los perfiles de micronutrientes más completos — incluyendo vitaminas, minerales, aminoácidos y ácidos grasos omega-3 y omega-6. Un pequeño número proviene de los tipos de datos Foundation y Survey (FNDDS) para alimentos no disponibles en SR Legacy. Cada entrada se verifica individualmente para garantizar su precisión — un proceso continuo. En algunos casos donde solo había datos del alimento en su forma cruda disponibles en el USDA, los valores nutricionales se ajustaron para reflejar la forma cocida.</p>
+
+      <h2>Alimentos AMFT</h2>
+      <p>Los alimentos marcados como "AMFT" se dividen en dos categorías: alimentos compuestos formados por múltiples ingredientes, o alimentos envasados cuyos datos nutricionales se obtuvieron del fabricante. Los alimentos compuestos muestran un desglose completo de ingredientes con composición porcentual, con el objetivo de reflejar cómo se prepara comúnmente ese alimento en España, Italia, Francia y Alemania.</p>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="privacy.html">Privacidad</a>
+          <a href="terms.html">Términos</a>
+          <a href="targets.html">Cómo se establecen los objetivos</a>
+          <a href="database.html">Cómo se construye la base de datos</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Contacto</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/vendor/matter.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the es/database.html file -->

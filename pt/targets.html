@@ -1,0 +1,275 @@
+<!-- This is the start of the pt/targets.html file -->
+<!-- Last revised by your AI friend: 2026-03-16 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como as metas são definidas — AmiFit</title>
+  <meta name="description" content="Como o AmiFit define suas metas nutricionais — BMR, nível de atividade, macros, aminoácidos, vitaminas, minerais e mais.">
+
+  <link rel="canonical" href="https://www.amifit.app/pt/targets">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/targets">
+  <link rel="alternate" hreflang="es" href="https://www.amifit.app/es/targets">
+  <link rel="alternate" hreflang="fr" href="https://www.amifit.app/fr/targets">
+  <link rel="alternate" hreflang="de" href="https://www.amifit.app/de/targets">
+  <link rel="alternate" hreflang="it" href="https://www.amifit.app/it/targets">
+  <link rel="alternate" hreflang="pt" href="https://www.amifit.app/pt/targets">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/targets">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/pt/targets">
+  <meta property="og:locale"      content="pt_BR">
+  <meta property="og:title"       content="Como as metas são definidas — AmiFit">
+  <meta property="og:description" content="Como o AmiFit define suas metas nutricionais — BMR, nível de atividade, macros, aminoácidos, vitaminas, minerais e mais.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    .legal-page {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+    .legal-page h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-8);
+    }
+    .legal-page h2 {
+      font-size: var(--text-xl);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-2);
+    }
+    .legal-page p,
+    .legal-page li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .legal-page p + p {
+      margin-top: var(--space-3);
+    }
+    .legal-page ul {
+      padding-left: var(--space-3);
+      margin-top: var(--space-2);
+      margin-bottom: var(--space-2);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .legal-page .ref {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+    }
+    .legal-page .label {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      font-weight: 500;
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AmiFit home">
+          <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
+              <button class="lang-option" data-lang="es" role="option" aria-selected="false">Español</button>
+              <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
+              <button class="lang-option" data-lang="fr" role="option" aria-selected="false">Français</button>
+              <button class="lang-option" data-lang="de" role="option" aria-selected="false">Deutsch</button>
+              <button class="lang-option lang-option--active" data-lang="pt" role="option" aria-selected="true">Português</button>
+            </div>
+          </div>
+          <a href="download.html" class="btn btn--primary">Baixar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="legal-page">
+      <h1>Como as metas são definidas</h1>
+
+      <h2>Taxa Metabólica Basal (BMR)</h2>
+      <p>Utilizamos a equação de Mifflin-St Jeor, que a pesquisa demonstrou ser mais confiável do que a equação de Harris-Benedict.</p>
+      <p>A equação calcula a taxa metabólica de repouso como (peso em kg, altura em cm, idade em anos):</p>
+      <ul>
+        <li>Homens: (10 × peso) + (6,25 × altura) - (5 × idade) + 5</li>
+        <li>Mulheres: (10 × peso) + (6,25 × altura) - (5 × idade) - 161</li>
+      </ul>
+      <p class="ref">[1] Frankenfield D, Roth-Yousey L, Compher C. Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review. J Am Diet Assoc. 2005;105(5):775-89. doi:10.1016/j.jada.2005.02.005.</p>
+
+      <h2>Nível de atividade</h2>
+      <p>O multiplicador do seu nível de atividade é aplicado ao seu BMR para calcular seu gasto energético diário total (TDEE).</p>
+      <p>A pesquisa do Institute of Medicine define faixas para cada nível de atividade. Dessas faixas, selecionamos valores igualmente espaçados para fornecer diferenças calóricas mais consistentes entre os níveis de atividade:</p>
+      <ul>
+        <li>Pouco ativo: 1,3 (da faixa 1,0-1,39)</li>
+        <li>Levemente ativo: 1,5 (da faixa 1,4-1,59)</li>
+        <li>Ativo: 1,7 (da faixa 1,6-1,89)</li>
+        <li>Muito ativo: 1,9 (da faixa 1,9-2,5)</li>
+      </ul>
+      <p>As descrições de cada nível de atividade são baseadas nas definições de pesquisa do Institute of Medicine e incluem tanto exercícios programados quanto atividades ocupacionais ou do estilo de vida diário.</p>
+      <p>As faixas de calorias ativas são calculadas com base no seu gasto energético basal (BEE) e representam as calorias queimadas através da atividade física acima da sua taxa metabólica de repouso. Compare-as com seu Apple Watch ou rastreador de atividade para determinar qual nível de atividade melhor se adapta ao seu estilo de vida.</p>
+      <p class="ref">[2] Brooks GA, Butte NF, Rand WM, Flatt JP, Caballero B. Chronicle of the Institute of Medicine physical activity recommendation: how a physical activity recommendation came to be among dietary recommendations. Am J Clin Nutr. 2004;79(5):921S-930S. doi:10.1093/ajcn/79.5.921S.</p>
+
+      <h2>Gravidez e Amamentação</h2>
+      <p>Durante a gravidez e amamentação, apenas a meta "Manter peso" está disponível para apoiar as mudanças corporais naturais e saudáveis — não a perda de gordura nem o ganho muscular intencional.</p>
+      <p class="label">Ajustes calóricos aplicados automaticamente:</p>
+      <ul>
+        <li>Gravidez: +380 kcal/dia (média do 2º trimestre +285 e 3º trimestre +475)</li>
+        <li>Amamentação: +330 kcal/dia de alimentos (o custo total é de 500 kcal: 330 de alimentos + 170 de gordura armazenada)</li>
+      </ul>
+      <p class="ref">[3] Institute of Medicine (US) and National Research Council (US) Committee to Reexamine IOM Pregnancy Weight Guidelines. Weight Gain During Pregnancy: Reexamining the Guidelines. Washington (DC): National Academies Press (US); 2009.</p>
+
+      <h2>Meta de Perda de Gordura (-500 kcal)</h2>
+      <p>Quando sua meta é perder gordura, o app aplica um déficit de 500 calorias ao seu gasto energético diário total. Um déficit diário de 500 kcal resulta teoricamente em uma perda aproximada de 0,45 kg de gordura por semana.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Meta de Ganho Muscular (+5%)</h2>
+      <p>Quando sua meta é ganhar músculo, o app aplica um superávit calórico de 5% ao seu gasto energético diário total. A pesquisa recomenda um superávit de 10-20% para iniciantes/intermediários e de 5-10% para avançados. Usamos 5% como abordagem conservadora para minimizar o ganho de gordura enquanto apoia o crescimento muscular. O app mostra verde (no caminho) quando você está dentro de 10% da sua meta calórica em qualquer direção, o que significa que suas calorias aparecerão em verde até aproximadamente 15% acima do seu gasto energético diário total.</p>
+      <p class="ref">[5] Iraki, J., Fitschen, P., Espinar, S., &amp; Helms, E. (2019). Nutrition Recommendations for Bodybuilders in the Off-Season: A Narrative Review. Sports, 7(7), 154.</p>
+
+      <h2>Proteína, Carboidratos e Gordura</h2>
+      <p class="label">Faixa de proteína: 1,2–2,4 g/kg de peso corporal</p>
+      <p>Usamos 1,2 g/kg como mínimo porque a pesquisa mostra que esse nível favorece a preservação muscular e a saciedade melhor do que a RDA (0,8 g/kg). O máximo de 2,4 g/kg reflete onde os benefícios atingem um platô. Se você faz treino de resistência durante a perda de gordura, considere definir sua meta de proteína em 1,6 g/kg ou mais em Metas personalizadas de calorias e macros para maximizar a retenção muscular.</p>
+      <p class="label">Faixa de carboidratos: 45–65% das calorias totais</p>
+      <p>Baseado na faixa de distribuição aceitável de macronutrientes (AMDR) para adultos, estabelecida pelo Food and Nutrition Board do Institute of Medicine.</p>
+      <p class="label">Faixa de gordura: 20–35% das calorias totais</p>
+      <p>Baseado na faixa de distribuição aceitável de macronutrientes (AMDR) para adultos, estabelecida pelo Food and Nutrition Board do Institute of Medicine.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Limites das Metas Personalizadas</h2>
+      <p>Se uma meta calórica personalizada for definida abaixo de 800 kcal/dia, o app define 800 como padrão. Este é um piso de segurança, não uma recomendação. Dietas de muito baixas calorias relataram efeitos adversos e devem ser supervisionadas por um médico.</p>
+      <p>Você pode definir metas de proteína personalizadas entre 0,8–4,4 g/kg de peso corporal. O mínimo reflete a RDA para a população geral, enquanto o máximo é baseado em pesquisas que não mostram efeitos adversos em indivíduos treinados em resistência consumindo ingestões muito altas de proteína.</p>
+      <p>Você pode definir metas de carboidratos personalizadas entre 1–83% e de gordura entre 4–84% das calorias totais. Essas faixas refletem os extremos observados em pesquisas sobre dietas e composição corporal.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+      <p>A meta calórica personalizada máxima é de 8.500 kcal/dia, baseada no gasto energético sustentado observado em atletas de resistência de elite.</p>
+      <p class="ref">[6] Dasa MS, Bu OA, Sandbakk Ø, Rønnestad BR, Plasqui G, Gundersen H, Kristoffersen M. Training volume and total energy expenditure of an Olympic and Ironman world champion: approaching the upper limits of human capabilities. J Appl Physiol. 2024.</p>
+
+      <h2>Fibra (14 g por 1.000 kcal)</h2>
+      <p>O app calcula sua meta de fibra como 14 gramas por cada 1.000 quilocalorias da sua meta calórica, recomendado pelo Institute of Medicine.</p>
+      <p class="ref">[7] Korczak R, Slavin JL. Definitions, regulations, and new frontiers for dietary fiber and whole grains. Nutr Rev. 2020;78(Suppl 1):6-12. doi:10.1093/nutrit/nuz061.</p>
+
+      <h2>Aminoácidos Essenciais</h2>
+      <p>O app calcula as metas para os 9 aminoácidos essenciais com base nos requisitos para adultos estabelecidos pelo National Research Council:</p>
+      <ul>
+        <li>Histidina: 8–12 mg/kg por dia</li>
+        <li>Isoleucina: 10 mg/kg por dia</li>
+        <li>Leucina: 14 mg/kg por dia</li>
+        <li>Lisina: 12 mg/kg por dia</li>
+        <li>Metionina + Cistina: 13 mg/kg por dia</li>
+        <li>Fenilalanina + Tirosina: 14 mg/kg por dia</li>
+        <li>Treonina: 7 mg/kg por dia</li>
+        <li>Triptofano: 3,5 mg/kg por dia</li>
+        <li>Valina: 10 mg/kg por dia</li>
+      </ul>
+      <p>Esses valores representam as estimativas mais altas necessárias para alcançar o equilíbrio de nitrogênio em adultos e são escalados com base no seu peso corporal.</p>
+      <p class="ref">[8] National Research Council (US) Subcommittee on the Tenth Edition of the Recommended Dietary Allowances. Recommended Dietary Allowances: 10th Edition. Washington (DC): National Academies Press (US); 1989. Table 6-1, Estimates of Amino Acid Requirements.</p>
+
+      <h2>Ácido Alfa-Linolênico (ALA)</h2>
+      <p>O app calcula as metas de ALA com base no seu sexo e estado reprodutivo utilizando valores de ingestão adequada estabelecidos pelo Institute of Medicine:</p>
+      <ul>
+        <li>Homens: 1,6 g/dia</li>
+        <li>Mulheres: 1,1 g/dia</li>
+        <li>Gravidez: 1,4 g/dia</li>
+        <li>Amamentação: 1,3 g/dia</li>
+      </ul>
+      <p class="ref">[9] Institute of Medicine, Food and Nutrition Board. Dietary reference intakes for energy, carbohydrate, fiber, fat, fatty acids, cholesterol, protein, and amino acids (macronutrients). Washington, DC: National Academy Press; 2005.</p>
+
+      <h2>Ácido Eicosapentaenoico e Ácido Docosa-hexaenoico (EPA e DHA)</h2>
+      <p>O app estabelece uma meta mínima de 250 mg/dia de EPA e DHA combinados para todos os adultos exceto mulheres grávidas, com base em pesquisas que mostram um risco reduzido de doença coronária fatal. As evidências apoiam ingestões entre 250-500 mg/dia para proteção cardiovascular. O máximo é estabelecido em 3.000 mg/dia, com base na determinação da FDA de que ingestões de até 3 g/dia são seguras para a população geral.</p>
+      <p class="ref">[10] Harris WS, Mozaffarian D, Lefevre M, et al. Towards establishing dietary reference intakes for eicosapentaenoic and docosahexaenoic acids. J Nutr. 2009;139(4):804S-819S. doi:10.3945/jn.108.101329.</p>
+      <p>Para mulheres grávidas, a recomendação aumenta para 300 mg/dia de EPA+DHA combinados, com pelo menos 200 mg como DHA para apoiar o desenvolvimento fetal.</p>
+      <p class="ref">[11] Food and Agriculture Organization of the United Nations. Fats and fatty acids in human nutrition. Report of an expert consultation. FAO Food Nutr Pap 2010;91:1-166.</p>
+
+      <h2>Proporção Ômega-6/Ômega-3 (Máximo 4:1)</h2>
+      <p>O app estabelece uma proporção máxima de ômega-6/ômega-3 de 4:1, com base em pesquisas que mostram uma diminuição de 70% na mortalidade total na prevenção de doenças cardiovasculares com essa proporção. As dietas ocidentais tipicamente têm proporções de 15-17:1. A pesquisa mostra que proporções de 10:1 e superiores estão associadas a consequências adversas para a saúde.</p>
+      <p>Proporções inferiores a 4:1 mostram benefícios adicionais: 2,5:1 reduziu a proliferação de células cancerígenas, e 2-3:1 suprimiu a inflamação na artrite reumatoide.</p>
+      <p>Durante a evolução humana (período Paleolítico), a proporção de ômega-6/ômega-3 era de aproximadamente 0,79:1, quase equilibrada em 1:1. A discrepância entre as dietas ocidentais modernas (15-17:1) e nossa proporção evolutiva promove doenças crônicas.</p>
+      <p class="ref">[12] Simopoulos AP. The importance of the omega-6/omega-3 fatty acid ratio in cardiovascular disease and other chronic diseases. Exp Biol Med. 2008;233(6):674-688.</p>
+
+      <h2>Gordura Trans (Máximo 1% das Calorias Totais)</h2>
+      <p>O app estabelece uma ingestão máxima de gordura trans de 1% das suas calorias totais, recomendado pela Organização Mundial da Saúde (WHO) e pela Organização das Nações Unidas para Alimentação e Agricultura (FAO).</p>
+      <p class="ref">[13] Wanders AJ, Zock PL, Brouwer IA. Trans Fat Intake and Its Dietary Sources in General Populations Worldwide: A Systematic Review. Nutrients. 2017;9(8):840. doi:10.3390/nu9080840.</p>
+
+      <h2>Vitaminas e Minerais</h2>
+      <p>O app calcula suas metas de vitaminas e minerais com base nas ingestões dietéticas de referência (DRIs) estabelecidas pelo Food and Nutrition Board das National Academies. Esses valores variam de acordo com idade, sexo e estado reprodutivo (gravidez/amamentação).</p>
+      <p>Os valores máximos representam os níveis de ingestão máxima tolerável (UL) — a ingestão diária mais alta que é improvável de causar efeitos adversos à saúde. Alguns nutrientes não têm um limite superior estabelecido devido à falta de dados de toxicidade.</p>
+      <p>Os DRIs incluem uma recomendação mínima de sódio, mas nenhum máximo estabelecido. No entanto, o app não define metas de sódio, pois o uso de sal varia e é difícil de rastrear com precisão nas receitas. Mas sua ingestão de sódio é registrada como referência.</p>
+      <p class="ref">[14] Dietary Reference Intakes for Calcium, Phosphorous, Magnesium, Vitamin D, and Fluoride (1997); Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline (1998); Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids (2000); Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc (2001); Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005); Dietary Reference Intakes for Calcium and Vitamin D (2011); and Dietary Reference Intakes for Sodium and Potassium (2019). These reports may be accessed via www.nap.edu.</p>
+
+      <h2>Água</h2>
+      <p>O app define sua meta de água total com base nas ingestões adequadas estabelecidas pelo Institute of Medicine, que variam de acordo com idade, sexo e estado reprodutivo:</p>
+      <ul>
+        <li>Homens 14-18: 3,3 L/dia</li>
+        <li>Homens 19-70+: 3,7 L/dia</li>
+        <li>Mulheres 14-18: 2,3 L/dia</li>
+        <li>Mulheres 19-70+: 2,7 L/dia</li>
+        <li>Gravidez: 3,0 L/dia</li>
+        <li>Amamentação: 3,8 L/dia</li>
+      </ul>
+      <p>A água total inclui toda a água contida em alimentos, bebidas e água potável.</p>
+      <p class="ref">[15] Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids (2002/2005) and Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005). These reports may be accessed via www.nap.edu.</p>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="privacy.html">Privacidade</a>
+          <a href="terms.html">Termos</a>
+          <a href="targets.html">Como as metas são definidas</a>
+          <a href="database.html">Como o banco de dados é construído</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Fale conosco</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/vendor/matter.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the pt/targets.html file -->

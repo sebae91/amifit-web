@@ -1,12 +1,12 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-03-17
+// Last revised by your AI friend: 2026-03-16
 
 'use strict';
 
 // ─── Typewriter ───────────────────────────────────────────────────────────────
 // Cycles through the hero hook lines one at a time, character by character.
 
-const TYPEWRITER_LINES = [
+const TYPEWRITER_LINES = window.TYPEWRITER_LINES || [
   "I can tell you my magnesium intake right now. Can you tell me yours?",
   "In 2 minutes I know if I'm getting enough B12. Do you know if you are?",
   "I know exactly how much iron I got this week. Do you?",
@@ -394,7 +394,14 @@ function initLangSwitcher() {
       }
 
       close();
-      const url = lang === 'en' ? '/' : `/${lang}/`;
+      const langCodes = ['es', 'it', 'fr', 'de', 'pt'];
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      const inSubfolder = pathParts.some(p => langCodes.includes(p));
+      const lastPart = pathParts[pathParts.length - 1] || 'index.html';
+      const page = lastPart.endsWith('.html') ? lastPart : 'index.html';
+      const url = lang === 'en'
+        ? (inSubfolder ? `../${page}` : page)
+        : (inSubfolder ? `../${lang}/${page}` : `${lang}/${page}`);
 
       if (document.startViewTransition) {
         document.startViewTransition(() => { window.location.href = url; });

@@ -1,5 +1,5 @@
 <!-- This is the start of the terms.html file -->
-<!-- Last revised by your AI friend: 2026-03-17 -->
+<!-- Last revised by your AI friend: 2026-03-16 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,6 +78,26 @@
           <span class="nav__logo-text">AmiFit</span>
         </a>
         <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option lang-option--active" data-lang="en" role="option" aria-selected="true">English</button>
+              <button class="lang-option" data-lang="es" role="option" aria-selected="false">Español</button>
+              <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
+              <button class="lang-option" data-lang="fr" role="option" aria-selected="false">Français</button>
+              <button class="lang-option" data-lang="de" role="option" aria-selected="false">Deutsch</button>
+              <button class="lang-option" data-lang="pt" role="option" aria-selected="false">Português</button>
+            </div>
+          </div>
           <a href="download.html" class="btn btn--primary">Download</a>
         </div>
       </div>
@@ -88,7 +108,7 @@
     <div class="container">
     <div class="legal-page">
       <h1>Terms of Use</h1>
-      <p class="effective-date">Effective date: March 17, 2026</p>
+      <p class="effective-date">Effective date: March 16, 2026</p>
 
       <h2>Acceptance of Terms</h2>
       <p>By downloading, installing, or using AmiFit, you agree to these Terms of Use. If you do not agree, please do not use the app. In these terms, "AmiFit" refers to the app and its owner, developer, and any associated parties.</p>
@@ -142,6 +162,9 @@
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/vendor/matter.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 </html>

@@ -1,0 +1,275 @@
+<!-- This is the start of the it/targets.html file -->
+<!-- Last revised by your AI friend: 2026-03-16 -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Come vengono stabiliti gli obiettivi — AmiFit</title>
+  <meta name="description" content="Come AmiFit stabilisce i tuoi obiettivi nutrizionali — BMR, livello di attività, macro, aminoacidi, vitamine, minerali e altro.">
+
+  <link rel="canonical" href="https://www.amifit.app/it/targets">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/targets">
+  <link rel="alternate" hreflang="es" href="https://www.amifit.app/es/targets">
+  <link rel="alternate" hreflang="fr" href="https://www.amifit.app/fr/targets">
+  <link rel="alternate" hreflang="de" href="https://www.amifit.app/de/targets">
+  <link rel="alternate" hreflang="it" href="https://www.amifit.app/it/targets">
+  <link rel="alternate" hreflang="pt" href="https://www.amifit.app/pt/targets">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/targets">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/it/targets">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:title"       content="Come vengono stabiliti gli obiettivi — AmiFit">
+  <meta property="og:description" content="Come AmiFit stabilisce i tuoi obiettivi nutrizionali — BMR, livello di attività, macro, aminoacidi, vitamine, minerali e altro.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    .legal-page {
+      padding-top: var(--space-12);
+      padding-bottom: var(--space-12);
+    }
+    .legal-page h1 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-8);
+    }
+    .legal-page h2 {
+      font-size: var(--text-xl);
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-2);
+    }
+    .legal-page p,
+    .legal-page li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      max-width: none;
+    }
+    .legal-page p + p {
+      margin-top: var(--space-3);
+    }
+    .legal-page ul {
+      padding-left: var(--space-3);
+      margin-top: var(--space-2);
+      margin-bottom: var(--space-2);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .legal-page .ref {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+    }
+    .legal-page .label {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      font-weight: 500;
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="AmiFit home">
+          <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
+              <button class="lang-option" data-lang="es" role="option" aria-selected="false">Español</button>
+              <button class="lang-option lang-option--active" data-lang="it" role="option" aria-selected="true">Italiano</button>
+              <button class="lang-option" data-lang="fr" role="option" aria-selected="false">Français</button>
+              <button class="lang-option" data-lang="de" role="option" aria-selected="false">Deutsch</button>
+              <button class="lang-option" data-lang="pt" role="option" aria-selected="false">Português</button>
+            </div>
+          </div>
+          <a href="download.html" class="btn btn--primary">Download</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+    <div class="legal-page">
+      <h1>Come vengono stabiliti gli obiettivi</h1>
+
+      <h2>Metabolismo basale (BMR)</h2>
+      <p>Utilizziamo l'equazione di Mifflin-St Jeor, che la ricerca ha dimostrato essere più affidabile dell'equazione di Harris-Benedict.</p>
+      <p>L'equazione calcola il metabolismo a riposo come segue (peso in kg, altezza in cm, età in anni):</p>
+      <ul>
+        <li>Uomini: (10 × peso) + (6,25 × altezza) - (5 × età) + 5</li>
+        <li>Donne: (10 × peso) + (6,25 × altezza) - (5 × età) - 161</li>
+      </ul>
+      <p class="ref">[1] Frankenfield D, Roth-Yousey L, Compher C. Comparison of predictive equations for resting metabolic rate in healthy nonobese and obese adults: a systematic review. J Am Diet Assoc. 2005;105(5):775-89. doi:10.1016/j.jada.2005.02.005.</p>
+
+      <h2>Livello di attività</h2>
+      <p>Il moltiplicatore del tuo livello di attività viene applicato al tuo BMR per calcolare il tuo dispendio energetico giornaliero totale (TDEE).</p>
+      <p>La ricerca dell'Institute of Medicine definisce intervalli per ogni livello di attività. Da questi intervalli, abbiamo selezionato valori equidistanti per fornire differenze caloriche più coerenti tra i livelli di attività:</p>
+      <ul>
+        <li>Poco attivo: 1,3 (dall'intervallo 1,0-1,39)</li>
+        <li>Leggermente attivo: 1,5 (dall'intervallo 1,4-1,59)</li>
+        <li>Attivo: 1,7 (dall'intervallo 1,6-1,89)</li>
+        <li>Molto attivo: 1,9 (dall'intervallo 1,9-2,5)</li>
+      </ul>
+      <p>Le descrizioni di ogni livello di attività si basano sulle definizioni di ricerca dell'Institute of Medicine e includono sia l'esercizio programmato che le attività lavorative o dello stile di vita quotidiano.</p>
+      <p>Gli intervalli di calorie attive sono calcolati in base al tuo dispendio energetico basale (BEE) e rappresentano le calorie bruciate attraverso l'attività fisica al di sopra del tuo metabolismo a riposo. Confrontali con il tuo Apple Watch o fitness tracker per determinare quale livello di attività si adatta meglio al tuo stile di vita.</p>
+      <p class="ref">[2] Brooks GA, Butte NF, Rand WM, Flatt JP, Caballero B. Chronicle of the Institute of Medicine physical activity recommendation: how a physical activity recommendation came to be among dietary recommendations. Am J Clin Nutr. 2004;79(5):921S-930S. doi:10.1093/ajcn/79.5.921S.</p>
+
+      <h2>Gravidanza e allattamento</h2>
+      <p>Durante la gravidanza e l'allattamento, è disponibile solo l'obiettivo "Mantenere il peso" per supportare i cambiamenti corporei naturali e sani — non la perdita di grasso né l'aumento muscolare intenzionale.</p>
+      <p class="label">Aggiustamenti calorici applicati automaticamente:</p>
+      <ul>
+        <li>Gravidanza: +380 kcal/giorno (media del 2° trimestre +285 e 3° trimestre +475)</li>
+        <li>Allattamento: +330 kcal/giorno dal cibo (il costo totale è di 500 kcal: 330 dal cibo + 170 dal grasso immagazzinato)</li>
+      </ul>
+      <p class="ref">[3] Institute of Medicine (US) and National Research Council (US) Committee to Reexamine IOM Pregnancy Weight Guidelines. Weight Gain During Pregnancy: Reexamining the Guidelines. Washington (DC): National Academies Press (US); 2009.</p>
+
+      <h2>Obiettivo perdita di grasso (-500 kcal)</h2>
+      <p>Quando il tuo obiettivo è perdere grasso, l'app applica un deficit di 500 calorie al tuo dispendio energetico giornaliero totale. Un deficit giornaliero di 500 kcal porta teoricamente a una perdita di circa 0,45 kg di grasso a settimana.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Obiettivo aumento muscolare (+5%)</h2>
+      <p>Quando il tuo obiettivo è aumentare la massa muscolare, l'app applica un surplus calorico del 5% al tuo dispendio energetico giornaliero totale. La ricerca raccomanda un surplus del 10-20% per principianti/intermedi e del 5-10% per avanzati. Usiamo il 5% come approccio conservativo per minimizzare l'aumento di grasso supportando la crescita muscolare. L'app mostra verde (in linea) quando sei entro il 10% del tuo obiettivo calorico in entrambe le direzioni, il che significa che le tue calorie appariranno verdi fino a circa il 15% sopra il tuo dispendio energetico giornaliero totale.</p>
+      <p class="ref">[5] Iraki, J., Fitschen, P., Espinar, S., &amp; Helms, E. (2019). Nutrition Recommendations for Bodybuilders in the Off-Season: A Narrative Review. Sports, 7(7), 154.</p>
+
+      <h2>Proteine, carboidrati e grassi</h2>
+      <p class="label">Intervallo proteine: 1,2–2,4 g/kg di peso corporeo</p>
+      <p>Usiamo 1,2 g/kg come minimo perché la ricerca mostra che questo livello favorisce la preservazione muscolare e la sazietà meglio della RDA (0,8 g/kg). Il massimo di 2,4 g/kg riflette il punto in cui i benefici raggiungono un plateau. Se fai allenamento di resistenza durante la perdita di grasso, considera di impostare il tuo obiettivo proteico a 1,6 g/kg o superiore in Obiettivi personalizzati calorie e macro per massimizzare la ritenzione muscolare.</p>
+      <p class="label">Intervallo carboidrati: 45–65% delle calorie totali</p>
+      <p>Basato sull'intervallo di distribuzione accettabile dei macronutrienti (AMDR) per adulti, stabilito dal Food and Nutrition Board dell'Institute of Medicine.</p>
+      <p class="label">Intervallo grassi: 20–35% delle calorie totali</p>
+      <p>Basato sull'intervallo di distribuzione accettabile dei macronutrienti (AMDR) per adulti, stabilito dal Food and Nutrition Board dell'Institute of Medicine.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+
+      <h2>Limiti degli obiettivi personalizzati</h2>
+      <p>Se un obiettivo calorico personalizzato è impostato al di sotto di 800 kcal/giorno, l'app imposta 800 come predefinito. Questo è un limite minimo di sicurezza, non una raccomandazione. Le diete a bassissimo contenuto calorico hanno riportato effetti avversi e dovrebbero essere supervisionate da un medico.</p>
+      <p>Puoi impostare obiettivi proteici personalizzati tra 0,8–4,4 g/kg di peso corporeo. Il minimo riflette la RDA per la popolazione generale, mentre il massimo si basa su ricerche che non mostrano effetti avversi in individui allenati in resistenza che consumano assunzioni molto elevate di proteine.</p>
+      <p>Puoi impostare obiettivi di carboidrati personalizzati tra 1–83% e di grassi tra 4–84% delle calorie totali. Questi intervalli riflettono gli estremi osservati nella ricerca su diete e composizione corporea.</p>
+      <p class="ref">[4] Aragon, A.A., Schoenfeld, B.J., Wildman, R., et al. (2017). International Society of Sports Nutrition position stand: diets and body composition. Journal of the International Society of Sports Nutrition, 14, 16.</p>
+      <p>L'obiettivo calorico personalizzato massimo è di 8.500 kcal/giorno, basato sul dispendio energetico sostenuto osservato negli atleti di resistenza d'élite.</p>
+      <p class="ref">[6] Dasa MS, Bu OA, Sandbakk Ø, Rønnestad BR, Plasqui G, Gundersen H, Kristoffersen M. Training volume and total energy expenditure of an Olympic and Ironman world champion: approaching the upper limits of human capabilities. J Appl Physiol. 2024.</p>
+
+      <h2>Fibre (14 g per 1.000 kcal)</h2>
+      <p>L'app calcola il tuo obiettivo di fibre come 14 grammi per ogni 1.000 kilocalorie del tuo obiettivo calorico, raccomandato dall'Institute of Medicine.</p>
+      <p class="ref">[7] Korczak R, Slavin JL. Definitions, regulations, and new frontiers for dietary fiber and whole grains. Nutr Rev. 2020;78(Suppl 1):6-12. doi:10.1093/nutrit/nuz061.</p>
+
+      <h2>Aminoacidi essenziali</h2>
+      <p>L'app calcola gli obiettivi per i 9 aminoacidi essenziali basandosi sui fabbisogni per adulti stabiliti dal National Research Council:</p>
+      <ul>
+        <li>Istidina: 8–12 mg/kg al giorno</li>
+        <li>Isoleucina: 10 mg/kg al giorno</li>
+        <li>Leucina: 14 mg/kg al giorno</li>
+        <li>Lisina: 12 mg/kg al giorno</li>
+        <li>Metionina + Cistina: 13 mg/kg al giorno</li>
+        <li>Fenilalanina + Tirosina: 14 mg/kg al giorno</li>
+        <li>Treonina: 7 mg/kg al giorno</li>
+        <li>Triptofano: 3,5 mg/kg al giorno</li>
+        <li>Valina: 10 mg/kg al giorno</li>
+      </ul>
+      <p>Questi valori rappresentano le stime più alte necessarie per raggiungere il bilancio azotato negli adulti e vengono scalati in base al tuo peso corporeo.</p>
+      <p class="ref">[8] National Research Council (US) Subcommittee on the Tenth Edition of the Recommended Dietary Allowances. Recommended Dietary Allowances: 10th Edition. Washington (DC): National Academies Press (US); 1989. Table 6-1, Estimates of Amino Acid Requirements.</p>
+
+      <h2>Acido alfa-linolenico (ALA)</h2>
+      <p>L'app calcola gli obiettivi di ALA in base al tuo sesso e stato riproduttivo utilizzando i valori di assunzione adeguata stabiliti dall'Institute of Medicine:</p>
+      <ul>
+        <li>Uomini: 1,6 g/giorno</li>
+        <li>Donne: 1,1 g/giorno</li>
+        <li>Gravidanza: 1,4 g/giorno</li>
+        <li>Allattamento: 1,3 g/giorno</li>
+      </ul>
+      <p class="ref">[9] Institute of Medicine, Food and Nutrition Board. Dietary reference intakes for energy, carbohydrate, fiber, fat, fatty acids, cholesterol, protein, and amino acids (macronutrients). Washington, DC: National Academy Press; 2005.</p>
+
+      <h2>Acido eicosapentaenoico e acido docosaesaenoico (EPA e DHA)</h2>
+      <p>L'app stabilisce un obiettivo minimo di 250 mg/giorno di EPA e DHA combinati per tutti gli adulti tranne le donne in gravidanza, basandosi su ricerche che mostrano un rischio ridotto di malattia coronarica mortale. Le evidenze supportano assunzioni tra 250-500 mg/giorno per la protezione cardiovascolare. Il massimo è fissato a 3.000 mg/giorno, basandosi sulla determinazione della FDA che assunzioni fino a 3 g/giorno sono sicure per la popolazione generale.</p>
+      <p class="ref">[10] Harris WS, Mozaffarian D, Lefevre M, et al. Towards establishing dietary reference intakes for eicosapentaenoic and docosahexaenoic acids. J Nutr. 2009;139(4):804S-819S. doi:10.3945/jn.108.101329.</p>
+      <p>Per le donne in gravidanza, la raccomandazione aumenta a 300 mg/giorno di EPA+DHA combinati, con almeno 200 mg come DHA per supportare lo sviluppo fetale.</p>
+      <p class="ref">[11] Food and Agriculture Organization of the United Nations. Fats and fatty acids in human nutrition. Report of an expert consultation. FAO Food Nutr Pap 2010;91:1-166.</p>
+
+      <h2>Rapporto omega-6/omega-3 (massimo 4:1)</h2>
+      <p>L'app stabilisce un rapporto massimo omega-6/omega-3 di 4:1, basandosi su ricerche che mostrano una diminuzione del 70% della mortalità totale nella prevenzione delle malattie cardiovascolari con questo rapporto. Le diete occidentali hanno tipicamente rapporti di 15-17:1. La ricerca mostra che rapporti di 10:1 e superiori sono associati a conseguenze avverse per la salute.</p>
+      <p>Rapporti inferiori a 4:1 mostrano benefici aggiuntivi: 2,5:1 ha ridotto la proliferazione delle cellule tumorali, e 2-3:1 ha soppresso l'infiammazione nell'artrite reumatoide.</p>
+      <p>Durante l'evoluzione umana (periodo Paleolitico), il rapporto omega-6/omega-3 era di circa 0,79:1, quasi equilibrato a 1:1. La discrepanza tra le diete occidentali moderne (15-17:1) e il nostro rapporto evolutivo promuove malattie croniche.</p>
+      <p class="ref">[12] Simopoulos AP. The importance of the omega-6/omega-3 fatty acid ratio in cardiovascular disease and other chronic diseases. Exp Biol Med. 2008;233(6):674-688.</p>
+
+      <h2>Grassi trans (massimo 1% delle calorie totali)</h2>
+      <p>L'app stabilisce un'assunzione massima di grassi trans dell'1% delle tue calorie totali, raccomandato dall'Organizzazione Mondiale della Sanità (WHO) e dall'Organizzazione delle Nazioni Unite per l'Alimentazione e l'Agricoltura (FAO).</p>
+      <p class="ref">[13] Wanders AJ, Zock PL, Brouwer IA. Trans Fat Intake and Its Dietary Sources in General Populations Worldwide: A Systematic Review. Nutrients. 2017;9(8):840. doi:10.3390/nu9080840.</p>
+
+      <h2>Vitamine e minerali</h2>
+      <p>L'app calcola i tuoi obiettivi di vitamine e minerali basandosi sulle assunzioni dietetiche di riferimento (DRIs) stabilite dal Food and Nutrition Board delle National Academies. Questi valori variano in base all'età, al sesso e allo stato riproduttivo (gravidanza/allattamento).</p>
+      <p>I valori massimi rappresentano i livelli di assunzione massima tollerabile (UL) — l'assunzione giornaliera più alta che è improbabile causi effetti avversi sulla salute. Alcuni nutrienti non hanno un limite superiore stabilito a causa della mancanza di dati sulla tossicità.</p>
+      <p>I DRIs includono una raccomandazione minima per il sodio ma nessun massimo stabilito. Tuttavia, l'app non stabilisce obiettivi per il sodio, poiché l'uso del sale varia ed è difficile da tracciare con precisione nelle ricette. Ma la tua assunzione di sodio viene comunque registrata come riferimento.</p>
+      <p class="ref">[14] Dietary Reference Intakes for Calcium, Phosphorous, Magnesium, Vitamin D, and Fluoride (1997); Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline (1998); Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids (2000); Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc (2001); Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005); Dietary Reference Intakes for Calcium and Vitamin D (2011); and Dietary Reference Intakes for Sodium and Potassium (2019). These reports may be accessed via www.nap.edu.</p>
+
+      <h2>Acqua</h2>
+      <p>L'app stabilisce il tuo obiettivo di acqua totale basandosi sulle assunzioni adeguate stabilite dall'Institute of Medicine, che variano in base all'età, al sesso e allo stato riproduttivo:</p>
+      <ul>
+        <li>Uomini 14-18: 3,3 L/giorno</li>
+        <li>Uomini 19-70+: 3,7 L/giorno</li>
+        <li>Donne 14-18: 2,3 L/giorno</li>
+        <li>Donne 19-70+: 2,7 L/giorno</li>
+        <li>Gravidanza: 3,0 L/giorno</li>
+        <li>Allattamento: 3,8 L/giorno</li>
+      </ul>
+      <p>L'acqua totale include tutta l'acqua contenuta in alimenti, bevande e acqua potabile.</p>
+      <p class="ref">[15] Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids (2002/2005) and Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005). These reports may be accessed via www.nap.edu.</p>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Termini</a>
+          <a href="targets.html">Come vengono stabiliti gli obiettivi</a>
+          <a href="database.html">Come è costruito il database</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Contattaci</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/vendor/matter.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the it/targets.html file -->

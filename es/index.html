@@ -1,0 +1,317 @@
+<!-- This is the start of the es/index.html file -->
+<!-- Last revised by your AI friend: 2026-03-16 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmiFit — Rastreador de micronutrientes sin conexión para iPhone</title>
+  <meta name="description" content="Descubre lo que te falta en minutos. AmiFit te dice tus carencias de vitaminas, minerales y omegas — completamente sin conexión. Sin cuenta. Sin internet. Sin suscripción para empezar.">
+
+  <link rel="canonical" href="https://www.amifit.app/es/">
+  <link rel="alternate" hreflang="en" href="https://www.amifit.app/">
+  <link rel="alternate" hreflang="es" href="https://www.amifit.app/es/">
+  <link rel="alternate" hreflang="fr" href="https://www.amifit.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://www.amifit.app/de/">
+  <link rel="alternate" hreflang="it" href="https://www.amifit.app/it/">
+  <link rel="alternate" hreflang="pt" href="https://www.amifit.app/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://www.amifit.app/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.amifit.app/es/">
+  <meta property="og:locale"      content="es_ES">
+  <meta property="og:title"       content="AmiFit — Rastreador de micronutrientes sin conexión para iPhone">
+  <meta property="og:description" content="Descubre lo que te falta en minutos — vitaminas, minerales, EPA+DHA y la ratio Omega-6:3 que la mayoría de apps ni conoce. Sin cuenta. Sin internet. Tuyo para siempre.">
+  <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+
+  <script>
+    window.TYPEWRITER_LINES = [
+      "Puedo decirte mi ingesta de magnesio ahora mismo. ¿Tú puedes decirme la tuya?",
+      "En 2 minutos sé si estoy tomando suficiente B12. ¿Sabes si tú lo haces?",
+      "Sé exactamente cuánto hierro he tomado esta semana. ¿Y tú?",
+      "Sé si me estoy excediendo con la vitamina A. ¿Lo sabes tú?",
+      "Sé si estoy tomando suficiente zinc esta semana. ¿Sabes si tú lo haces?"
+    ];
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo" aria-label="AmiFit home">
+          <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="32" height="32">
+          <span class="nav__logo-text">AmiFit</span>
+        </a>
+
+        <div class="nav__right">
+          <div class="lang-menu" id="lang-menu">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+              <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
+              <button class="lang-option lang-option--active" data-lang="es" role="option" aria-selected="true">Español</button>
+              <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
+              <button class="lang-option" data-lang="fr" role="option" aria-selected="false">Français</button>
+              <button class="lang-option" data-lang="de" role="option" aria-selected="false">Deutsch</button>
+              <button class="lang-option" data-lang="pt" role="option" aria-selected="false">Português</button>
+            </div>
+          </div>
+
+          <a href="download.html" class="btn btn--primary">Descargar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-labelledby="hero-headline">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Rastreador de micronutrientes sin conexión para iPhone</p>
+        <h1 class="hero__headline" id="hero-headline">
+          Probablemente tienes una carencia nutricional.<br>
+          Solo que no sabes cuál.
+        </h1>
+        <p class="hero__sub">
+          Descubre lo que te falta en minutos — vitaminas, minerales, EPA+DHA y la ratio Omega&#8209;6:3 que la mayoría de apps ni conoce.
+        </p>
+
+        <div class="hero__cta-row" id="download">
+          <a href="download.html" class="app-store-badge" aria-label="Descargar AmiFit en el App Store">
+            <img
+              src="../assets/img/app-store-badge.svg"
+              alt="Descargar en el App Store"
+              width="180"
+              height="52"
+              loading="eager"
+              onerror="this.parentElement.innerHTML='<span class=\'btn btn--primary\'>Descargar en el App Store</span>'"
+            >
+          </a>
+          <div class="hero__qr" aria-hidden="true" title="Escanear para descargar">
+            <img src="../assets/img/qr-code.png" alt="Código QR para descargar AmiFit" hidden>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pills-canvas" aria-label="Muestra interactiva de todos los nutrientes rastreados por AmiFit" role="img">
+
+        <div class="pill" style="--pill-color:#FBBF24">Proteína</div>
+        <div class="pill" style="--pill-color:#C084FC">Carbohidratos</div>
+        <div class="pill" style="--pill-color:#F472B6">Grasa</div>
+        <div class="pill" style="--pill-color:#FBBF24">Fibra</div>
+        <div class="pill" style="--pill-color:#22D3EE">Azúcar</div>
+
+        <div class="pill" style="--pill-color:#818CF8">Grasa saturada</div>
+        <div class="pill" style="--pill-color:#34D399">Grasa trans</div>
+        <div class="pill" style="--pill-color:#60A5FA">Grasa monoinsaturada</div>
+        <div class="pill" style="--pill-color:#4ADE80">Grasa poliinsaturada</div>
+
+        <div class="pill" style="--pill-color:#F87171">ALA Omega-3</div>
+        <div class="pill" style="--pill-color:#2DD4BF">EPA Omega-3</div>
+        <div class="pill" style="--pill-color:#FB923C">DHA Omega-3</div>
+        <div class="pill" style="--pill-color:#C084FC">EPA + DHA Omega-3</div>
+        <div class="pill" style="--pill-color:#FBBF24">Omega-6</div>
+        <div class="pill" style="--pill-color:#22D3EE">Ratio Omega-6:3</div>
+
+        <div class="pill" style="--pill-color:#F472B6">Calcio</div>
+        <div class="pill" style="--pill-color:#818CF8">Fósforo</div>
+        <div class="pill" style="--pill-color:#34D399">Potasio</div>
+        <div class="pill" style="--pill-color:#60A5FA">Magnesio</div>
+        <div class="pill" style="--pill-color:#4ADE80">Sodio</div>
+        <div class="pill" style="--pill-color:#F87171">Hierro</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Zinc</div>
+        <div class="pill" style="--pill-color:#FB923C">Cobre</div>
+        <div class="pill" style="--pill-color:#C084FC">Manganeso</div>
+        <div class="pill" style="--pill-color:#FBBF24">Selenio</div>
+
+        <div class="pill" style="--pill-color:#22D3EE">Vitamina A</div>
+        <div class="pill" style="--pill-color:#F472B6">Vitamina D</div>
+        <div class="pill" style="--pill-color:#818CF8">Vitamina E</div>
+        <div class="pill" style="--pill-color:#34D399">Vitamina K</div>
+        <div class="pill" style="--pill-color:#60A5FA">Vitamina C</div>
+        <div class="pill" style="--pill-color:#4ADE80">Tiamina (B1)</div>
+        <div class="pill" style="--pill-color:#F87171">Riboflavina (B2)</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Niacina (B3)</div>
+        <div class="pill" style="--pill-color:#FB923C">Ácido pantoténico (B5)</div>
+        <div class="pill" style="--pill-color:#C084FC">Vitamina B6</div>
+        <div class="pill" style="--pill-color:#FBBF24">Folato (B9)</div>
+        <div class="pill" style="--pill-color:#22D3EE">Vitamina B12</div>
+        <div class="pill" style="--pill-color:#F472B6">Colina</div>
+
+        <div class="pill" style="--pill-color:#818CF8">Colesterol</div>
+        <div class="pill" style="--pill-color:#34D399">Alcohol</div>
+        <div class="pill" style="--pill-color:#60A5FA">Agua</div>
+
+        <div class="pill" style="--pill-color:#22D3EE">Histidina</div>
+        <div class="pill" style="--pill-color:#F472B6">Isoleucina</div>
+        <div class="pill" style="--pill-color:#818CF8">Leucina</div>
+        <div class="pill" style="--pill-color:#34D399">Lisina</div>
+        <div class="pill" style="--pill-color:#60A5FA">Metionina + Cistina</div>
+        <div class="pill" style="--pill-color:#4ADE80">Fenilalanina + Tirosina</div>
+        <div class="pill" style="--pill-color:#F87171">Treonina</div>
+        <div class="pill" style="--pill-color:#2DD4BF">Triptófano</div>
+        <div class="pill" style="--pill-color:#FB923C">Valina</div>
+      </div>
+
+      <div class="pills-static container" aria-hidden="true">
+        <div class="pill pill--static" style="--pill-color:#F472B6">Vitamina D</div>
+        <div class="pill pill--static" style="--pill-color:#60A5FA">Magnesio</div>
+        <div class="pill pill--static" style="--pill-color:#22D3EE">Vitamina B12</div>
+        <div class="pill pill--static" style="--pill-color:#F87171">Hierro</div>
+        <div class="pill pill--static" style="--pill-color:#F472B6">Calcio</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">EPA Omega-3</div>
+        <div class="pill pill--static" style="--pill-color:#FB923C">DHA Omega-3</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">Zinc</div>
+        <div class="pill pill--static" style="--pill-color:#34D399">Potasio</div>
+        <div class="pill pill--static" style="--pill-color:#60A5FA">Vitamina C</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Fibra</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Folato (B9)</div>
+        <div class="pill pill--static" style="--pill-color:#FBBF24">Selenio</div>
+        <div class="pill pill--static" style="--pill-color:#F472B6">Colina</div>
+        <div class="pill pill--static" style="--pill-color:#818CF8">Leucina</div>
+        <div class="pill pill--static" style="--pill-color:#34D399">Lisina</div>
+        <div class="pill pill--static" style="--pill-color:#2DD4BF">Triptófano</div>
+        <div class="pill pill--static" style="--pill-color:#4ADE80">Sodio</div>
+        <div class="pill pill--static" style="--pill-color:#818CF8">Colesterol</div>
+        <div class="pill pill--static" style="--pill-color:#F87171">ALA Omega-3</div>
+      </div>
+
+      <div class="pills-section__header container">
+        <h2 class="pills-section__headline" id="pills-headline">
+          Las macros son el pasado. Los micros son el futuro.
+        </h2>
+        <div class="hero__typewriter-wrap" aria-live="polite" aria-atomic="true">
+          <span class="hero__typewriter" id="typewriter"></span>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="graffiti" aria-hidden="true">Sin conexión es la nueva normalidad.</div>
+
+    <section class="anxiety" aria-labelledby="anxiety-headline">
+      <div class="container">
+        <h2 class="sr-only" id="anxiety-headline">¿Conoces tu ingesta de nutrientes?</h2>
+        <div class="anxiety__questions" role="list">
+          <p class="anxiety__q" role="listitem">¿Cuál es mi ratio Omega-6 a Omega-3 ahora mismo?</p>
+          <p class="anxiety__q" role="listitem">¿Estoy tomando suficiente B12 últimamente?</p>
+          <p class="anxiety__q" role="listitem">¿Cuánto hierro he consumido esta semana?</p>
+          <p class="anxiety__q" role="listitem">¿Estoy obteniendo suficiente vitamina D de lo que realmente como?</p>
+          <p class="anxiety__q" role="listitem">¿Sé cuánto magnesio he tomado en los últimos días?</p>
+        </div>
+        <p class="anxiety__answer">
+          AmiFit te lo dice. En minutos.<br>Sin cuenta. Sin internet.
+        </p>
+        <p class="anxiety__clarification">
+          Sin servidores. Úsalo en modo avión si quieres.
+        </p>
+      </div>
+    </section>
+
+    <section class="trust">
+      <div class="trust__inner container">
+        <div class="trust__text-col">
+          <h2 class="trust__headline reveal">El escaneo con IA es increíble, pero</h2>
+          <p class="trust__line reveal">Nunca sabes si el peso que estima es correcto. Y una báscula de cocina funciona, pero es un fastidio.</p>
+          <p class="trust__line reveal">Hay una tercera opción.</p>
+          <p class="trust__line reveal"><span class="pill-highlight pill-highlight--pink">Fotos reales de porciones reales</span> en tu bolsillo. Sabrás cómo son 275g de hamburguesa con queso. La mayoría no lo sabe.</p>
+          <div class="graffiti graffiti--marker" aria-hidden="true">No fotografío mi comida. Simplemente como.</div>
+        </div>
+        <div class="trust__screenshot-col reveal">
+          <figure class="screenshot-card screenshot-card--blue">
+            <img src="../assets/img/screenshots/portion-collection-cheeseburger_es.png" alt="AmiFit selector de porciones — fotos reales de hamburguesas de 75g a 465g, fotografiadas y pesadas personalmente" width="390" height="844" loading="lazy">
+          </figure>
+          <figure class="screenshot-card screenshot-card--blue">
+            <img src="../assets/img/screenshots/portion-collection-salmon_es.png" alt="AmiFit selector de porciones — fotos reales de porciones de salmón, fotografiadas y pesadas personalmente" width="390" height="844" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" aria-labelledby="pricing-headline">
+      <div class="pricing__inner container">
+        <div class="pricing__screenshots">
+          <figure class="screenshot-card screenshot-card--blue reveal" style="transition-delay: 0ms">
+            <img src="../assets/img/screenshots/nutrient-breakdown-1_es.png" alt="Vista de nutrición de AmiFit — ratio Omega-6 a Omega-3 en 12,30:1, déficits de ALA y EPA+DHA en rojo" width="390" height="844" loading="lazy">
+          </figure>
+          <figure class="screenshot-card screenshot-card--blue reveal" style="transition-delay: 150ms">
+            <img src="../assets/img/screenshots/nutrient-breakdown-2_es.png" alt="Vista de nutrición de AmiFit — desglose de vitaminas mostrando vitamina D en 4μg frente a un objetivo de 15-100μg" width="390" height="844" loading="lazy">
+          </figure>
+        </div>
+        <div class="pricing__copy">
+          <h2 class="pricing__headline reveal">Úsalo gratis</h2>
+          <p class="pricing__line reveal">Registra tus calorías, proteínas, carbohidratos y grasas gratis. <span class="pill-highlight pill-highlight--green">Sin funciones bloqueadas.</span> Premium solo muestra más nutrientes.</p>
+          <p class="pricing__line reveal">Prueba Premium por el precio de un helado. O consigue el acceso de por vida por el precio de una buena cena.</p>
+          <p class="pricing__line pricing__line--muted reveal">Con el acceso de por vida, sin más verificaciones de tu suscripción en los servidores de Apple.</p>
+          <div class="graffiti graffiti--marker" aria-hidden="true">La app sin conexión para los que ya estamos suficientemente conectados.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="final-cta-headline">
+      <h2 class="final-cta__headline reveal" id="final-cta-headline">
+        Descubre lo que te falta.
+      </h2>
+      <p class="final-cta__pun reveal">Literalmente.</p>
+      <div class="reveal">
+        <a href="download.html" class="app-store-badge" aria-label="Descargar AmiFit en el App Store">
+          <img
+            src="../assets/img/app-store-badge.svg"
+            alt="Descargar en el App Store"
+            width="180"
+            height="52"
+            loading="lazy"
+            onerror="this.parentElement.innerHTML='<span class=\'btn btn--primary\'>Descargar en el App Store</span>'"
+          >
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__icon">
+        <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
+      </div>
+      <div class="footer__bar">
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="../privacy.html">Privacidad</a>
+          <a href="../terms.html">Términos</a>
+          <a href="../targets.html">Cómo se establecen los objetivos</a>
+          <a href="../database.html">Cómo se construye la base de datos</a>
+        </nav>
+        <div class="footer__legal">
+          <p>&copy; 2026 AmiFit&#8482;</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-title">Contáctanos</p>
+          <span>email: info@amifit.app</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/vendor/matter.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
+<!-- This is the end of the es/index.html file -->
