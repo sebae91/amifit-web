@@ -9,8 +9,8 @@
 const TYPEWRITER_LINES = [
   "I can tell you my magnesium intake right now. Can you tell me yours?",
   "In 2 minutes I know if I'm getting enough B12. Do you know if you are?",
-  "I know exactly how much iron I got today. Do you?",
-  "Takes me 30 seconds to check my calcium levels. How do you check yours?",
+  "I know exactly how much iron I got this week. Do you?",
+  "I know if I'm overdoing Vitamin A. Do you?",
   "I know if I'm getting enough zinc this week. Do you know if you are?"
 ];
 
@@ -24,8 +24,8 @@ function initTypewriter() {
   let pauseTimer = null;
 
   const TYPING_SPEED   = 40;   // ms per character (typing)
-  const DELETE_SPEED   = 20;   // ms per character (deleting)
-  const PAUSE_END      = 2800; // ms — pause at end of line before delete
+  const DELETE_SPEED   = 25;   // ms per character (deleting)
+  const PAUSE_END      = 3600; // ms — pause at end of line before delete
   const PAUSE_EMPTY    = 400;  // ms — pause at empty before next line
 
   function tick() {

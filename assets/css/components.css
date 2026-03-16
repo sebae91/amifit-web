@@ -304,7 +304,7 @@ main {
 }
 
 .hero__typewriter-wrap {
-  font-size: var(--text-base);
+  font-size: var(--text-xl);
   color: var(--color-text-muted);
   font-style: italic;
   min-height: 2.4em;
