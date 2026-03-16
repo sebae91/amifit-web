@@ -99,10 +99,10 @@ main {
 .lang-toggle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 4px;
   background: none;
   border: none;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
@@ -125,11 +125,11 @@ main {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  background-color: var(--color-surface-2);
-  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  border: none;
   border-radius: 10px;
   padding: 6px;
-  min-width: 120px;
+  width: max-content;
   display: none;
   flex-direction: column;
   gap: 2px;
@@ -142,12 +142,12 @@ main {
 .lang-option {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   background: none;
   border: none;
   font-family: var(--font);
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: #000000;
   padding: 9px 12px;
   border-radius: 7px;
   cursor: pointer;
@@ -157,12 +157,13 @@ main {
 }
 
 .lang-option:hover {
-  background-color: var(--color-border);
-  color: var(--color-text);
+  background: none;
+  color: #000000;
 }
 
 .lang-option--active {
-  color: var(--color-text);
+  color: #000000;
+  font-weight: 600;
 }
 
 .lang-option--active::after {
