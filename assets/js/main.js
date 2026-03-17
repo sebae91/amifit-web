@@ -337,7 +337,21 @@ function initPillsPhysics() {
     }
 
     syncLoop();
-    setInterval(checkLoop, 500);
+    let checkInterval = setInterval(checkLoop, 500);
+
+    // When the tab is hidden (laptop closed, tab switched), pause physics.
+    // When visible again, reset settle timestamps so pills don't all mass-recycle
+    // due to the accumulated time they appeared "settled" while frozen.
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        Matter.Runner.stop(runner);
+        clearInterval(checkInterval);
+      } else {
+        pillState.forEach((state) => { state.settledAt = null; });
+        Matter.Runner.run(runner, engine);
+        checkInterval = setInterval(checkLoop, 500);
+      }
+    });
   }
 
   // Start when canvas scrolls into view
