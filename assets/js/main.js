@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-03-16
+// Last revised by your AI friend: 2026-03-19
 
 'use strict';
 
@@ -23,8 +23,8 @@ function initTypewriter() {
   let isDeleting = false;
   let pauseTimer = null;
 
-  const TYPING_SPEED   = 40;   // ms per character (typing)
-  const DELETE_SPEED   = 25;   // ms per character (deleting)
+  const TYPING_SPEED   = 28;   // ms per character (typing)
+  const DELETE_SPEED   = 18;   // ms per character (deleting)
   const PAUSE_END      = 3600; // ms — pause at end of line before delete
   const PAUSE_EMPTY    = 400;  // ms — pause at empty before next line
 
