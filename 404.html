@@ -1,0 +1,92 @@
+<!-- This is the start of the 404.html file -->
+<!-- Last revised by your AI friend: 2026-03-23 -->
+<!-- This site has no server, no database, no API calls, no external requests. -->
+<!-- The only way to land here is a URL that doesn't exist. That's it. -->
+<!-- Old browser, weird device, small screen — the page still loads. It's just HTML. -->
+<!-- TODO: consider fallback for very old browsers where flexbox centering breaks — table-cell trick or basic margin:auto -->
+<!-- If you're reading this in the inspector — hi. Nothing to find here. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — AmiFit</title>
+  <link rel="icon" type="image/png" href="assets/img/icon.png">
+  <style>
+    :root {
+      --color-bg: #0a0a0a;
+      --color-text: #f0f0f0;
+      --color-text-muted: #888888;
+      --color-accent: #2997FF;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .emoticon {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      line-height: 1;
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .message {
+      font-size: 1.125rem;
+      color: var(--color-text);
+    }
+
+    .message__lang {
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      margin-left: 8px;
+    }
+
+    .home-link {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    .home-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="emoticon">¯\_(ツ)_/¯</div>
+
+  <div class="messages">
+    <p class="message">This page doesn't exist. <span class="message__lang">EN</span></p>
+    <p class="message">Esta página no existe. <span class="message__lang">ES</span></p>
+    <p class="message">Questa pagina non esiste. <span class="message__lang">IT</span></p>
+    <p class="message">Cette page n'existe pas. <span class="message__lang">FR</span></p>
+    <p class="message">Diese Seite existiert nicht. <span class="message__lang">DE</span></p>
+    <p class="message">Esta página não existe. <span class="message__lang">PT</span></p>
+  </div>
+
+  <a href="/" class="home-link">← Back to AmiFit</a>
+
+</body>
+</html>
+<!-- This is the end of the 404.html file -->
