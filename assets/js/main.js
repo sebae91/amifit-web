@@ -182,7 +182,7 @@ function initAnxietySection() {
         if (answer) {
           setTimeout(() => {
             answer.classList.add('anxiety__answer--visible');
-          }, questions.length * 500 + 400);
+          }, (questions.length - 1) * 500 + 500);
         }
 
         setTimeout(startThoughtLoop, questions.length * 500 + 1800);
