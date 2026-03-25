@@ -365,6 +365,21 @@ function initPillsPhysics() {
   }, { threshold: 0.1 });
 
   observer.observe(canvas);
+
+  // Reposition walls when canvas is resized (e.g. browser window resized).
+  // Without this, pills fall through the gap between the old right wall and the new edge.
+  const resizeObserver = new ResizeObserver(() => {
+    if (!started || !walls) return;
+    const W = canvas.offsetWidth;
+    const H = canvas.offsetHeight;
+    Matter.World.remove(engine.world, walls);
+    walls[0] = Matter.Bodies.rectangle(W / 2,  H + 25, W + 100, 50,    { isStatic: true }); // floor
+    walls[1] = Matter.Bodies.rectangle(-25,    H / 2,  50,      H * 6, { isStatic: true }); // left
+    walls[2] = Matter.Bodies.rectangle(W + 25, H / 2,  50,      H * 6, { isStatic: true }); // right
+    Matter.World.add(engine.world, walls);
+  });
+
+  resizeObserver.observe(canvas);
 }
 
 // ─── Language Menu (globe icon + dropdown) ────────────────────────────────────
