@@ -4,7 +4,7 @@
 /* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg: #0a0a0a;
+  --color-bg: #0a0a0a;          /* not pure black — pure black on a screen is harsher than people expect */
   --color-surface: #141414;
   --color-surface-2: #1e1e1e;
   --color-border: #2a2a2a;

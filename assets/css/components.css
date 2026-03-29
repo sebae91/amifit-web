@@ -372,6 +372,8 @@ main {
   src: url('../fonts/cabin-sketch.woff2') format('woff2');
 }
 
+/* Three fonts. All locally hosted. Each one a different kind of handwriting. */
+
 .graffiti {
   font-family: 'Rock Salt', cursive;
   font-size: clamp(2.5rem, 8vw, 6rem);
@@ -437,6 +439,7 @@ main {
   animation: thought-intrude 0.12s ease forwards;
 }
 
+/* The thought pops in like it interrupted something. */
 @keyframes thought-intrude {
   0%   { opacity: 0.2; }
   40%  { opacity: 1.0; }

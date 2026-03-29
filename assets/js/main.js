@@ -5,6 +5,7 @@
 
 // ─── Typewriter ───────────────────────────────────────────────────────────────
 // Cycles through the hero hook lines one at a time, character by character.
+// These aren't hypothetical. They're the questions that got the app built.
 
 const TYPEWRITER_LINES = window.TYPEWRITER_LINES || [
   "I can tell you my magnesium intake right now. Can you tell me yours?",
