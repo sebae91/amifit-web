@@ -369,6 +369,21 @@ function initPillsPhysics() {
 
   // Reposition walls when canvas is resized (e.g. browser window resized).
   // Without this, pills fall through the gap between the old right wall and the new edge.
+  //
+  // Note: this is intentionally asymmetric. Narrowing from the right pushes pills left
+  // (right wall acts as a piston), and widening back leaves them there — new pills fall
+  // into the empty space. It looks great. Narrowing from the left does NOT push pills
+  // right symmetrically; the right wall still moves inward because the canvas always
+  // starts at x=0 and is full-width regardless of which browser edge moved.
+  //
+  // We looked into fixing this with window.screenX + window.outerWidth to detect
+  // left-vs-right resize direction and move the left wall as a matching piston. It
+  // didn't work cleanly: (1) both walls ended up moving simultaneously, squeezing pills
+  // toward the middle instead of pushing them right, and (2) window.screenX reports in
+  // physical pixels on HiDPI displays so the left wall moved 2x too fast. A proper fix
+  // would also need to freeze the right wall during a left-side resize, which risks pills
+  // escaping into physics positions beyond the visible canvas. Not worth it — the
+  // right-side resize behavior is the one people actually see and it already feels great.
   const resizeObserver = new ResizeObserver(() => {
     if (!started || !walls) return;
     const W = canvas.offsetWidth;
