@@ -31,82 +31,78 @@
     .composition {
       width: 440px;
       height: 956px;
-      background: #0a0a0a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 32px 20px;
-      gap: 28px;
+      position: relative;
       flex-shrink: 0;
       overflow: hidden;
     }
 
-    .top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .brand img {
-      height: 28px;
-      width: auto;
-    }
-
-    .brand-name {
-      color: #fff;
-      font-size: 28px;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-    }
+    .composition--1,
+    .composition--2,
+    .composition--3,
+    .composition--4,
+    .composition--5 { background: #ffffff; }
 
     .headline {
-      color: #fff;
+      position: absolute;
+      top: 32px;
+      left: 40px;
+      right: 40px;
+      color: #000;
       font-size: 32px;
-      font-weight: 300;
+      font-weight: 500;
       text-align: center;
       line-height: 1.25;
       letter-spacing: -0.4px;
     }
 
-    .headline strong {
-      font-weight: 700;
-    }
-
-    .headline .light {
-      font-weight: 300;
-    }
-
-    .screenshot {
-      width: 92%;
-      height: auto;
-      max-height: 720px;
-      object-fit: contain;
+    .screenshot-frame {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 84%;
       border-radius: 36px;
-      border: 2px solid rgba(255, 255, 255, 0.55);
+      border: none;
+      overflow: hidden;
+    }
+
+    .screenshot-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
   <p class="label">1 — Diary (EN)</p>
-  <div class="composition">
-    <div class="top">
-      <div class="brand">
-        <img src="assets/img/amifit_no_bg_dark.png" alt="AmiFit">
-        <span class="brand-name">AmiFit</span>
-      </div>
-      <p class="headline"><span class="light">No account ever created.</span> <strong>Fully offline.</strong></p>
-    </div>
-    <img class="screenshot" src="assets/img/appstore/diary_en.png">
+  <div class="composition composition--1">
+    <p class="headline">No account ever created. Fully offline.</p>
+    <div class="screenshot-frame"><img src="assets/img/appstore/diary_en.png"></div>
+  </div>
+
+  <p class="label">2 — Portions (EN)</p>
+  <div class="composition composition--2">
+    <p class="headline">Real photos of real portions. In your pocket.</p>
+    <div class="screenshot-frame"><img src="assets/img/screenshots/portion-collection-cheeseburger_en.png"></div>
+  </div>
+
+  <p class="label">3 — Omega-3 (EN)</p>
+  <div class="composition composition--3">
+    <p class="headline">Finally see your Omega-6 to Omega-3 ratio.</p>
+    <div class="screenshot-frame"><img src="assets/img/screenshots/nutrient-breakdown-1_en.png"></div>
+  </div>
+
+  <p class="label">4 — Vitamin D (EN)</p>
+  <div class="composition composition--4">
+    <p class="headline">Low on something? Find the foods that help.</p>
+    <div class="screenshot-frame"><img src="assets/img/appstore/nutrient-filter_en.png"></div>
+  </div>
+
+  <p class="label">5 — Vitamins (EN)</p>
+  <div class="composition composition--5">
+    <p class="headline">See what you're actually missing.</p>
+    <div class="screenshot-frame"><img src="assets/img/screenshots/nutrient-breakdown-2_en.png"></div>
   </div>
 
 
