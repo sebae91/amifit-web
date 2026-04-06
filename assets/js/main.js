@@ -349,6 +349,7 @@ function initPillsPhysics() {
         clearInterval(checkInterval);
       } else {
         pillState.forEach((state) => { state.settledAt = null; });
+        runner = Matter.Runner.create();
         Matter.Runner.run(runner, engine);
         checkInterval = setInterval(checkLoop, 500);
       }

@@ -9,8 +9,9 @@
   <meta name="description" content="Find out what you're missing in minutes. AmiFit tells you your vitamin, mineral, and omega gaps — entirely offline. No account. No internet. No subscription to start.">
 
   <!-- Canonical & hreflang -->
-  <!-- No navigator.language auto-redirect. hreflang handles Google (most traffic lands on the right language via search). -->
-  <!-- The globe icon handles direct visitors. Auto-redirect risks sending people to the wrong page, and this site's identity is nothing to break. -->
+  <!-- No navigator.language auto-redirect. hreflang handles Google — search traffic lands on the right language already. -->
+  <!-- Auto-redirect needs localStorage or a cookie to remember manual switches, otherwise it bounces the user back every visit. -->
+  <!-- Either way you're storing something — and in Europe a cookie means a consent banner. This site stores nothing. No banner, no consent, no storage. Leave it alone. -->
   <link rel="canonical" href="https://www.amifit.app/">
   <link rel="alternate" hreflang="en" href="https://www.amifit.app/">
   <link rel="alternate" hreflang="es" href="https://www.amifit.app/es/">
@@ -24,7 +25,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://www.amifit.app/">
   <meta property="og:title"       content="AmiFit — Offline Micronutrient Tracker for iPhone">
-  <meta property="og:description" content="Find out what you're missing in minutes — vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of. No account. No internet. Yours forever.">
+  <meta property="og:description" content="Find out what you're actually missing — vitamins, minerals, EPA+DHA, the Omega‑6:3 ratio. No account. No internet. No servers.">
   <meta property="og:image"       content="https://www.amifit.app/assets/img/og-image.jpg">
   <meta name="twitter:card"       content="summary_large_image">
 
@@ -306,7 +307,7 @@
           <p class="anxiety__q" role="listitem">What's my Omega-6 to Omega-3 ratio right now?</p>
           <p class="anxiety__q" role="listitem">Am I getting enough B12 lately?</p>
           <p class="anxiety__q" role="listitem">How much iron have I gotten this week?</p>
-          <p class="anxiety__q" role="listitem">Am I getting enough Vitamin D from what I actually eat?</p>
+          <p class="anxiety__q" role="listitem">Am I getting enough Vitamin D from what I eat?</p>
           <p class="anxiety__q" role="listitem">Do I know my magnesium intake from the past few days?</p>
         </div>
         <p class="anxiety__answer">
