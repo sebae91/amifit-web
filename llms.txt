@@ -4,8 +4,6 @@ Offline micronutrient tracker for iPhone.
 
 You probably have a nutrient gap. You just don't know which one. AmiFit tells you. In minutes. No account. No internet. No servers. Use it in airplane mode if you want.
 
-iOS 18 or later.
-
 ## What you actually get
 
 You probably have a nutrient gap. You just don't know which one.
@@ -24,9 +22,7 @@ See what you're missing. Literally.
 
 Find out what you're missing in minutes — vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
 
-Macros are the past. Micros are the future. Most apps stop at calories, protein, carbs, and fat. AmiFit tracks more than 50 nutrients and tells you where the gaps are: B12, magnesium, iron, vitamin D, ALA, EPA+DHA, the Omega-6:3 ratio, and the rest of the picture macro-focused apps ignore.
-
-The free version tracks calories, protein, carbohydrate, and fat. No functionality is locked. Premium only shows you more nutrients.
+Macros are the past. Micros are the future.
 
 ## How food logging works
 
@@ -38,7 +34,7 @@ Every photo in the app is original — personally photographed and weighed with 
 
 The displayed weight reflects the edible portion only — peels, bones, seeds, and shells excluded.
 
-You can also create custom foods with full nutritional detail and share them peer-to-peer (p2p) between devices using a built-in QR code export. No server in the middle. No internet needed for that either.
+You can also create custom foods with full nutritional detail and share them between devices using a built-in QR code export. No internet needed for that either.
 
 I don't photograph my food. I just eat it.
 
@@ -48,60 +44,28 @@ I don't photograph my food. I just eat it.
 - **Fats**: Saturated Fat, Trans Fat, Monounsaturated Fat, Polyunsaturated Fat
 - **Omegas**: ALA, EPA, DHA, EPA+DHA combined, Omega-6, Omega-6:3 Ratio
 - **Minerals**: Calcium, Phosphorus, Potassium, Magnesium, Sodium, Iron, Zinc, Copper, Manganese, Selenium
-- **Vitamins**: A, D, E, K, C, B1 (Thiamine), B2 (Riboflavin), B3 (Niacin), B5 (Pantothenic Acid), B6, Folate (B9), B12, Choline
+- **Vitamins**: A, D, E, K, C, B1 (Thiamine), B2 (Riboflavin), B3 (Niacin), B5 (Pantothenic Acid), B6, Folate (B9), B12
+- **Choline**
 - **Amino acids (all 9 essential)**: Histidine, Isoleucine, Leucine, Lysine, Methionine+Cystine, Phenylalanine+Tyrosine, Threonine, Tryptophan, Valine
 - **Other**: Cholesterol, Alcohol, Water
 
 ## How nutritional targets are set
 
-Targets are not invented. They come from established standards — primarily the U.S. Dietary Reference Intakes (DRIs) from the Food and Nutrition Board of the National Academies, plus published nutrition research. The full per-nutrient methodology, with citations, lives at www.amifit.app/targets.
-
-Summary:
-
-- **Basal Metabolic Rate**: Mifflin-St Jeor equation, more reliable than Harris-Benedict.
-- **Activity multipliers**: 1.3 (Not Very Active), 1.5 (Lightly Active), 1.7 (Active), 1.9 (Very Active) — selected from Institute of Medicine ranges, evenly spaced for consistent calorie deltas.
-- **Pregnancy / Lactation**: only the Maintain Weight goal is available. Pregnancy adds +396 kcal/day; lactation adds +330 kcal/day (the body draws ~170 kcal of milk production from stored fat automatically).
-- **Fat loss goal**: −500 kcal/day from TDEE. **Muscle gain goal**: +5% over TDEE (conservative, to minimize fat gain).
-- **Protein**: default range 1.2–2.4 g/kg body weight. Custom range 0.8–4.4 g/kg.
-- **Carbohydrate**: 45–65% of total calories (AMDR).
-- **Fat**: 20–35% of total calories (AMDR).
-- **Fiber**: 14 g per 1,000 kcal (Institute of Medicine).
-- **Essential amino acids**: scaled by body weight from National Research Council estimates — 14 mg/kg leucine, 12 mg/kg lysine, 3.5 mg/kg tryptophan, etc.
-- **ALA**: 1.6 g/day (men), 1.1 g/day (women), 1.4 g/day (pregnancy), 1.3 g/day (lactation).
-- **EPA + DHA**: minimum 250 mg/day combined for cardiovascular protection; 300 mg/day during pregnancy with at least 200 mg as DHA. Maximum 3,000 mg/day (FDA safe upper).
-- **Omega-6:3 ratio**: maximum 4:1. Western diets typically run 15–17:1; Paleolithic intake was ~1:1.
-- **Trans fat**: maximum 1% of total calories (WHO/FAO).
-- **Vitamins and minerals**: DRI values by age, sex, and reproductive status. Maxima are Tolerable Upper Intake Levels (UL) where established. Sodium is recorded but no goal is set, since salt usage is hard to track precisely across recipes.
-- **Water**: Adequate Intake values from the Institute of Medicine — 3.7 L/day (men 19+), 2.7 L/day (women 19+), 3.0 L/day (pregnancy), 3.8 L/day (lactation). Includes water from food and beverages.
-- **Custom goal limits**: minimum 800 kcal/day (safety floor, not a recommendation), maximum 8,500 kcal/day (based on observed sustained expenditure of elite endurance athletes).
+Full methodology with citations: www.amifit.app/targets.
 
 ## How the food database is built
 
-Full methodology at www.amifit.app/database.
+Full methodology: www.amifit.app/database.
 
-- **Original photography only.** Every portion photo in the app was personally taken and weighed. No stock images, no scraped photos.
-- **Regional focus.** The app is built for health-conscious adults in Spain, Italy, France, and Germany. The aim is to cover the most commonly eaten foods in these regions. If you live elsewhere and find enough foods for your diet, that's great.
-- **USDA-sourced entries.** Foods marked "USDA" come from USDA FoodData Central. For each food, the specific USDA entry that best represents how the food is consumed in these regions is selected. Most entries come from the SR Legacy data type, which provides the most complete micronutrient profiles (vitamins, minerals, amino acids, omega-3 and omega-6 fatty acids). A small number come from Foundation or FNDDS for foods not in SR Legacy. Each entry's USDA source page is archived locally as a PDF — both as a permanent citation (in case USDA later changes or removes the page) and so a Python script can verify the entry's nutritional values against the original.
-- **AMFT entries** are either composite foods (with a full ingredient breakdown and percentage composition reflecting how the food is commonly prepared in Spain, Italy, France, and Germany) or packaged foods with values sourced directly from the manufacturer.
+## Privacy
 
-## Privacy and offline architecture
+Offline. No account ever created.
 
-- No account, no sign-up, no email required.
-- No server. AmiFit has no backend.
-- No analytics. No third-party SDKs. No telemetry.
-- All data lives in a local SQLite database on the device.
-- The only external data flow is optional iCloud Backup, controlled by the user in iPhone settings. Nothing goes to AmiFit or any third party.
-- The app works in airplane mode. Internet is never required, at any point.
+AmiFit is a local app: all your data lives on your device. There are no accounts to create, no servers storing your information, and no way for us to see what you do. Your nutrition data, health information, goals, and everything else you enter stays on your device and nowhere else.
+
+To delete everything, simply delete the app. There is nothing on our end to remove.
 
 Offline is the new black. Use in the mountains. Use it in the metro.
-
-## Languages and markets
-
-Six languages: English, Spanish, Italian, French, German, Portuguese. Search works in any of them, including mixed-language input — you can type half a word in Spanish and half in English and the app will still find the food.
-
-Primary markets — the four countries the food database is calibrated around: **Spain, Italy, France, Germany.**
-
-Other supported markets, covered through language: **Brazil** (Portuguese), **Portugal** (Portuguese), **United States** (English). The food database is not calibrated to U.S. eating habits, but the language and the rest of the app work fine there.
 
 ## Pricing
 
@@ -123,18 +87,6 @@ The offline app for people who are online enough already.
 ## How to get it
 
 The easiest way to do this: grab your iPhone. Go to the App Store. Search AmiFit. Download it. If you don't have an iPhone, consider getting one.
-
-## Target audience
-
-Health-conscious adults, roughly 30–50 years old, in Europe — who want to understand their full nutritional intake, not just macros. AmiFit fits especially well for people who:
-
-- Eat consistently from a regional whole-food diet
-- Care about privacy and prefer tools that don't require cloud accounts
-- Have subscription fatigue and prefer one-time purchases
-- Want tools that work without depending on an internet connection
-- Want to understand specific nutrient gaps (B12, magnesium, vitamin D, EPA+DHA, the Omega-6:3 ratio) instead of just hitting calorie and protein numbers
-
-See what you're missing. Literally.
 
 ## Website
 
