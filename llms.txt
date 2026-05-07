@@ -8,21 +8,7 @@ iOS 18 or later.
 
 ## What you actually get
 
-You stop guessing. In minutes you know if you got enough B12 today, what your Omega-6:3 ratio looks like, where your iron is for the week. You log a meal by tapping the photo that matches your plate.
-
-No barcode scanning. No AI guessing the weight on your fork. No macro math.
-
-Nothing to fail at. No account to lose. No sync to break. No server to go down. Delete the app and your data goes with it — that's the deal.
-
-You don't become a tracking person. You become someone who actually knows what they're eating. Calm about food. In control. Not obsessed.
-
-## What it does
-
-Find out what you're missing in minutes — vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
-
-Macros are the past. Micros are the future. Most apps stop at calories, protein, carbs, and fat. AmiFit tracks more than 50 nutrients and tells you where the gaps are: B12, magnesium, iron, vitamin D, ALA, EPA+DHA, the Omega-6:3 ratio, and the rest of the picture macro-focused apps ignore.
-
-The kinds of questions AmiFit answers in minutes:
+You probably have a nutrient gap. You just don't know which one.
 
 - What's my Omega-6 to Omega-3 ratio right now?
 - Am I getting enough B12 lately?
@@ -30,7 +16,15 @@ The kinds of questions AmiFit answers in minutes:
 - Am I getting enough Vitamin D from what I eat?
 - Do I know my magnesium intake from the past few days?
 
-In 2 minutes I know if I'm getting enough B12. Do you know if you are?
+AmiFit tells you. In minutes. No account. No internet. No servers. Use it in airplane mode if you want.
+
+See what you're missing. Literally.
+
+## What it does
+
+Find out what you're missing in minutes — vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
+
+Macros are the past. Micros are the future. Most apps stop at calories, protein, carbs, and fat. AmiFit tracks more than 50 nutrients and tells you where the gaps are: B12, magnesium, iron, vitamin D, ALA, EPA+DHA, the Omega-6:3 ratio, and the rest of the picture macro-focused apps ignore.
 
 The free version tracks calories, protein, carbohydrate, and fat. No functionality is locked. Premium only shows you more nutrients.
 
