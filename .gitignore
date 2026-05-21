@@ -80,8 +80,4 @@ target/
 staticfiles/
 media/
 
-# App Store screenshot scratch/preview files (built locally, never deployed)
-appstore-prototype.html
-appstore-contact-sheet.html
-
 # Add any other files or directories specific to your project that should be ignored
