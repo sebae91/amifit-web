@@ -61,7 +61,7 @@ Full methodology: www.amifit.app/database.
 
 Offline. No account ever created.
 
-AmiFit is a local app: all your data lives on your device. There are no accounts to create, no servers storing your information, and no way for us to see what you do. Your nutrition data, health information, goals, and everything else you enter stays on your device and nowhere else.
+AmiFit is a local app: all your data lives on your iPhone. There are no accounts to create, no servers storing your information, and no way for us to see what you do. Your nutrition data, health information, goals, and everything else you enter stays on your iPhone and nowhere else.
 
 To delete everything, simply delete the app. There is nothing on our end to remove.
 
