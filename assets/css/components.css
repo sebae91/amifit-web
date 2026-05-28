@@ -355,11 +355,11 @@ main {
   margin-bottom: var(--space-6);
 }
 
-/* Mobile: longest hook wraps to ~3 lines on narrow viewports.
+/* Mobile: longest hook wraps to ~4 lines on narrow viewports (the magnesium one).
    Reserve the space so the page below never jumps as it types/erases. */
 @media (max-width: 767px) {
   .hero__typewriter-wrap {
-    min-height: 3lh;
+    min-height: 4lh;
   }
 }
 
@@ -939,6 +939,29 @@ main {
 .footer__legal {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+
+/* Mobile: stack the footer bar contents vertically, left-aligned.
+   Desktop keeps the row layout (links | legal | contact).
+   Icon + graffiti row above stays centered as-is.
+   Horizontal padding matches the section+container indent used elsewhere
+   (24px section + 24px container = 48px) so all text on mobile lines up
+   to the same left edge. */
+@media (max-width: 767px) {
+  .footer {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+  .footer__bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .footer__links {
+    flex-direction: column;
+    gap: var(--space-1);
+    align-items: flex-start;
+  }
 }
 
 /* ─── Section reveal utility (used by IntersectionObserver) ──────── */
