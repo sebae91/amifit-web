@@ -727,6 +727,14 @@ main {
 }
 
 @media (max-width: 767px) {
+  /* The .pricing { padding: var(--space-20) ... } declaration above is invalid
+     because --space-20 isn't defined, so padding falls back to 0. That left
+     the pricing section flush against the viewport while trust and footer
+     had a 48px indent. Restore matching horizontal padding on mobile only. */
+  .pricing {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
   .pricing__inner {
     flex-direction: column;
     gap: var(--space-8);
