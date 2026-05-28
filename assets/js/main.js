@@ -219,6 +219,13 @@ function initPillsPhysics() {
   // regardless of whether the IntersectionObserver fires or not
   activePills.forEach((el) => { el.style.transform = 'translate(-9999px, 0)'; });
 
+  // On mobile we render fewer pills. The leftover ones must also be parked,
+  // otherwise their default position-absolute layout glues them to the top of
+  // the canvas (Tryptophan, Valine, etc. sitting in the corner like wallflowers).
+  Array.from(pillEls).slice(pillCount).forEach((el) => {
+    el.style.transform = 'translate(-9999px, 0)';
+  });
+
   // Per-pill state: body + timestamp when it settled (null = still moving)
   const pillState = new Map();
 

@@ -91,6 +91,21 @@ main {
   gap: var(--space-3);
 }
 
+/* Mobile: tighter nav so the Download button doesn't get clipped by the viewport edge.
+   At 375px the logo + lang toggle + button row was overflowing — shave padding and gaps. */
+@media (max-width: 767px) {
+  .nav__inner {
+    padding: 0 var(--space-2);
+    gap: var(--space-2);
+  }
+  .nav__right {
+    gap: var(--space-1);
+  }
+  .nav__right .btn {
+    padding: 10px 16px;
+  }
+}
+
 /* ─── Language menu (globe icon + dropdown) ──────────────────────── */
 .lang-menu {
   position: relative;
