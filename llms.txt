@@ -51,11 +51,11 @@ I don't photograph my food. I just eat it.
 
 ## How nutritional targets are set
 
-Full methodology with citations: www.amifit.app/targets.
+Full methodology with citations: amifit.app/targets.
 
 ## How the food database is built
 
-Full methodology: www.amifit.app/database.
+Full methodology: amifit.app/database.
 
 ## Privacy
 
@@ -90,7 +90,7 @@ The easiest way to do this: grab your iPhone. Go to the App Store. Search AmiFit
 
 ## Website
 
-www.amifit.app
+amifit.app
 
 - Landing page (`/`) — feature overview, pricing, the full nutrient list as interactive pills
 - How Targets Are Set (`/targets`) — full methodology with citations
