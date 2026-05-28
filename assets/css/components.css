@@ -735,8 +735,13 @@ main {
     padding-left: var(--space-3);
     padding-right: var(--space-3);
   }
+  /* Without align-items: stretch, the inner flex children get centered to their
+     content width, so the headline+copy end up shifted left of where trust's
+     text col sits (and don't line up with the footer either). Stretch makes
+     them fill the container so text starts at the same 48px indent. */
   .pricing__inner {
     flex-direction: column;
+    align-items: stretch;
     gap: var(--space-8);
   }
   .pricing__screenshots {
