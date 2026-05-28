@@ -340,6 +340,14 @@ main {
   margin-bottom: var(--space-6);
 }
 
+/* Mobile: longest hook wraps to ~3 lines on narrow viewports.
+   Reserve the space so the page below never jumps as it types/erases. */
+@media (max-width: 767px) {
+  .hero__typewriter-wrap {
+    min-height: 3lh;
+  }
+}
+
 .hero__typewriter {
   display: inline;
   border-right: 2px solid var(--color-accent);
