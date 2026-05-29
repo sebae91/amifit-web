@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised by your AI friend: 2026-04-01 */
+/* Last revised by your AI friend: 2026-05-29 */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -355,11 +355,14 @@ main {
   margin-bottom: var(--space-6);
 }
 
-/* Mobile: longest hook wraps to ~4 lines on narrow viewports (the magnesium one).
-   Reserve the space so the page below never jumps as it types/erases. */
+/* Mobile: the longest hook is the German magnesium line, which wraps to 5 lines
+   on a 375px screen (iPhone SE). Reserve that height so the page below never
+   jumps as the line types out and erases. German is the worst case across all
+   six languages — longest by character count and it carries the unbreakable
+   word "Magnesiumaufnahme" — so 5 lines covers every language. */
 @media (max-width: 767px) {
   .hero__typewriter-wrap {
-    min-height: 4lh;
+    min-height: 5lh;
   }
 }
 
@@ -964,6 +967,15 @@ main {
   .footer {
     padding-left: var(--space-6);
     padding-right: var(--space-6);
+  }
+  /* The two graffiti phrases flank the logo on desktop. On a phone the longest
+     pairs (French and German) are far too wide to sit beside the 48px logo at a
+     readable size — they'd have to shrink to ~8px or run off the edges. Stack
+     them instead: phrase, logo, phrase. Full size, no clipping, and the
+     mountains/metro pairing still reads top to bottom. */
+  .footer__icon {
+    flex-direction: column;
+    gap: var(--space-2);
   }
   .footer__bar {
     flex-direction: column;
