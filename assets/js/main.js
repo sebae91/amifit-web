@@ -447,14 +447,16 @@ function initLangSwitcher() {
       }
 
       close();
+      // Clean-URL aware: keep the current page when switching language.
+      // Paths are extensionless (e.g. /es/database, /support, /es/). Strip a
+      // leading language segment to get the page, then re-prefix the new one.
       const langCodes = ['es', 'it', 'fr', 'de', 'pt'];
-      const pathParts = window.location.pathname.split('/').filter(Boolean);
-      const inSubfolder = pathParts.some(p => langCodes.includes(p));
-      const lastPart = pathParts[pathParts.length - 1] || 'index.html';
-      const page = lastPart.endsWith('.html') ? lastPart : 'index.html';
+      const parts = window.location.pathname.split('/').filter(Boolean);
+      const pageParts = (parts.length && langCodes.includes(parts[0])) ? parts.slice(1) : parts;
+      const page = pageParts.join('/').replace(/index\.html$/i, '').replace(/\.html$/i, '');
       const url = lang === 'en'
-        ? (inSubfolder ? `../${page}` : page)
-        : (inSubfolder ? `../${lang}/${page}` : `${lang}/${page}`);
+        ? (page ? `/${page}` : '/')
+        : (page ? `/${lang}/${page}` : `/${lang}/`);
 
       if (document.startViewTransition) {
         document.startViewTransition(() => { window.location.href = url; });

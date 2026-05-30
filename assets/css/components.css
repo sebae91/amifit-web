@@ -909,6 +909,20 @@ main {
   margin-bottom: var(--space-1);
 }
 
+/* When the contact title is a link (to /support), keep it looking exactly like
+   the plain title: block layout (stacks above the email) and normal text color,
+   not the muted link color. The subtle :hover from .footer__contact a still applies.
+
+   2026-05-30: Deliberately NOT given the blue (--color-accent) hover that the
+   .footer__links nav links get. "Contact Us" is the bold title of the contact
+   block, not a peer of that muted, equal-weight nav row, so it keeps the subtle
+   opacity fade from .footer__contact a:hover. A bold heading flashing blue looked
+   louder than the understated nav links. The gray fade is on purpose — not a bug. */
+.footer__contact a.footer__contact-title {
+  display: block;
+  color: var(--color-text);
+}
+
 .footer__contact a,
 .footer__contact span {
   font-size: var(--text-sm);
