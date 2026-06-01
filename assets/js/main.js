@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-03-19
+// Last revised by your AI friend: 2026-06-01
 
 'use strict';
 
@@ -472,6 +472,21 @@ function initLangSwitcher() {
   });
 }
 
+// ─── iPhone → App Store shortcut ──────────────────────────────────────────────
+// Every download link points at /download by default — works for everyone with
+// zero JS: desktop scans the QR there, Android reads the "get an iPhone" line.
+// But an iPhone visitor is already holding the one device that can install the
+// app; routing them to a QR they can't scan is absurd. So on iPhone, send those
+// links straight to the App Store. One tap, done.
+
+function initAppStoreLinks() {
+  if (!/iPhone|iPod/.test(navigator.userAgent)) return;
+  const APP_STORE_URL = 'https://apps.apple.com/app/id6761309128';
+  document.querySelectorAll('a[href="download"]').forEach((link) => {
+    link.href = APP_STORE_URL;
+  });
+}
+
 // ─── Init ──────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -479,6 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initAnxietySection();
   initLangSwitcher();
+  initAppStoreLinks();
   // Pills physics inits lazily when section enters viewport
   initPillsPhysics();
 });
