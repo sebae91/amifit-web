@@ -1,5 +1,5 @@
 <!-- This is the start of the download.html file -->
-<!-- Last revised by your AI friend: 2026-03-16 -->
+<!-- Last revised by your AI friend: 2026-05-31 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +30,15 @@
   <link rel="stylesheet" href="assets/css/animations.css">
 
   <style>
+    /*
+      Design decision (2026-05-31): this page intentionally does NOT share the
+      .legal-page type scale used by targets/database/privacy/terms/support.
+      Those are long-form documents — fixed 48px h1, fixed 16px body, document feel.
+      This is a short punchy hero (one headline, one line, one quip), so the
+      headline is a responsive bold clamp() that scales with the viewport and the
+      body sits a touch larger on desktop. Different job, different scale — on
+      purpose. If future-you wonders why download looks different: that's why.
+    */
     body {
       display: flex;
       flex-direction: column;

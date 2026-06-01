@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised by your AI friend: 2026-05-29 */
+/* Last revised by your AI friend: 2026-06-01 */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -481,7 +481,10 @@ main {
 }
 
 .anxiety__answer {
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  /* min bumped 1.5→1.875rem so the punchline keeps its ~1.5x lead over the
+     questions on phones too — at the old min both collapsed near 20/24px and
+     the hierarchy went flat. Max stays 3rem; desktop is unchanged. (2026-06-01) */
+  font-size: clamp(1.875rem, 4.5vw, 3rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--color-accent);
