@@ -76,6 +76,17 @@
       color: var(--color-text-muted);
       margin-top: var(--space-3);
     }
+
+    .download-page__qr {
+      margin-top: var(--space-6);
+    }
+
+    .download-page__qr img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -121,8 +132,11 @@
     <div class="download-page container">
       <h1 class="download-page__headline">The easiest way to do this</h1>
       <p class="download-page__body">
-        Grab your iPhone. Go to the App Store. Search <strong>AmiFit</strong>. Download it.
+        Grab your iPhone. Open the camera. Scan the QR code.
       </p>
+      <figure class="download-page__qr">
+        <img src="assets/img/qr-code.png" alt="QR code to download AmiFit" width="200" height="200">
+      </figure>
       <p class="download-page__note">If you don't have an iPhone, consider getting one.</p>
     </div>
   </main>
