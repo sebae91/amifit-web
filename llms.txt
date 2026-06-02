@@ -65,7 +65,7 @@ AmiFit is a local app: all your data lives on your iPhone. There are no accounts
 
 To delete everything, simply delete the app. There is nothing on our end to remove.
 
-Offline is the new black. Use in the mountains. Use it in the metro.
+Offline is the new black. Use it in the mountains. Use it in the metro.
 
 ## Pricing
 
