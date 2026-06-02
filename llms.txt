@@ -38,7 +38,7 @@ You can also create custom foods with full nutritional detail and share them bet
 
 I don't photograph my food. I just eat it.
 
-## Nutrients tracked (50+)
+## Nutrients tracked (48)
 
 - **Macros**: Protein, Carbohydrate, Fat, Fiber, Sugar
 - **Fats**: Saturated Fat, Trans Fat, Monounsaturated Fat, Polyunsaturated Fat
