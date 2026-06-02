@@ -2,7 +2,11 @@
 .DS_Store
 
 # Node (tooling that may run locally; not part of the static site)
+# The QR/image scripts use npm packages, but this is a static HTML/CSS/JS site —
+# the manifests and installed deps must never ship or be tracked.
 node_modules/
+package.json
+package-lock.json
 
 # Logs
 *.log

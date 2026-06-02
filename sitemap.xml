@@ -2,34 +2,569 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- 42 pages: 7 page types x 6 languages. Every URL carries the full
+       hreflang cluster (all 6 languages + x-default) so each language
+       version references every alternate, including itself - per
+       Google multilingual sitemap guidance. Regenerate, never hand-edit. -->
+
+  <!-- index -->
   <url>
     <loc>https://amifit.app/</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://amifit.app/"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://amifit.app/es/"/>
-    <xhtml:link rel="alternate" hreflang="fr"        href="https://amifit.app/fr/"/>
-    <xhtml:link rel="alternate" hreflang="de"        href="https://amifit.app/de/"/>
-    <xhtml:link rel="alternate" hreflang="it"        href="https://amifit.app/it/"/>
-    <xhtml:link rel="alternate" hreflang="pt"        href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/"/>
   </url>
 
+  <!-- download -->
+  <url>
+    <loc>https://amifit.app/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/download</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/download"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/download"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/download"/>
+  </url>
+
+  <!-- targets -->
+  <url>
+    <loc>https://amifit.app/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/targets</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/targets"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/targets"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/targets"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/targets"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/targets"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/targets"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/targets"/>
+  </url>
+
+  <!-- database -->
+  <url>
+    <loc>https://amifit.app/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/database</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/database"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/database"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/database"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/database"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/database"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/database"/>
+  </url>
+
+  <!-- support -->
+  <url>
+    <loc>https://amifit.app/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/support</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/support"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/support"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/support"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/support"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/support"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/support"/>
+  </url>
+
+  <!-- privacy -->
   <url>
     <loc>https://amifit.app/privacy</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/es/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/privacy</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/privacy"/>
   </url>
 
+  <!-- terms -->
   <url>
     <loc>https://amifit.app/terms</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
   </url>
-
-  <!-- /es/, /fr/, /de/, /it/, /pt/ added when built -->
+  <url>
+    <loc>https://amifit.app/es/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/fr/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/de/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/it/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
+  </url>
+  <url>
+    <loc>https://amifit.app/pt/terms</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amifit.app/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amifit.app/fr/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://amifit.app/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://amifit.app/it/terms"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://amifit.app/pt/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amifit.app/terms"/>
+  </url>
 
 </urlset>

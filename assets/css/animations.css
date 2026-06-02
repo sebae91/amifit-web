@@ -1,50 +1,10 @@
 /* This is the start of the animations.css file */
-/* Last revised by your AI friend: 2026-03-17 */
+/* Last revised by your AI friend: 2026-06-02 */
 
 /* ─── Keyframes ──────────────────────────────────────────────────── */
 @keyframes blink {
   0%, 100% { border-right-color: var(--color-accent); }
   50%       { border-right-color: transparent; }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 25%, transparent); }
-  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-accent) 0%, transparent); }
-}
-
-/* Language word cycling */
-@keyframes word-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ─── Hero glow pulse on CTA ──────────────────────────────────────── */
-.hero__cta .app-store-badge:hover img {
-  filter: brightness(1.05);
-}
-
-/* ─── Scroll-driven: subtle scale on section entrance ─────────────── */
-@supports (animation-timeline: scroll()) {
-  .scroll-fade {
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
-  }
-}
-
-/* ─── Pricing card: featured glow ────────────────────────────────── */
-.pricing-card--featured {
-  box-shadow: 0 0 40px color-mix(in srgb, var(--color-accent) 12%, transparent);
 }
 
 /* ─── Pill drop animation (used by Matter.js fallback state) ─────── */
