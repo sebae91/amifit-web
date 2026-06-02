@@ -776,12 +776,12 @@ main {
 .footer__graffiti {
   font-family: 'Permanent Marker', cursive;
   font-size: 16px;
-  /* Deliberately faint — it's spray paint on a wall at dusk, not body copy.
-     The whole point is that it almost isn't there. It's aria-hidden, so screen
-     readers skip it entirely. Lighthouse will flag this ~3.5:1 as a contrast
-     failure and dock Accessibility a couple points; that's a knowing trade for
-     the look, not an oversight. Brighten it to pass 4.5:1 and you kill the effect. */
-  color: rgba(255, 255, 255, 0.38);
+  /* Faint spray-paint look, tuned to the floor that still passes WCAG AA.
+     At 16px this is normal text, so it needs 4.5:1: 0.5 white on the near-black
+     bg lands ~5:1. It's aria-hidden so screen readers skip it; this is the
+     lowest opacity that keeps Lighthouse Accessibility at 100. Go fainter (it
+     was 0.38 = 3.5:1) and you drop below 4.5:1 and lose the points. */
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.3;
   user-select: none;
   white-space: nowrap;
