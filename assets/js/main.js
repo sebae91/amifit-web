@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-06-01
+// Last revised by your AI friend: 2026-06-08
 
 'use strict';
 
@@ -25,9 +25,21 @@ function initTypewriter() {
   let pauseTimer = null;
 
   const TYPING_SPEED   = 28;   // ms per character (typing)
-  const DELETE_SPEED   = 18;   // ms per character (deleting)
-  const PAUSE_END      = 3600; // ms — pause at end of line before delete
+  const DELETE_SPEED   = 28;   // ms per character (deleting)
   const PAUSE_EMPTY    = 400;  // ms — pause at empty before next line
+
+  // How long a fully-typed line holds before it deletes — scaled to its length,
+  // the same MECHANISM amifit-video uses to time its headlines (reveal.html): a
+  // base settle time plus a reading allowance of READ_WPS words per second, so
+  // longer lines stay longer. It counts words in whatever line it's handed, so
+  // every language self-adjusts — no per-line, per-language tuning needed.
+  // (The pace here is the site's own — quicker than the video, which is slower
+  // on purpose.) We type the line out rather than fading it in whole, and the
+  // reader's already reading during that, so we subtract the type-out time:
+  // total on-screen time (typing + hold) lands on the reading budget below.
+  const READ_BASE_SEC = 0.7;   // base settle time, seconds
+  const READ_WPS      = 3.8;   // reading allowance, words per second
+  const HOLD_FLOOR    = 1200;  // ms — never hold less than this, however short the line
 
   function tick() {
     const line = TYPEWRITER_LINES[lineIndex];
@@ -47,7 +59,10 @@ function initTypewriter() {
       el.textContent = line.slice(0, charIndex);
       if (charIndex === line.length) {
         isDeleting = true;
-        pauseTimer = setTimeout(tick, PAUSE_END);
+        const words  = line.trim().split(/\s+/).length;
+        const budget = (READ_BASE_SEC + words / READ_WPS) * 1000;          // total time the line should stay readable
+        const hold   = Math.max(HOLD_FLOOR, budget - line.length * TYPING_SPEED);  // minus the type-out already spent reading
+        pauseTimer = setTimeout(tick, hold);
         return;
       }
       pauseTimer = setTimeout(tick, TYPING_SPEED);
@@ -102,98 +117,64 @@ function initScrollReveal() {
   });
 }
 
-// ─── Anxiety Questions (staggered scroll reveal) ──────────────────────────────
-// Each question fades in one at a time as the section scrolls into view.
+// ─── Anxiety Questions (scroll-driven spotlight) ──────────────────────────────
+// Lights the question nearest the vertical centre of the viewport and dims it
+// again as you scroll past — driven by scroll position, never a timer, so it
+// reads like the rest of the page instead of a slideshow happening at you.
+// JS off: every question simply stays in its resting colour, fully legible.
 
 function initAnxietySection() {
-  const questions = document.querySelectorAll('.anxiety__q');
-  const answer    = document.querySelector('.anxiety__answer');
-  if (!questions.length) return;
+  const questions = Array.from(document.querySelectorAll('.anxiety__q'));
+  const section   = document.querySelector('.anxiety');
+  if (!questions.length || !section) return;
 
-  const section = document.querySelector('.anxiety');
-  if (!section) return;
+  // Reduced motion: no moving spotlight. Leave every line resting and readable.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Start the cycling thought loop (runs regardless of how section was revealed)
-  function startThoughtLoop() {
-    let current = -1;
-    function nextThought() {
-      questions.forEach((q) => {
-        q.classList.add('anxiety__q--dim');
-        q.classList.remove('anxiety__q--lit');
-      });
-      current = (current + 1) % questions.length;
-      questions[current].classList.remove('anxiety__q--dim');
-      questions[current].classList.add('anxiety__q--lit');
-      setTimeout(nextThought, 1800);
-    }
-    nextThought();
-  }
+  let ticking = false;
 
-  // Show everything instantly — no stagger, no transitions
-  const clarification = document.querySelector('.anxiety__clarification');
-  function showInstant() {
-    questions.forEach((q) => {
-      q.style.transition = 'none';
-      q.style.opacity = '1';
-      q.style.transform = 'none';
-      q.classList.add('anxiety__q--visible');
+  // Whichever line sits closest to the middle of the screen is the one you're
+  // reading — light it. Lines above it are read (resting); lines below it are
+  // still coming (recessed). Three states, one decided index.
+  function lightNearest() {
+    ticking = false;
+    const centre = window.innerHeight / 2;
+    let nearestIdx = 0;
+    let best = Infinity;
+    questions.forEach((q, i) => {
+      const rect = q.getBoundingClientRect();
+      const dist = Math.abs(rect.top + rect.height / 2 - centre);
+      if (dist < best) { best = dist; nearestIdx = i; }
     });
-    if (answer) {
-      answer.style.transition = 'none';
-      answer.classList.add('anxiety__answer--visible');
-    }
-    if (clarification) {
-      clarification.style.transition = 'none';
-      clarification.style.opacity = '1';
-    }
-    startThoughtLoop();
+    questions.forEach((q, i) => {
+      q.classList.toggle('anxiety__q--focused', i === nearestIdx);
+      q.classList.toggle('anxiety__q--upcoming', i > nearestIdx);
+    });
   }
 
-  // rAF defers until after browser scroll restoration
-  requestAnimationFrame(() => {
-    // Already above viewport on load — show instantly
-    if (section.getBoundingClientRect().bottom < 0) {
-      showInstant();
-      return;
-    }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(lightNearest);
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  // Only listen to scroll while the section is actually on screen — no work
+  // (and no stray lit line) while you're elsewhere on the page.
+  const gate = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        lightNearest();
+      } else {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        questions.forEach((q) => q.classList.remove('anxiety__q--focused', 'anxiety__q--upcoming'));
+      }
+    });
+  }, { threshold: 0 });
 
-        // Scrolled past too fast — show instantly
-        if (entry.boundingClientRect.bottom < 0) {
-          showInstant();
-          observer.unobserve(section);
-          return;
-        }
-
-        // Entering from above (scrolling up) — show instantly
-        if (entry.boundingClientRect.top < 0) {
-          showInstant();
-          observer.unobserve(section);
-          return;
-        }
-
-        // Normal scroll — staggered reveal
-        questions.forEach((q, i) => {
-          setTimeout(() => q.classList.add('anxiety__q--visible'), i * 500);
-        });
-
-        if (answer) {
-          setTimeout(() => {
-            answer.classList.add('anxiety__answer--visible');
-          }, (questions.length - 1) * 500 + 500);
-        }
-
-        setTimeout(startThoughtLoop, questions.length * 500 + 1800);
-
-        observer.unobserve(section);
-      });
-    }, { threshold: 0 });
-
-    observer.observe(section);
-  });
+  gate.observe(section);
 }
 
 // ─── Pills Physics (Matter.js) ────────────────────────────────────────────────

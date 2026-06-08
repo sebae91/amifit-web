@@ -1,5 +1,5 @@
 /* This is the start of the animations.css file */
-/* Last revised by your AI friend: 2026-06-02 */
+/* Last revised by your AI friend: 2026-06-08 */
 
 /* ─── Keyframes ──────────────────────────────────────────────────── */
 @keyframes blink {
@@ -65,6 +65,32 @@
 
 ::view-transition-new(root) {
   animation: 250ms ease slide-in-right;
+}
+
+/* ─── Anxiety answer reveal (scroll-driven, progressive enhancement) ─ */
+/* The questions' spotlight lives in main.js — it has to compare siblings to
+   find the one nearest centre, which CSS can't do. The answer only needs to
+   rise as it arrives, and that's per-element, so CSS owns it on its own
+   timeline. Base state (components.css) is fully visible, so anything without
+   scroll-timeline support just shows it outright. */
+@keyframes anxiety-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .anxiety__answer {
+      animation: anxiety-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 15% entry 65%;
+    }
+    .anxiety__clarification {
+      animation: anxiety-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 35% entry 85%;
+    }
+  }
 }
 
 /* This is the end of the animations.css file */

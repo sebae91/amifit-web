@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised by your AI friend: 2026-06-02 */
+/* Last revised by your AI friend: 2026-06-08 */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -371,40 +371,31 @@ main {
   margin-bottom: var(--space-4);
 }
 
+/* Three states, by where a line sits relative to the one you're reading:
+   · passed   — above the focus (default #888 muted): already read, it settles back
+   · focused  — nearest the centre of the screen (white): the thought you're on
+   · upcoming — below the focus (darker): not faced yet, waiting for you
+   Which is which is decided by scroll position in main.js (initAnxietySection).
+   The colour transition is the spotlight gliding from one line to the next. */
 .anxiety__q {
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 600;
   color: var(--color-text-muted);
   letter-spacing: -0.02em;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
   max-width: 36ch;
   margin: 0 auto;
+  transition: color 0.35s ease, opacity 0.35s ease;
 }
 
-.anxiety__q--visible {
-  opacity: 1;
-  transform: translateY(0);
+/* The one line nearest the centre of your screen — the thought you're on. */
+.anxiety__q--focused {
+  color: var(--color-text);
 }
 
-.anxiety__q--dim {
+/* Still ahead of you — recessed until you scroll down to it.
+   Same dim as the original design: muted gray at 0.2 opacity. */
+.anxiety__q--upcoming {
   opacity: 0.2;
-  color: var(--color-text-muted);
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.anxiety__q--lit {
-  opacity: 1 !important;
-  color: var(--color-text) !important;
-  animation: thought-intrude 0.12s ease forwards;
-}
-
-/* The thought pops in like it interrupted something. */
-@keyframes thought-intrude {
-  0%   { opacity: 0.2; }
-  40%  { opacity: 1.0; }
-  100% { opacity: 1.0; }
 }
 
 .anxiety__answer {
@@ -417,16 +408,10 @@ main {
   color: var(--color-accent);
   text-shadow: 0 0 40px color-mix(in srgb, var(--color-accent) 60%, transparent),
                0 0 80px color-mix(in srgb, var(--color-accent) 30%, transparent);
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
   line-height: 1.3;
   margin-top: var(--space-6);
-}
-
-.anxiety__answer--visible {
-  opacity: 1;
-  transform: translateY(0);
+  /* Visible by default (no-JS / no scroll-timeline safe). The fade-up as it
+     scrolls into view is a pure-CSS enhancement — see animations.css. */
 }
 
 .anxiety__clarification {
@@ -435,12 +420,6 @@ main {
   margin: var(--space-3) auto 0;
   text-align: center;
   max-width: 44ch;
-  opacity: 0;
-  transition: opacity 0.6s ease 1.2s;
-}
-
-.anxiety__answer--visible ~ .anxiety__clarification {
-  opacity: 1;
 }
 
 /* ─── Inline Pill Highlights ─────────────────────────────────────── */
