@@ -253,6 +253,7 @@ main {
   line-height: 1.05;
   letter-spacing: -0.03em;
   max-width: 16ch;
+  text-wrap: balance;   /* even out wraps so short words (e.g. FR "un") don't strand at a line end */
   margin: 0 auto var(--space-3);
 }
 
