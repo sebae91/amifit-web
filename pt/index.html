@@ -1,11 +1,11 @@
 <!-- This is the start of the pt/index.html file -->
-<!-- Last revised by your AI friend: 2026-06-14 -->
+<!-- Last revised by your AI friend: 2026-06-20 -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AmiFit — Rastreador de Micronutrientes Offline para iPhone</title>
+  <title>AmiFit: Rastreador de Micronutrientes Offline para iPhone</title>
   <meta name="description" content="Veja o que realmente te falta. Vitaminas, minerais, EPA+DHA e a proporção Ômega-6:3. Sem conta. Sem internet. Sem servidores.">
 
   <link rel="canonical" href="https://amifit.app/pt/">
@@ -20,7 +20,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://amifit.app/pt/">
   <meta property="og:locale"      content="pt_BR">
-  <meta property="og:title"       content="AmiFit — Rastreador de Micronutrientes Offline para iPhone">
+  <meta property="og:title"       content="AmiFit: Rastreador de Micronutrientes Offline para iPhone">
   <meta property="og:description" content="Veja o que realmente te falta. Vitaminas, minerais, EPA+DHA e a proporção Ômega-6:3. Sem conta. Sem internet. Sem servidores.">
   <meta property="og:image"       content="https://amifit.app/assets/img/og-image.jpg">
   <meta name="twitter:card"       content="summary_large_image">
@@ -38,6 +38,81 @@
       "Sei se estou exagerando na vitamina A. Você sabe?",
       "Sei se estou consumindo zinco suficiente essa semana. Você sabe?"
     ];
+  </script>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "name": "AmiFit",
+        "operatingSystem": "iOS",
+        "applicationCategory": "HealthApplication",
+        "description": "Rastreador de micronutrientes offline para iPhone. Monitora vitaminas, minerais, ácidos graxos ômega-3, aminoácidos e mais. Sem conta. Seus dados nunca saem do seu iPhone. Disponível em inglês, espanhol, francês, alemão, italiano e português.",
+        "inLanguage": ["en", "es", "fr", "de", "it", "pt"],
+        "url": "https://amifit.app/pt/",
+        "offers": [
+          {
+            "@type": "Offer",
+            "description": "Assinatura mensal",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "description": "Acesso vitalício, pagamento único",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O AmiFit funciona offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. O AmiFit funciona 100% offline. Nunca é necessária conexão com a internet para usá-lo. Todos os dados ficam salvos localmente no seu iPhone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O AmiFit exige uma conta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nenhuma conta necessária. Baixe o app e comece a registrar na hora. Sem e-mail, sem cadastro, sem nuvem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais nutrientes o AmiFit monitora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O AmiFit monitora 48 nutrientes, incluindo todas as vitaminas principais (A, C, D, E, K, B1, B2, B3, B5, B6, B9, B12), colina, minerais (cálcio, magnésio, ferro, zinco, potássio, selênio e mais), ácidos graxos ômega-3 (EPA, DHA, ALA), ômega-6, todos os 9 aminoácidos essenciais, fibra, sódio, colesterol e água."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Existe opção de pagamento único?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. O AmiFit oferece uma compra vitalícia única além da assinatura mensal. Pague uma vez, sem assinatura e sem cobranças recorrentes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais idiomas o AmiFit oferece?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O AmiFit está disponível em inglês, espanhol, francês, alemão, italiano e português. Você pode buscar alimentos em qualquer um desses idiomas e até misturar idiomas na mesma busca."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 
