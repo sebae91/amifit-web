@@ -2,19 +2,19 @@
 
 Offline micronutrient tracker for iPhone.
 
-You probably have a nutrient gap. You just don't know which one. AmiFit tells you. In minutes. No account. No internet. No servers. Use it in airplane mode if you want.
+You probably have a nutrient gap. You just don't know which one. AmiFit tells you. No account. No internet. No servers. Use it in airplane mode if you want.
 
 ## What you actually get
 
 You probably have a nutrient gap. You just don't know which one.
 
 - What's my Omega-6 to Omega-3 ratio right now?
-- Am I getting enough B12 lately?
+- Do I get enough B12?
 - How much iron have I gotten this week?
-- Am I getting enough Vitamin D from what I eat?
-- Do I know my magnesium intake from the past few days?
+- Do I get enough Vitamin D from what I eat?
+- Have I had enough magnesium this week?
 
-AmiFit tells you. In minutes. No account. No internet. No servers. Use it in airplane mode if you want.
+AmiFit tells you. No account. No internet. No servers. Use it in airplane mode if you want.
 
 See what you're missing. Literally.
 
