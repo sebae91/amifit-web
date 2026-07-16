@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-06-08
+// Last revised by your AI friend: 2026-07-15 (Opus 4.8)
 
 'use strict';
 
@@ -7,12 +7,14 @@
 // Cycles through the hero hook lines one at a time, character by character.
 // These aren't hypothetical. They're the questions that got the app built.
 
+// B12 is the baked-in HTML fallback (the one crawlers see), so it lives LAST:
+// the page opens on it, the rotation cycles the others, then loops home to it.
 const TYPEWRITER_LINES = window.TYPEWRITER_LINES || [
   "I can tell you my magnesium intake right now. Can you tell me yours?",
-  "In 2 minutes I know if I'm getting enough B12. Do you know if you are?",
   "I know exactly how much iron I got this week. Do you?",
   "I know if I'm overdoing Vitamin A. Do you?",
-  "I know if I'm getting enough zinc this week. Do you know if you are?"
+  "I know if I'm getting enough zinc this week. Do you know if you are?",
+  "In 2 minutes I know if I'm getting enough B12. Do you know if you are?"
 ];
 
 function initTypewriter() {
@@ -69,14 +71,32 @@ function initTypewriter() {
     }
   }
 
-  // Respect reduced motion — just show the first line statically
+  // Respect reduced motion — leave whatever line the HTML already shows (the
+  // baked-in SEO fallback) in place; only drop the caret. Empty span (the
+  // localized pages) falls back to the first line.
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    el.textContent = TYPEWRITER_LINES[0];
+    if (!el.textContent.trim()) el.textContent = TYPEWRITER_LINES[0];
     el.style.borderRight = 'none';
     return;
   }
 
-  pauseTimer = setTimeout(tick, 800);
+  // If the HTML already shows one of the lines (the baked-in SEO fallback),
+  // continue from it: hold it, then delete letter by letter, then cycle on.
+  // This avoids wiping the full sentence and retyping from scratch, which
+  // reads as a jarring snap on load.
+  const existing = el.textContent.trim();
+  const startIdx = TYPEWRITER_LINES.indexOf(existing);
+  if (startIdx !== -1) {
+    lineIndex  = startIdx;
+    charIndex  = existing.length;
+    isDeleting = true;
+    const words  = existing.split(/\s+/).length;
+    const budget = (READ_BASE_SEC + words / READ_WPS) * 1000;
+    const hold   = Math.max(HOLD_FLOOR, budget - existing.length * TYPING_SPEED);
+    pauseTimer = setTimeout(tick, hold);
+  } else {
+    pauseTimer = setTimeout(tick, 800);
+  }
 }
 
 // ─── Scroll Reveal (IntersectionObserver) ────────────────────────────────────
@@ -215,6 +235,11 @@ function initPillsPhysics() {
   const SETTLE_SPEED   = 0.25;  // velocity below this = settled
   const RECYCLE_AFTER  = 6000;  // ms a pill sits settled before recycling
   const RECYCLE_FADE   = 500;   // ms fade-out duration
+  // Rest pills a few px above the canvas bottom. The canvas clips at its bottom
+  // edge (overflow: hidden), and Matter lets settled bodies sink ~1-2px into a
+  // static floor, so a floor flush with the clip line shaves the bottom border
+  // off the resting pills. This inset keeps them inside the visible area.
+  const FLOOR_INSET    = 5;     // px the floor sits above the canvas bottom
 
   function pillWidth(el) {
     const chars = el.textContent.trim().length;
@@ -308,7 +333,7 @@ function initPillsPhysics() {
     runner = Matter.Runner.create();
 
     walls = [
-      Matter.Bodies.rectangle(W / 2,  H + 25, W + 100, 50,    { isStatic: true }), // floor
+      Matter.Bodies.rectangle(W / 2,  H + 25 - FLOOR_INSET, W + 100, 50,    { isStatic: true }), // floor
       Matter.Bodies.rectangle(-25,    H / 2,  50,      H * 6, { isStatic: true }), // left
       Matter.Bodies.rectangle(W + 25, H / 2,  50,      H * 6, { isStatic: true }), // right
     ];
@@ -378,7 +403,7 @@ function initPillsPhysics() {
     const W = canvas.offsetWidth;
     const H = canvas.offsetHeight;
     Matter.World.remove(engine.world, walls);
-    walls[0] = Matter.Bodies.rectangle(W / 2,  H + 25, W + 100, 50,    { isStatic: true }); // floor
+    walls[0] = Matter.Bodies.rectangle(W / 2,  H + 25 - FLOOR_INSET, W + 100, 50,    { isStatic: true }); // floor
     walls[1] = Matter.Bodies.rectangle(-25,    H / 2,  50,      H * 6, { isStatic: true }); // left
     walls[2] = Matter.Bodies.rectangle(W + 25, H / 2,  50,      H * 6, { isStatic: true }); // right
     Matter.World.add(engine.world, walls);
