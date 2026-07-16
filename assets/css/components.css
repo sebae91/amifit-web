@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised by your AI friend: 2026-06-08 */
+/* Last revised: 2026-07-16 (Fable 5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -275,6 +275,10 @@ main {
   justify-content: center;
 }
 
+/* The min-heights here (and in the mobile block below) are the no-JS
+   fallback. With JS, initTypewriter measures the tallest hook line for the
+   actual language at the actual width and sets an exact inline min-height,
+   so the content below never jumps when a line wraps mid-typing. */
 .hero__typewriter-wrap {
   font-size: var(--text-xl);
   color: var(--color-text-muted);
@@ -448,21 +452,79 @@ main {
   padding: var(--space-6) var(--space-3);
 }
 
+/* Copy, screenshots and graffiti are three separate grid items (the graffiti
+   is a direct child of the inner, not nested in the text column) so the
+   graffiti can relocate per width: under the copy on wide screens, spanning
+   the full width below everything at mid widths — where the copy column gets
+   too narrow and the graffiti would otherwise stack one word per line.
+   Base = phones: single column, same visual order as before. */
 .trust__inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-10);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'text'
+    'graffiti'
+    'shots';
 }
 
 .trust__text-col {
-  flex: 1;
-  min-width: 0;
+  grid-area: text;
+}
+
+.trust__inner > .graffiti {
+  grid-area: graffiti;
 }
 
 .trust__screenshot-col {
-  flex: 0 0 auto;
+  grid-area: shots;
   display: flex;
   gap: var(--space-4);
+  justify-self: center;
+  margin-top: var(--space-6);
+}
+
+/* Side-by-side at every desktop width, like always. The copy column shrinks
+   as far as it must — narrow, hard-wrapped copy next to big screenshots is
+   the design (the 24vw screenshot clamp below hands the copy what room it
+   can). The graffiti is the one thing that can't take the squeeze (it turns
+   into a one-word tower), so it gets its own full-width row below.
+   Screenshots top-align with the headline. */
+@media (min-width: 768px) {
+  .trust__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'text shots'
+      'graffiti graffiti';
+    column-gap: var(--space-10);
+    align-items: start;
+  }
+  .trust__screenshot-col {
+    justify-self: auto;
+    margin-top: 0;
+  }
+}
+
+/* Wide: from 1100 up the copy column is ~330px+ — enough for the graffiti to
+   sit back under the copy wrapping in a few readable lines (tuned against
+   the German line, the longest of the six). align-self end/start keeps copy
+   and graffiti hugging each other while the pair stays vertically centered
+   against the screenshots (the leftover row space distributes evenly above
+   and below). */
+@media (min-width: 1100px) {
+  .trust__inner {
+    grid-template-areas:
+      'text shots'
+      'graffiti shots';
+  }
+  .trust__text-col {
+    align-self: end;
+  }
+  .trust__inner > .graffiti {
+    align-self: start;
+  }
+  .trust__screenshot-col {
+    align-self: center;
+  }
 }
 
 .trust__headline {
@@ -481,16 +543,6 @@ main {
   margin-bottom: var(--space-2);
 }
 
-@media (max-width: 767px) {
-  .trust__inner {
-    flex-direction: column;
-    gap: var(--space-6);
-  }
-  .trust__screenshot-col {
-    align-self: center;
-  }
-}
-
 .screenshot-card {
   flex: 0 0 auto;
   scroll-snap-align: center;
@@ -501,7 +553,10 @@ main {
 
 .screenshot-card img {
   display: block;
-  width: clamp(200px, 28vw, 280px);
+  /* 24vw (was 28vw): below ~1170px the screenshots give ground as the window
+     narrows instead of sitting at their 280px max while the copy column
+     absorbs the whole squeeze. At >=1170px nothing changes. */
+  width: clamp(200px, 24vw, 280px);
   height: auto;
   border-radius: 36px;
   border: 2px solid rgba(255, 255, 255, 0.55);
@@ -523,24 +578,103 @@ main {
 /* ─── Pricing Section ─────────────────────────────────────────────── */
 .pricing {
   background-color: var(--color-bg);
-  padding: var(--space-20) var(--space-3);
+  /* No padding by design — the container inside provides the horizontal
+     indent on desktop, and the sections above and below carry the vertical
+     rhythm. (Historically an accident: the old declaration used
+     var(--space-20), which doesn't exist, and one invalid var() voids the
+     whole shorthand. But this spacing is what the site looks like, so it's
+     now deliberate.) Phone and mid-width exceptions below. */
+  padding: 0;
 }
 
+/* Phones: without a horizontal indent the section sits flush against the
+   viewport edge while trust and footer are indented. */
+@media (max-width: 767px) {
+  .pricing {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+}
+
+/* Mid widths: the trust graffiti runs full-width right above this section and
+   would nearly touch the pricing screenshots without some air. Wide screens
+   and phones keep the tight rhythm — there the graffiti lives inside the
+   copy column and provides its own separation. */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .pricing {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* Mirror of .trust__inner (see the comment there): grid with the graffiti as
+   its own item, screenshots on the left this time. Base = phones. */
 .pricing__inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-10);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'shots'
+    'text'
+    'graffiti';
 }
 
 .pricing__screenshots {
-  flex: 0 0 auto;
+  grid-area: shots;
   display: flex;
   gap: var(--space-4);
+  justify-self: center;
+  margin-bottom: var(--space-8);
 }
 
 .pricing__copy {
-  flex: 1;
-  min-width: 0;
+  grid-area: text;
+}
+
+.pricing__inner > .graffiti {
+  grid-area: graffiti;
+}
+
+@media (min-width: 768px) {
+  .pricing__inner {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      'shots text'
+      'graffiti graffiti';
+    column-gap: var(--space-10);
+    align-items: start;
+  }
+  .pricing__screenshots {
+    justify-self: auto;
+    margin-bottom: 0;
+  }
+}
+
+/* Mid widths only: the graffiti row lands under the screenshots, which sit on
+   the LEFT here — cancel the marker's default push to the right so it lines
+   up with what it sits under. Trust keeps the default (its screenshots are
+   on the right, where the marker already leans). */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .pricing__inner > .graffiti {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .pricing__inner {
+    grid-template-areas:
+      'shots text'
+      'shots graffiti';
+  }
+  .pricing__copy {
+    align-self: end;
+  }
+  .pricing__inner > .graffiti {
+    align-self: start;
+  }
+  .pricing__screenshots {
+    align-self: center;
+  }
 }
 
 .pricing__headline {
@@ -563,29 +697,6 @@ main {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   margin-top: var(--space-3);
-}
-
-@media (max-width: 767px) {
-  /* The .pricing { padding: var(--space-20) ... } declaration above is invalid
-     because --space-20 isn't defined, so padding falls back to 0. That left
-     the pricing section flush against the viewport while trust and footer
-     had a 48px indent. Restore matching horizontal padding on mobile only. */
-  .pricing {
-    padding-left: var(--space-3);
-    padding-right: var(--space-3);
-  }
-  /* Without align-items: stretch, the inner flex children get centered to their
-     content width, so the headline+copy end up shifted left of where trust's
-     text col sits (and don't line up with the footer either). Stretch makes
-     them fill the container so text starts at the same 48px indent. */
-  .pricing__inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-8);
-  }
-  .pricing__screenshots {
-    justify-content: center;
-  }
 }
 
 /* ─── Pills Section ───────────────────────────────────────────────── */

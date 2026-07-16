@@ -2,11 +2,9 @@
 
 Offline micronutrient tracker for iPhone.
 
-You probably have a nutrient gap. You just don't know which one. AmiFit tells you. No account. No internet. No servers. Use it in airplane mode if you want.
+You probably have a nutrient gap. You just don't know which one. See what you're actually missing. Vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
 
 ## What you actually get
-
-You probably have a nutrient gap. You just don't know which one.
 
 - What's my Omega-6 to Omega-3 ratio right now?
 - Do I get enough B12?
@@ -18,10 +16,6 @@ AmiFit tells you. No account. No internet. No servers. Use it in airplane mode i
 
 See what you're missing. Literally.
 
-## What it does
-
-Find out what you're missing in minutes — vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
-
 Macros are the past. Micros are the future.
 
 ## How food logging works
@@ -30,11 +24,9 @@ AI scanning is amazing, but you never know if the weight it guesses is right. An
 
 There's a third option. Real photos of real portions in your pocket. You'll know what 275g of cheeseburger looks like. Most people don't.
 
-Every photo in the app is original — personally photographed and weighed with real portions. No stock images. Search a food, see actual photographs at common portions, tap the one that looks like your plate, and the grams are set automatically. If you had two of that serving, increase the count. If you'd rather estimate manually, compare your plate to the photo and enter grams directly.
+Every photo in the app is original — personally photographed and weighed with real portions. No stock images are used. Tap the photo that looks like your portion and the grams are set automatically. If you had more than one of that serving, increase the number of portions. Or compare your food with the photos to estimate your portion size and enter the grams manually.
 
-The displayed weight reflects the edible portion only — peels, bones, seeds, and shells excluded.
-
-You can also create custom foods with full nutritional detail and share them between devices using a built-in QR code export. No internet needed for that either.
+Photos show food as it naturally appears, but the weight reflects only the edible portion, excluding peels you don't eat, bones, seeds, and other inedible parts.
 
 I don't photograph my food. I just eat it.
 
@@ -57,6 +49,10 @@ Full methodology with citations: amifit.app/targets.
 
 Full methodology: amifit.app/database.
 
+## Languages
+
+AmiFit supports six languages: English, Spanish, Italian, French, German, and Portuguese.
+
 ## Privacy
 
 Offline. No account ever created.
@@ -69,24 +65,23 @@ Offline is the new black. Use it in the mountains. Use it in the metro.
 
 ## Pricing
 
-Use it for free. Track your calories, protein, carbohydrate, and fat for free. No functionality is locked. Premium only shows you more nutrients.
+Use it for free (no expiration). Track your calories, protein, carbohydrate and fat for free. No functionality is locked. Premium only shows you more nutrients.
 
-- **Premium**: €7.49 per month. Cancel anytime through the App Store.
-- **Lifetime**: €99 one-time. With Lifetime, no more checking Apple's servers to verify your subscription.
+Try Premium for €7.49 per month. Or get Lifetime for €99. With Lifetime, no more checking Apple's servers to verify your subscription.
 
-No free trial. The free version is fully functional for macro tracking and gives a complete picture of how the app works before any upgrade.
+A monthly subscription requires a periodic internet connection for Apple to verify your subscription status. The lifetime option is a one-time purchase, and once completed, the app never needs an internet connection again.
 
 The offline app for people who are online enough already.
 
 ## Requirements
 
-- iOS 18 or later.
-- Runs on any iPhone that supports iOS 18, including older models like iPhone XR and iPhone SE (3rd generation).
-- Single-device design. AmiFit does not sync between devices in real time. iCloud Backup transfers data to a new device on the same Apple ID, but ongoing changes do not propagate live across devices.
+Requires iOS 18.0 or later.
 
 ## How to get it
 
-The easiest way to do this: grab your iPhone. Go to the App Store. Search AmiFit. Download it. If you don't have an iPhone, consider getting one.
+Download on the App Store: amifit.app/download
+
+If you don't have an iPhone, consider getting one.
 
 ## Website
 

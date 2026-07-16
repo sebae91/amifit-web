@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised by your AI friend: 2026-07-15 (Opus 4.8)
+// Last revised: 2026-07-16 (Fable 5)
 
 'use strict';
 
@@ -79,6 +79,32 @@ function initTypewriter() {
     el.style.borderRight = 'none';
     return;
   }
+
+  // Reserve the height of the tallest hook line so the page below never jumps
+  // as lines type out, wrap to a second line and delete again. Measured, not
+  // guessed: every language × viewport width has a different worst case, so
+  // render each line at the real width (all inside one task — nothing paints
+  // in between) and keep the max. The CSS min-heights are the no-JS fallback.
+  const wrap = el.parentElement;
+  let remeasureTimer = null;
+
+  function reserveTallestLine() {
+    const current = el.textContent;
+    wrap.style.minHeight = '0';
+    let tallest = 0;
+    TYPEWRITER_LINES.forEach((line) => {
+      el.textContent = line;
+      tallest = Math.max(tallest, wrap.offsetHeight);
+    });
+    el.textContent = current;
+    wrap.style.minHeight = `${tallest}px`;
+  }
+
+  reserveTallestLine();
+  window.addEventListener('resize', () => {
+    clearTimeout(remeasureTimer);
+    remeasureTimer = setTimeout(reserveTallestLine, 150);
+  });
 
   // If the HTML already shows one of the lines (the baked-in SEO fallback),
   // continue from it: hold it, then delete letter by letter, then cycle on.
