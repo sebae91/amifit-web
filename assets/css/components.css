@@ -195,6 +195,13 @@ main {
   transform: scale(0.97);
 }
 
+/* .btn's inline-flex beats the UA [hidden] rule, so restore it explicitly.
+   Used by the download page's nav button, which only exists for iPhone
+   visitors — main.js reveals it there. */
+.btn[hidden] {
+  display: none;
+}
+
 .btn--primary {
   background-color: var(--color-text);
   color: var(--color-bg);
@@ -504,6 +511,7 @@ main {
   }
 }
 
+
 /* Wide: from 1100 up the copy column is ~330px+ — enough for the graffiti to
    sit back under the copy wrapping in a few readable lines (tuned against
    the German line, the longest of the six). align-self end/start keeps copy
@@ -649,11 +657,49 @@ main {
   }
 }
 
-/* Mid widths: in its full-width row the graffiti is a banner between
-   sections, so center it (both sections). The marker's default right-lean
-   only makes sense inside a column — with short lines (EN/ES/IT) a leaned
-   banner read as "vaguely off-center" instead of deliberate. */
+/* ─── Mid-width graffiti placement variants ──────────────────────────
+   At mid widths the graffiti goes under whichever column renders SHORTER —
+   it fills that column's void at zero height cost — and spans both as a
+   banner when the columns are about level. CSS can't compare rendered
+   sibling heights, so main.js (initGraffitiPlacement) measures and sets
+   these classes; without JS neither is set and the banner above applies.
+
+   min-content on the screenshot column is load-bearing in the under-shots
+   variants: with auto, the graffiti's one-line width (~800px) would become
+   the column width and crush the text. min-content lets the fixed-width
+   screenshots set the width and the graffiti wraps to match. */
 @media (min-width: 768px) and (max-width: 1099px) {
+  .trust__inner--graffiti-under-shots {
+    grid-template-columns: minmax(0, 1fr) min-content;
+    grid-template-areas:
+      'text shots'
+      'text graffiti';
+  }
+  .trust__inner--graffiti-under-text {
+    grid-template-areas:
+      'text shots'
+      'graffiti shots';
+  }
+  .pricing__inner--graffiti-under-shots {
+    grid-template-columns: min-content minmax(0, 1fr);
+    grid-template-areas:
+      'shots text'
+      'graffiti text';
+  }
+  .pricing__inner--graffiti-under-text {
+    grid-template-areas:
+      'shots text'
+      'shots graffiti';
+  }
+}
+
+/* Below the wide layout the graffiti sits in a row of its own (banner at mid
+   widths, stacked flow on phones), so center it in both sections. The
+   marker's default right-lean only makes sense inside a column — with short
+   lines (EN/ES/IT) a leaned row read as "vaguely off-center" instead of
+   deliberate. On real phones this changes nothing visible: the line fills
+   the full width and wraps anyway. */
+@media (max-width: 1099px) {
   .trust__inner > .graffiti,
   .pricing__inner > .graffiti {
     margin-left: auto;
@@ -849,6 +895,10 @@ main {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  /* Insurance: the bar goes vertical below 1024, but if a long-language
+     line ever outgrows a width just above that, wrap beats colliding. */
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
   width: 100%;
   max-width: var(--max-width);
 }
@@ -887,6 +937,24 @@ main {
   align-items: center;
 }
 
+/* Stacked variant — set by main.js (initFooterBar) the moment the bar's
+   three groups (links / legal / contact) stop fitting on one line, measured
+   per language instead of a worst-case breakpoint: German's link names
+   outgrow the row ~150px sooner than English's, and a fixed number made
+   the short languages go vertical early for no reason. No JS: phones stack
+   via the mobile block below, mid widths fall back to the bar's flex-wrap. */
+.footer__bar--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.footer__bar--stacked .footer__links {
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: flex-start;
+}
+
 .footer__links a {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
@@ -903,12 +971,10 @@ main {
   color: var(--color-text-muted);
 }
 
-/* Mobile: stack the footer bar contents vertically, left-aligned.
-   Desktop keeps the row layout (links | legal | contact).
-   Icon + graffiti row above stays centered as-is.
-   Horizontal padding matches the section+container indent used elsewhere
-   (24px section + 24px container = 48px) so all text on mobile lines up
-   to the same left edge. */
+/* Mobile-only footer adjustments (the bar's vertical stacking starts
+   earlier, at 1023px — see above). Horizontal padding matches the
+   section+container indent used elsewhere (24px section + 24px container
+   = 48px) so all text on mobile lines up to the same left edge. */
 @media (max-width: 767px) {
   .footer {
     padding-left: var(--space-6);
@@ -929,6 +995,8 @@ main {
     flex-direction: column;
     gap: var(--space-2);
   }
+  /* No-JS fallback: with JS, initFooterBar sets .footer__bar--stacked long
+     before phone widths anyway. */
   .footer__bar {
     flex-direction: column;
     align-items: flex-start;

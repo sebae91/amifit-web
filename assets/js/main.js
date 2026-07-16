@@ -125,6 +125,109 @@ function initTypewriter() {
   }
 }
 
+// ─── Graffiti placement (trust & pricing, mid widths) ────────────────────────
+// Between 768 and 1100px the right spot for the graffiti depends on how the
+// two columns actually render at this width, in this language: under the
+// shorter column when the other towers over it (the graffiti fills the void
+// at zero height cost), spanning both as a banner when they're about level.
+// CSS can't compare rendered sibling heights, so JS measures and picks; the
+// stylesheet defines what each placement looks like (components.css,
+// "Mid-width graffiti placement variants"). No JS = banner, safe everywhere.
+
+function initGraffitiPlacement() {
+  const sections = [
+    { name: 'trust',   textSel: '.trust__text-col',  shotsSel: '.trust__screenshot-col' },
+    { name: 'pricing', textSel: '.pricing__copy',    shotsSel: '.pricing__screenshots' },
+  ]
+    .map(({ name, textSel, shotsSel }) => {
+      const inner = document.querySelector(`.${name}__inner`);
+      if (!inner) return null;
+      return {
+        inner,
+        text:  inner.querySelector(textSel),
+        shots: inner.querySelector(shotsSel),
+        underText:  `${name}__inner--graffiti-under-text`,
+        underShots: `${name}__inner--graffiti-under-shots`,
+      };
+    })
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  // Columns within this band count as "level" → banner. Beyond it, one is
+  // clearly shorter and the graffiti moves under it. Started at 120 but a
+  // ~100px void already reads as empty space, so the tuck should win it.
+  const LEVEL_BAND = 50;
+
+  function place() {
+    const mid = window.innerWidth >= 768 && window.innerWidth < 1100;
+    sections.forEach((s) => {
+      s.inner.classList.remove(s.underText, s.underShots);
+      if (!mid || !s.text || !s.shots) return;
+      const diff = s.text.offsetHeight - s.shots.offsetHeight;
+      if (diff > LEVEL_BAND) {
+        s.inner.classList.add(s.underShots);       // text towers → fill the void under the screenshots
+      } else if (diff < -LEVEL_BAND) {
+        s.inner.classList.add(s.underText);        // screenshots tower → fill the void under the copy
+      }                                            // else: level → banner (default CSS)
+    });
+  }
+
+  // Live during the drag — the measurement is two offsetHeight reads per
+  // section, cheap enough to run per frame (rAF-throttled, same pattern as
+  // the anxiety spotlight). A trailing debounce here made the graffiti
+  // visibly "think" before jumping to its spot.
+  place();
+  let ticking = false;
+  window.addEventListener('resize', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      place();
+    });
+  });
+}
+
+// ─── Footer bar (row ↔ stacked) ───────────────────────────────────────────────
+// The bar (links | legal | contact) goes vertical the moment its three groups
+// stop fitting on one line — measured, not a breakpoint, because the fitting
+// point differs by ~150px between languages (German's link names outgrow
+// English's). Detection: on a single flex line, align-items: flex-end gives
+// every child the same bottom edge; a child pushed to a wrapped line breaks
+// that. No JS: phones stack via media query, mid widths fall back to the
+// bar's flex-wrap.
+
+function initFooterBar() {
+  const bar = document.querySelector('.footer__bar');
+  if (!bar) return;
+
+  const STACKED = 'footer__bar--stacked';
+  const kids = Array.from(bar.children);
+  if (kids.length < 2) return;
+
+  function fitsOneRow() {
+    const bottom = (el) => el.offsetTop + el.offsetHeight;
+    const first = bottom(kids[0]);
+    return kids.every((el) => Math.abs(bottom(el) - first) < 2);
+  }
+
+  function place() {
+    bar.classList.remove(STACKED);   // measure in row layout (same-frame, nothing paints)
+    if (!fitsOneRow()) bar.classList.add(STACKED);
+  }
+
+  place();
+  let ticking = false;
+  window.addEventListener('resize', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      place();
+    });
+  });
+}
+
 // ─── Scroll Reveal (IntersectionObserver) ────────────────────────────────────
 // Adds --visible class to .reveal elements when they enter the viewport.
 // If already above viewport on load (refresh while scrolled down), show instantly.
@@ -510,12 +613,17 @@ function initLangSwitcher() {
 // But an iPhone visitor is already holding the one device that can install the
 // app; routing them to a QR they can't scan is absurd. So on iPhone, send those
 // links straight to the App Store. One tap, done.
+//
+// On the download page itself the nav button ships [hidden]: for everyone else
+// it would just reload the page, so it only appears here — on iPhone, pointing
+// at the App Store.
 
 function initAppStoreLinks() {
   if (!/iPhone|iPod/.test(navigator.userAgent)) return;
   const APP_STORE_URL = 'https://apps.apple.com/app/id6761309128';
   document.querySelectorAll('a[href="download"]').forEach((link) => {
     link.href = APP_STORE_URL;
+    link.hidden = false;
   });
 }
 
@@ -523,6 +631,8 @@ function initAppStoreLinks() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
+  initGraffitiPlacement();
+  initFooterBar();
   initScrollReveal();
   initAnxietySection();
   initLangSwitcher();
