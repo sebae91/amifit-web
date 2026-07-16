@@ -649,13 +649,14 @@ main {
   }
 }
 
-/* Mid widths only: the graffiti row lands under the screenshots, which sit on
-   the LEFT here — cancel the marker's default push to the right so it lines
-   up with what it sits under. Trust keeps the default (its screenshots are
-   on the right, where the marker already leans). */
+/* Mid widths: in its full-width row the graffiti is a banner between
+   sections, so center it (both sections). The marker's default right-lean
+   only makes sense inside a column — with short lines (EN/ES/IT) a leaned
+   banner read as "vaguely off-center" instead of deliberate. */
 @media (min-width: 768px) and (max-width: 1099px) {
+  .trust__inner > .graffiti,
   .pricing__inner > .graffiti {
-    margin-left: 0;
+    margin-left: auto;
     margin-right: auto;
   }
 }
