@@ -1,12 +1,12 @@
 <!-- This is the start of the fr/database.html file -->
-<!-- Last revised by your AI friend: 2026-07-12 -->
+<!-- Last revised by your AI friend: 2026-08-03 (Fable 5) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comment la base de données est construite - AmiFit</title>
-  <meta name="description" content="Chaque photo de l'app est originale : personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée.">
+  <meta name="description" content="Chaque photo de l'app est originale : personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée.">
 
   <link rel="canonical" href="https://amifit.app/fr/database">
   <link rel="alternate" hreflang="en" href="https://amifit.app/database">
@@ -21,7 +21,7 @@
   <meta property="og:url"         content="https://amifit.app/fr/database">
   <meta property="og:locale"      content="fr_FR">
   <meta property="og:title"       content="Comment la base de données est construite - AmiFit">
-  <meta property="og:description" content="Chaque photo de l'app est originale : personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée.">
+  <meta property="og:description" content="Chaque photo de l'app est originale : personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée.">
   <meta property="og:image"       content="https://amifit.app/assets/img/og-image.jpg">
   <meta name="twitter:card"       content="summary_large_image">
 
@@ -63,15 +63,15 @@
 <body>
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Navigation principale">
       <div class="nav__inner">
-        <a href="./" class="nav__logo" aria-label="AmiFit home">
+        <a href="./" class="nav__logo" aria-label="Accueil AmiFit">
           <img src="../assets/img/amifit_no_bg_dark.png" alt="" width="32" height="32">
           <span class="nav__logo-text">AmiFit</span>
         </a>
         <div class="nav__right">
           <div class="lang-menu" id="lang-menu">
-            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Sélectionner la langue">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M2 12h20"/>
@@ -81,7 +81,7 @@
                 <path d="M6 9l6 6 6-6"/>
               </svg>
             </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Options de langue">
               <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
               <button class="lang-option" data-lang="es" role="option" aria-selected="false">Español</button>
               <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
@@ -102,16 +102,16 @@
       <h1>Comment la base de données est construite</h1>
 
       <h2>Photographie originale</h2>
-      <p>Chaque photo de l'app est originale — personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée. Plutôt que de se fier à l'IA pour estimer la taille des portions (où tu ne peux jamais être sûr de la précision du résultat) ou de peser chaque aliment sur une balance de cuisine, l'app offre un juste milieu pratique : de vraies photos des portions les plus courantes avec leur poids réel. Appuie sur la photo qui ressemble à ta portion et les grammes sont définis automatiquement. Si tu as mangé plus d'une portion de cette taille, augmente le nombre de portions. Ou compare ton aliment avec les photos pour estimer la taille de ta portion et saisis les grammes manuellement. Les photos montrent les aliments tels qu'ils apparaissent naturellement, mais le poids ne reflète que la portion comestible, excluant les pelures que tu ne manges pas, os, graines et autres parties non comestibles.</p>
+      <p>Chaque photo de l'app est originale — personnellement photographiée et pesée avec des portions réelles. Aucune image de stock n'est utilisée. Plutôt que de se fier à l'IA pour estimer la taille des portions (où tu ne peux jamais être sûr de la précision du résultat) ou de peser chaque aliment sur une balance de cuisine, l'app offre un juste milieu pratique : de vraies photos des portions les plus courantes avec leur poids réel. Appuie sur la photo qui ressemble à ta portion et les grammes sont définis automatiquement. Si tu as mangé plus d'une portion de cette taille, augmente le nombre de portions. Ou compare ton aliment avec les photos pour estimer la taille de ta portion et saisis les grammes manuellement. Les photos montrent les aliments tels qu'ils apparaissent naturellement, mais le poids ne reflète que la portion comestible, excluant les pelures que tu ne manges pas, os, graines et autres parties non comestibles.</p>
 
-      <h2>Focus régional et langues</h2>
-      <p>L'app est conçue pour les adultes soucieux de leur santé en Espagne, Italie, France et Allemagne. L'objectif est de couvrir les aliments les plus couramment consommés dans ces régions, avec un support pour six langues : anglais, espagnol, italien, français, allemand et portugais. Si tu es en dehors de ces régions et trouves suffisamment d'aliments pour ton régime, tant mieux.</p>
+      <h2>Priorité régionale et langues</h2>
+      <p>L'app est conçue pour les adultes soucieux de leur santé en Espagne, Italie, France et Allemagne. L'objectif est de couvrir les aliments les plus couramment consommés dans ces régions, avec la prise en charge de six langues : anglais, espagnol, italien, français, allemand et portugais. Si tu es en dehors de ces régions et trouves suffisamment d'aliments pour ton régime, tant mieux.</p>
 
       <h2>Sélection des aliments USDA</h2>
       <p>Tous les aliments marqués « USDA » proviennent de la base de données USDA FoodData Central. Pour chaque aliment, nous avons sélectionné l'entrée USDA que nous jugeons la plus représentative de cet aliment tel qu'il est couramment consommé dans ces régions, car la base de données USDA peut contenir plusieurs entrées pour le même type d'aliment avec des profils nutritionnels variés. La plupart des aliments proviennent du type de données SR Legacy, qui a été spécifiquement sélectionné car il fournit les profils de micronutriments les plus complets, incluant vitamines, minéraux, acides aminés et acides gras oméga-3 et oméga-6. Un petit nombre provient des types de données Foundation et Survey (FNDDS) pour les aliments non disponibles dans SR Legacy. La page source USDA de chaque entrée est sauvegardée localement en PDF. Cela sert à la fois d'archive hors ligne de la source originale (afin que la citation reste intacte même si USDA modifie ou supprime ultérieurement la page) et permet à un script Python de vérifier les valeurs nutritionnelles de l'entrée par rapport à celle-ci. Dans quelques cas, les valeurs ont été ajustées en utilisant une entrée USDA apparentée ou une conversion standard.</p>
 
       <h2>Aliments AMFT</h2>
-      <p>Les aliments marqués « AMFT » se divisent en deux catégories : des aliments composites constitués de plusieurs ingrédients, ou des aliments emballés dont les données nutritionnelles ont été obtenues auprès du fabricant. Les aliments composites montrent un détail complet des ingrédients avec la composition en pourcentage, visant à refléter comment cet aliment est couramment préparé en Espagne, Italie, France et Allemagne. Lorsque les ingrédients varient selon la région, l'option la plus utilisée ou la plus neutre est retenue.</p>
+      <p>Les aliments marqués « AMFT » se divisent en deux catégories : des aliments composites constitués de plusieurs ingrédients, ou des aliments emballés dont les données nutritionnelles ont été obtenues auprès du fabricant. Les aliments composites montrent un détail complet des ingrédients avec la composition en pourcentage, visant à refléter comment cet aliment est couramment préparé en Espagne, Italie, France et Allemagne. Lorsque les ingrédients varient selon la région, l'option la plus utilisée ou la plus neutre est retenue.</p>
     </div>
     </div>
   </main>
@@ -122,7 +122,7 @@
         <img src="../assets/img/amifit_no_bg_dark.png" alt="AmiFit" width="48" height="48">
       </div>
       <div class="footer__bar">
-        <nav class="footer__links" aria-label="Footer navigation">
+        <nav class="footer__links" aria-label="Navigation de pied de page">
           <a href="privacy">Confidentialité</a>
           <a href="terms">Conditions</a>
           <a href="targets">Comment les objectifs sont définis</a>

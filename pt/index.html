@@ -1,5 +1,5 @@
 <!-- This is the start of the pt/index.html file -->
-<!-- Last revised: 2026-07-16 (Fable 5) -->
+<!-- Last revised: 2026-08-03 (Fable 5) -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -122,17 +122,17 @@
 <body>
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Navegação principal">
       <div class="nav__inner">
         <!-- href="#" is deliberate: on the homepage the logo scrolls to top instead of reloading. Every other page uses "./" to navigate home. -->
-        <a href="#" class="nav__logo" aria-label="AmiFit home">
+        <a href="#" class="nav__logo" aria-label="Página inicial do AmiFit">
           <img src="../assets/img/amifit_no_bg_dark.png" alt="" width="32" height="32">
           <span class="nav__logo-text">AmiFit</span>
         </a>
 
         <div class="nav__right">
           <div class="lang-menu" id="lang-menu">
-            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Selecionar idioma">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M2 12h20"/>
@@ -142,7 +142,7 @@
                 <path d="M6 9l6 6 6-6"/>
               </svg>
             </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Opções de idioma">
               <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
               <button class="lang-option" data-lang="es" role="option" aria-selected="false">Español</button>
               <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
@@ -167,6 +167,7 @@
           Provavelmente você está sem algum nutriente.<br>
           Só não sabe qual.
         </h1>
+  <!-- "Omega-6:3" (audited 2026-08-03) is intentional marketing shorthand for the hero/meta/pill surfaces. The app's canonical long form ("Omega-6 to Omega-3 ratio" per language) is used in body text and on the targets page. Not an inconsistency. -->
         <p class="hero__sub">
           Veja o que realmente te falta. Vitaminas, minerais, EPA+DHA e a proporção Ômega&#8209;6:3 que a maioria dos apps nunca ouviu falar.
         </p>
@@ -297,16 +298,16 @@
     <section class="trust">
       <div class="trust__inner container">
         <div class="trust__text-col">
-          <h2 class="trust__headline reveal">O scan por IA é incrível, mas</h2>
+          <h2 class="trust__headline reveal">O escaneamento por IA é incrível, mas</h2>
           <p class="trust__line reveal">Você nunca sabe se o peso estimado está certo. E uma balança de cozinha funciona, mas é um incômodo.</p>
           <p class="trust__line reveal">Existe uma terceira opção.</p>
-          <p class="trust__line reveal"><span class="pill-highlight pill-highlight--pink">Fotos reais de porções reais</span> no seu bolso. Você vai saber qual é a cara de 275g de cheeseburger. A maioria das pessoas não sabe.</p>
+          <p class="trust__line reveal"><span class="pill-highlight pill-highlight--pink">Fotos reais de porções reais</span> no seu bolso. Você vai saber qual é a cara de 275&#160;g de hambúrguer com queijo. A maioria das pessoas não sabe.</p>
         </div>
         <div class="trust__screenshot-col reveal">
           <figure class="screenshot-card screenshot-card--blue">
             <picture>
               <source srcset="../assets/img/screenshots/portion-collection-cheeseburger_pt.webp" type="image/webp">
-              <img src="../assets/img/screenshots/portion-collection-cheeseburger_pt.png" alt="AmiFit seletor de porções — fotos reais de hambúrgueres de 75g a 465g, fotografados e pesados pessoalmente" width="390" height="844" loading="eager" decoding="async" fetchpriority="low">
+              <img src="../assets/img/screenshots/portion-collection-cheeseburger_pt.png" alt="AmiFit seletor de porções — fotos reais de hambúrgueres de 75 g a 465 g, fotografados e pesados pessoalmente" width="390" height="844" loading="eager" decoding="async" fetchpriority="low">
             </picture>
           </figure>
           <figure class="screenshot-card screenshot-card--blue">
@@ -332,7 +333,7 @@
           <figure class="screenshot-card screenshot-card--blue reveal" style="transition-delay: 150ms">
             <picture>
               <source srcset="../assets/img/screenshots/nutrient-breakdown-2_pt.webp" type="image/webp">
-              <img src="../assets/img/screenshots/nutrient-breakdown-2_pt.png" alt="Vista de nutrição AmiFit — detalhamento de vitaminas mostrando vitamina D em 4μg contra uma meta de 15-100μg" width="390" height="844" loading="lazy" decoding="async">
+              <img src="../assets/img/screenshots/nutrient-breakdown-2_pt.png" alt="Vista de nutrição AmiFit — detalhamento de vitaminas mostrando vitamina D em 4 μg contra uma meta de 15-100 μg" width="390" height="844" loading="lazy" decoding="async">
             </picture>
           </figure>
         </div>
@@ -368,7 +369,7 @@
         <span class="footer__graffiti" aria-hidden="true">Use no metrô.</span>
       </div>
       <div class="footer__bar">
-        <nav class="footer__links" aria-label="Footer navigation">
+        <nav class="footer__links" aria-label="Navegação do rodapé">
           <a href="privacy">Privacidade</a>
           <a href="terms">Termos</a>
           <a href="targets">Como as Metas São Definidas</a>

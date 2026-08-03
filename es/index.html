@@ -1,11 +1,11 @@
 <!-- This is the start of the es/index.html file -->
-<!-- Last revised: 2026-07-16 (Fable 5) -->
+<!-- Last revised: 2026-08-03 (Fable 5) -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AmiFit - rastreador de micronutrientes sin conexión para iPhone</title>
+  <title>AmiFit - Rastreador de micronutrientes sin conexión para iPhone</title>
   <meta name="description" content="Descubre lo que realmente te falta. Vitaminas, minerales, EPA+DHA y la proporción Omega-6:3. Sin cuenta. Sin internet. Sin servidores.">
 
   <link rel="canonical" href="https://amifit.app/es/">
@@ -20,7 +20,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://amifit.app/es/">
   <meta property="og:locale"      content="es_ES">
-  <meta property="og:title"       content="AmiFit - rastreador de micronutrientes sin conexión para iPhone">
+  <meta property="og:title"       content="AmiFit - Rastreador de micronutrientes sin conexión para iPhone">
   <meta property="og:description" content="Descubre lo que realmente te falta. Vitaminas, minerales, EPA+DHA y la proporción Omega-6:3. Sin cuenta. Sin internet. Sin servidores.">
   <meta property="og:image"       content="https://amifit.app/assets/img/og-image.jpg">
   <meta name="twitter:card"       content="summary_large_image">
@@ -36,8 +36,8 @@
       "Puedo decirte mi ingesta de magnesio ahora mismo. ¿Tú puedes decirme la tuya?",
       "Sé exactamente cuánto hierro he consumido esta semana. ¿Y tú?",
       "Sé si me estoy excediendo con la vitamina A. ¿Lo sabes tú?",
-      "Sé si estoy consumiendo suficiente zinc esta semana. ¿Sabes si tú lo haces?",
-      "En 2 minutos sé si estoy consumiendo suficiente B12. ¿Sabes si tú lo haces?"
+      "Sé si estoy consumiendo suficiente zinc esta semana. ¿Lo sabes tú?",
+      "En 2 minutos sé si estoy consumiendo suficiente B12. ¿Y tú?"
     ];
   </script>
 
@@ -122,17 +122,17 @@
 <body>
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="nav" aria-label="Navegación principal">
       <div class="nav__inner">
         <!-- href="#" is deliberate: on the homepage the logo scrolls to top instead of reloading. Every other page uses "./" to navigate home. -->
-        <a href="#" class="nav__logo" aria-label="AmiFit home">
+        <a href="#" class="nav__logo" aria-label="Inicio de AmiFit">
           <img src="../assets/img/amifit_no_bg_dark.png" alt="" width="32" height="32">
           <span class="nav__logo-text">AmiFit</span>
         </a>
 
         <div class="nav__right">
           <div class="lang-menu" id="lang-menu">
-            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Seleccionar idioma">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M2 12h20"/>
@@ -142,7 +142,7 @@
                 <path d="M6 9l6 6 6-6"/>
               </svg>
             </button>
-            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language options">
+            <div class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Opciones de idioma">
               <button class="lang-option" data-lang="en" role="option" aria-selected="false">English</button>
               <button class="lang-option lang-option--active" data-lang="es" role="option" aria-selected="true">Español</button>
               <button class="lang-option" data-lang="it" role="option" aria-selected="false">Italiano</button>
@@ -167,6 +167,7 @@
           Probablemente te falta algún nutriente.<br>
           Solo que no sabes cuál.
         </h1>
+  <!-- "Omega-6:3" (audited 2026-08-03) is intentional marketing shorthand for the hero/meta/pill surfaces. The app's canonical long form ("Omega-6 to Omega-3 ratio" per language) is used in body text and on the targets page. Not an inconsistency. -->
         <p class="hero__sub">
           Descubre lo que realmente te falta. Vitaminas, minerales, EPA+DHA y la proporción Omega&#8209;6:3 que la mayoría de apps ni conoce.
         </p>
@@ -267,7 +268,7 @@
           Los macros son el pasado. Los micros son el futuro.
         </h2>
         <div class="hero__typewriter-wrap" aria-live="polite" aria-atomic="true">
-          <span class="hero__typewriter" id="typewriter">En 2 minutos sé si estoy consumiendo suficiente B12. ¿Sabes si tú lo haces?</span>
+          <span class="hero__typewriter" id="typewriter">En 2 minutos sé si estoy consumiendo suficiente B12. ¿Y tú?</span>
         </div>
       </div>
 
@@ -304,13 +305,13 @@
           <h2 class="trust__headline reveal">El escaneo con IA es increíble, pero</h2>
           <p class="trust__line reveal">Nunca sabes si el peso que estima es correcto. Y una báscula de cocina funciona, pero es un fastidio.</p>
           <p class="trust__line reveal">Hay una tercera opción.</p>
-          <p class="trust__line reveal"><span class="pill-highlight pill-highlight--pink">Fotos reales de porciones reales</span> en tu bolsillo. Sabrás cómo se ven 275g de hamburguesa con queso. La mayoría no lo sabe.</p>
+          <p class="trust__line reveal"><span class="pill-highlight pill-highlight--pink">Fotos reales de porciones reales</span> en tu bolsillo. Sabrás cómo se ven 275&#160;g de hamburguesa con queso. La mayoría no lo sabe.</p>
         </div>
         <div class="trust__screenshot-col reveal">
           <figure class="screenshot-card screenshot-card--blue">
             <picture>
               <source srcset="../assets/img/screenshots/portion-collection-cheeseburger_es.webp" type="image/webp">
-              <img src="../assets/img/screenshots/portion-collection-cheeseburger_es.png" alt="AmiFit selector de porciones — fotos reales de hamburguesas de 75g a 465g, fotografiadas y pesadas personalmente" width="390" height="844" loading="eager" decoding="async" fetchpriority="low">
+              <img src="../assets/img/screenshots/portion-collection-cheeseburger_es.png" alt="AmiFit selector de porciones — fotos reales de hamburguesas de 75 g a 465 g, fotografiadas y pesadas personalmente" width="390" height="844" loading="eager" decoding="async" fetchpriority="low">
             </picture>
           </figure>
           <figure class="screenshot-card screenshot-card--blue">
@@ -336,7 +337,7 @@
           <figure class="screenshot-card screenshot-card--blue reveal" style="transition-delay: 150ms">
             <picture>
               <source srcset="../assets/img/screenshots/nutrient-breakdown-2_es.webp" type="image/webp">
-              <img src="../assets/img/screenshots/nutrient-breakdown-2_es.png" alt="Vista de nutrición de AmiFit — desglose de vitaminas mostrando vitamina D en 4μg frente a un objetivo de 15-100μg" width="390" height="844" loading="lazy" decoding="async">
+              <img src="../assets/img/screenshots/nutrient-breakdown-2_es.png" alt="Vista de nutrición de AmiFit — desglose de vitaminas mostrando vitamina D en 4 μg frente a un objetivo de 15-100 μg" width="390" height="844" loading="lazy" decoding="async">
             </picture>
           </figure>
         </div>
@@ -372,7 +373,7 @@
         <span class="footer__graffiti" aria-hidden="true">Úsala en el metro.</span>
       </div>
       <div class="footer__bar">
-        <nav class="footer__links" aria-label="Footer navigation">
+        <nav class="footer__links" aria-label="Navegación de pie de página">
           <a href="privacy">Privacidad</a>
           <a href="terms">Términos</a>
           <a href="targets">Cómo se establecen los objetivos</a>
