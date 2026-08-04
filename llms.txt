@@ -24,7 +24,7 @@ AI scanning is amazing, but you never know if the weight it guesses is right. An
 
 There's a third option. Real photos of real portions in your pocket. You'll know what 275g of cheeseburger looks like. Most people don't.
 
-Every photo in the app is original — personally photographed and weighed with real portions. No stock images are used. Tap the photo that looks like your portion and the grams are set automatically. If you had more than one of that serving, increase the number of portions. Or compare your food with the photos to estimate your portion size and enter the grams manually.
+Every photo in the app is real — personally photographed and weighed with real portions. No stock or AI-generated images are used. Tap the photo that looks like your portion and the grams are set automatically. If you had more than one of that serving, increase the number of portions. Or compare your food with the photos to estimate your portion size and enter the grams manually.
 
 Photos show food as it naturally appears, but the weight reflects only the edible portion, excluding peels you don't eat, bones, seeds, and other inedible parts.
 
@@ -89,7 +89,7 @@ amifit.app
 
 - Landing page (`/`) — feature overview, pricing, the full nutrient list as interactive pills
 - How Targets Are Set (`/targets`) — full methodology with citations
-- How the Database Is Built (`/database`) — original photography, regional focus, USDA sourcing, AMFT
+- How the Database Is Built (`/database`) — real photos, regional focus, USDA sourcing, AMFT
 - Download (`/download`)
 - Privacy Policy (`/privacy`)
 - Terms of Use (`/terms`)

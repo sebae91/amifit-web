@@ -250,7 +250,7 @@
   <!-- database -->
   <url>
     <loc>https://amifit.app/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -263,7 +263,7 @@
   </url>
   <url>
     <loc>https://amifit.app/es/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -276,7 +276,7 @@
   </url>
   <url>
     <loc>https://amifit.app/fr/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -289,7 +289,7 @@
   </url>
   <url>
     <loc>https://amifit.app/de/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -302,7 +302,7 @@
   </url>
   <url>
     <loc>https://amifit.app/it/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -315,7 +315,7 @@
   </url>
   <url>
     <loc>https://amifit.app/pt/database</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/database"/>
@@ -490,7 +490,7 @@
   <!-- terms -->
   <url>
     <loc>https://amifit.app/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
@@ -503,7 +503,7 @@
   </url>
   <url>
     <loc>https://amifit.app/es/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
@@ -516,7 +516,7 @@
   </url>
   <url>
     <loc>https://amifit.app/fr/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
@@ -529,7 +529,7 @@
   </url>
   <url>
     <loc>https://amifit.app/de/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
@@ -542,7 +542,7 @@
   </url>
   <url>
     <loc>https://amifit.app/it/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
@@ -555,7 +555,7 @@
   </url>
   <url>
     <loc>https://amifit.app/pt/terms</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://amifit.app/terms"/>
