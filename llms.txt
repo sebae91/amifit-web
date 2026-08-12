@@ -2,7 +2,7 @@
 
 Offline micronutrient tracker for iPhone.
 
-You probably have a nutrient gap. You just don't know which one. See what you're actually missing. Vitamins, minerals, EPA+DHA, and the Omega-6:3 ratio most apps have never heard of.
+You probably have a nutrient gap. You just don't know which one. See what you're actually missing. Vitamins, minerals, EPA+DHA, and your Omega-6:3 ratio.
 
 ## What you actually get
 
