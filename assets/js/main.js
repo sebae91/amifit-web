@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised: 2026-07-16 (Fable 5)
+// Last revised: 2026-08-12 (Opus 4.8)
 
 'use strict';
 
@@ -627,12 +627,40 @@ function initAppStoreLinks() {
   });
 }
 
+// ─── Nav scroll state ────────────────────────────────────────────────────────
+// Solid at the top of the page, faintly translucent once you scroll. The bar
+// should feel like it lifts off the content, not float over it — so the effect
+// only kicks in past a few pixels of movement. Pure class toggle; the opacity
+// styling lives in components.css.
+
+function initNavScroll() {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  const SCROLLED = 'nav--scrolled';
+  const THRESHOLD = 8;
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    nav.classList.toggle(SCROLLED, window.scrollY > THRESHOLD);
+  }
+
+  update();   // honor a reload that's already scrolled down
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  }, { passive: true });
+}
+
 // ─── Init ──────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initGraffitiPlacement();
   initFooterBar();
+  initNavScroll();
   initScrollReveal();
   initAnxietySection();
   initLangSwitcher();

@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-07-16 (Fable 5) */
+/* Last revised: 2026-08-12 (Opus 4.8) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -19,6 +19,25 @@
 /* Push main content below fixed nav */
 main {
   padding-top: var(--nav-height);
+}
+
+/* Solid at the very top; once the page moves the bar goes just barely
+   see-through — dark glass, not fog. No blur on purpose: content behind stays
+   sharp (the vexl look), so text under the bar reads through cleanly instead of
+   smearing. The .nav--scrolled class is toggled by initNavScroll in main.js. */
+.nav {
+  transition: background-color 0.3s ease;
+}
+
+.nav--scrolled {
+  background-color: color-mix(in srgb, var(--color-bg) 97%, transparent);
+}
+
+/* Reduced-transparency users get the solid bar, always. */
+@media (prefers-reduced-transparency: reduce) {
+  .nav--scrolled {
+    background-color: var(--color-bg);
+  }
 }
 
 .nav__inner {
