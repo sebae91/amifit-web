@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-08-12 (Opus 4.8) */
+/* Last revised: 2026-08-14 (Fable 5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -118,11 +118,11 @@ main {
   border-radius: 8px;
   min-height: 44px;
   min-width: 44px;
-  transition: color 0.15s;
+  transition: background-color 0.15s;
 }
 
 .lang-toggle:hover {
-  color: var(--color-text);
+  background-color: var(--color-surface-2);
 }
 
 .lang-toggle:focus-visible {
