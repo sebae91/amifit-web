@@ -217,6 +217,13 @@ function initFooterBar() {
   }
 
   place();
+  // Safari sometimes gets this wrong at DOMContentLoaded on a fresh navigation
+  // (bar stacked at a width with visible room to spare), then heals on the
+  // first resize because that forces a re-measure against the settled layout.
+  // Do that re-measure automatically once everything that can still shift
+  // layout is in: full page load and font readiness.
+  window.addEventListener('load', place);
+  if (document.fonts) document.fonts.ready.then(place);
   let ticking = false;
   window.addEventListener('resize', () => {
     if (ticking) return;
