@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised: 2026-08-12 (Opus 4.8)
+// Last revised: 2026-08-27 (Fable 5)
 
 'use strict';
 
@@ -226,6 +226,74 @@ function initFooterBar() {
       place();
     });
   });
+}
+
+// ─── Rotation Scroll Anchor ──────────────────────────────────────────────────
+// iOS Safari quirk: rotate the phone while scrolled to the bottom and Safari
+// re-applies the old orientation's PIXEL offset to the new orientation's
+// geometry. Landscape's page is much shorter, so the restored offset lands
+// past the end of the document — a void below the footer until the first
+// touch snaps it back. Rotating back, the same offset lands ~24px shy of the
+// bottom instead. Measured on an SE (3rd gen): the offset reads legal at
+// 0/100/300ms after the orientation change, then Safari re-applies the stale
+// value somewhere in the 300–700ms window — a fixed one-shot check races it
+// and loses. So: capture what the position MEANS while the old layout is
+// still standing ("at the bottom", not a pixel count), then enforce the
+// meaning for 2s — the way a native UIScrollView keeps you pinned to the end
+// through a rotation. A finger on the screen ends the window immediately;
+// outside rotation, none of this runs.
+
+function initRotationScrollAnchor() {
+  let timer = null;
+  let wasAtBottom = false;
+
+  function maxScroll() {
+    return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  }
+
+  // Pin to the bottom if that's where the user was; otherwise only rescue an
+  // out-of-range offset. 'instant' — the CSS scroll-behavior: smooth would
+  // animate the correction into a visible glide.
+  function correct() {
+    const max = maxScroll();
+    if (wasAtBottom ? Math.abs(window.scrollY - max) > 1 : window.scrollY > max) {
+      window.scrollTo({ top: max, behavior: 'instant' });
+    }
+  }
+
+  function stop() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+    window.removeEventListener('scroll', correct);
+    window.removeEventListener('touchstart', stop);
+  }
+
+  function onRotate() {
+    stop();
+    // The pre-rotation layout is still intact at this instant (the first
+    // post-event read reports the old geometry), so this reads intent before
+    // Safari starts rewriting the numbers.
+    wasAtBottom = window.scrollY >= maxScroll() - 2;
+    // Safari fires a scroll event when it re-applies the stale offset —
+    // correct in the same breath, so the void never gets a frame to show.
+    // The interval is the backstop; touchstart hands control back to the
+    // user the moment a finger lands.
+    window.addEventListener('scroll', correct, { passive: true });
+    window.addEventListener('touchstart', stop, { passive: true });
+    let checks = 0;
+    timer = setInterval(() => {
+      correct();
+      if (++checks >= 20) stop();
+    }, 100);
+  }
+
+  if (screen.orientation) {
+    screen.orientation.addEventListener('change', onRotate);
+  } else {
+    window.addEventListener('orientationchange', onRotate);
+  }
 }
 
 // ─── Scroll Reveal (IntersectionObserver) ────────────────────────────────────
@@ -660,6 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initGraffitiPlacement();
   initFooterBar();
+  initRotationScrollAnchor();
   initNavScroll();
   initScrollReveal();
   initAnxietySection();
