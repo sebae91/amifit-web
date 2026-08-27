@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-08-14 (Fable 5) */
+/* Last revised: 2026-08-27 (Fable 5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -968,6 +968,15 @@ main {
   gap: var(--space-3);
 }
 
+/* Once the bar goes vertical it becomes a tall block competing with the
+   graffiti/logo above it, and the 24px seam between them — the tightest
+   vertical space on the page — reads as a collision. Double it whenever
+   the bar is stacked, at any width. (No-JS phones get the same 48px from
+   the mobile block below.) */
+.footer__inner:has(.footer__bar--stacked) {
+  gap: var(--space-6);
+}
+
 .footer__bar--stacked .footer__links {
   flex-direction: column;
   gap: var(--space-1);
@@ -1015,7 +1024,10 @@ main {
     gap: var(--space-2);
   }
   /* No-JS fallback: with JS, initFooterBar sets .footer__bar--stacked long
-     before phone widths anyway. */
+     before phone widths anyway (and the :has() rule above widens the seam). */
+  .footer__inner {
+    gap: var(--space-6);
+  }
   .footer__bar {
     flex-direction: column;
     align-items: flex-start;
