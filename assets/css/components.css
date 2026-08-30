@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-08-27 (Fable 5) */
+/* Last revised: 2026-08-29 (Fable 5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -507,6 +507,10 @@ main {
 
 .trust__inner > .graffiti {
   grid-area: graffiti;
+  /* Tight to the paragraph (16px + the paragraph's 16px margin). With the
+     marker's default 48px top padding the line dropped level with the phones'
+     photo grid and read as their caption, not as the retort to the copy. */
+  padding-top: var(--space-2);
 }
 
 .trust__screenshot-col {
@@ -556,6 +560,11 @@ main {
   }
   .trust__inner > .graffiti {
     align-self: start;
+    /* The marker's right-lean (margin-left: auto) works in pricing, where it
+       pushes the line deeper into its own column — away from the phones. Here
+       the phones are on the right, so the same lean pushed the line toward
+       them. Left-anchored it stays visually attached to the copy above. */
+    margin-left: 0;
   }
   .trust__screenshot-col {
     align-self: center;
@@ -634,11 +643,12 @@ main {
 /* Mid widths: the trust graffiti runs full-width right above this section and
    would nearly touch the pricing screenshots without some air. Wide screens
    and phones keep the tight rhythm — there the graffiti lives inside the
-   copy column and provides its own separation. */
+   copy column and provides its own separation. Top only: a matching bottom
+   padding stacked with the final CTA's 80px top padding into a ~210px hole,
+   while every other width sits at ~95px. */
 @media (min-width: 768px) and (max-width: 1099px) {
   .pricing {
     padding-top: var(--space-10);
-    padding-bottom: var(--space-10);
   }
 }
 
@@ -667,6 +677,10 @@ main {
 
 .pricing__inner > .graffiti {
   grid-area: graffiti;
+  /* Same tuck as the trust graffiti — both punchlines sit 32px under their
+     copy (16px here + the last line's 16px margin), so the two sections
+     share one rhythm. */
+  padding-top: var(--space-2);
 }
 
 @media (min-width: 768px) {
@@ -718,6 +732,19 @@ main {
       'shots text'
       'shots graffiti';
   }
+
+  /* The tight top padding (see .trust__inner > .graffiti) is only right when
+     the graffiti sits directly under its copy. In the banner row and the
+     under-shots variants the element above is the screenshots — restore the
+     marker's 48px so the line doesn't cling to the phone bezels. */
+  .trust__inner > .graffiti,
+  .pricing__inner > .graffiti {
+    padding-top: var(--space-6);
+  }
+  .trust__inner--graffiti-under-text > .graffiti,
+  .pricing__inner--graffiti-under-text > .graffiti {
+    padding-top: var(--space-2);
+  }
 }
 
 /* Below the wide layout the graffiti sits in a row of its own (banner at mid
@@ -731,6 +758,12 @@ main {
   .pricing__inner > .graffiti {
     margin-left: auto;
     margin-right: auto;
+  }
+  /* Exception: when JS tucks the trust graffiti under the copy column,
+     centering indents it away from the left-aligned paragraph it answers.
+     Same left-anchor rationale as the wide layout above. */
+  .trust__inner--graffiti-under-text > .graffiti {
+    margin-left: 0;
   }
 }
 
