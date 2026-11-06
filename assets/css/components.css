@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-08-29 (Fable 5) */
+/* Last revised: 2026-11-05 (Opus 5.5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -384,6 +384,14 @@ main {
   .graffiti {
     padding-top: var(--space-2);
   }
+}
+
+/* The hero line lives outside any container, full-bleed with the pills above it.
+   Past --max-width-wide the pills canvas stops growing and centers; this keeps
+   the graffiti's left edge on the canvas's left edge so the two still read as
+   one band instead of the tag drifting off to the window edge alone. */
+main > .graffiti {
+  margin-left: max(0px, (100% - var(--max-width-wide)) / 2);
 }
 
 .graffiti--marker {
@@ -836,7 +844,9 @@ main {
 .pills-canvas {
   position: relative;
   width: 100%;
+  max-width: var(--max-width-wide);
   height: 360px;
+  margin-inline: auto;
   overflow: hidden;
 }
 
