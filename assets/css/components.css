@@ -1,5 +1,5 @@
 /* This is the start of the components.css file */
-/* Last revised: 2026-11-05 (Opus 5.5) */
+/* Last revised: 2026-11-11 (Opus 5.5) */
 
 /* ─── Navigation ─────────────────────────────────────────────────── */
 :root {
@@ -148,6 +148,12 @@ main {
   border-radius: 10px;
   padding: 6px;
   width: max-content;
+  /* The nav is fixed, so page scroll can't reach options that fall below the
+     viewport (max browser zoom leaves ~150px of height). Cap to the space under
+     the nav and scroll inside — inert at normal zoom, where it never overflows. */
+  max-height: calc(100dvh - var(--nav-height) - 12px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: none;
   flex-direction: column;
   gap: 2px;
@@ -370,6 +376,10 @@ main {
   font-size: clamp(2.5rem, 8vw, 6rem);
   color: #FF2D78;
   padding: var(--space-6) var(--space-3) var(--space-2);
+  /* No-JS fallback for max browser zoom, where one Rock Salt word can outgrow
+     the layout: break it rather than let main's overflow-x: clip cut it. With
+     JS, initGraffitiFit (main.js) shrinks the line so this never triggers. */
+  overflow-wrap: break-word;
   transform: rotate(-2deg);
   transform-origin: left center;
   max-width: max-content;

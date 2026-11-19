@@ -1,5 +1,5 @@
 // This is the start of the main.js file
-// Last revised: 2026-08-27 (Fable 5)
+// Last revised: 2026-11-11 (Opus 5.5)
 
 'use strict';
 
@@ -184,6 +184,60 @@ function initGraffitiPlacement() {
     requestAnimationFrame(() => {
       ticking = false;
       place();
+    });
+  });
+}
+
+// ─── Graffiti fit (hero line, narrow layouts) ─────────────────────────────────
+// Rock Salt words can't wrap, and the longest ("Schwarz.") is ~5.8em wide. At
+// max browser zoom the layout gets narrower than one word at the CSS size —
+// and Safari's zoom scales vw text up with the page, so no CSS size can be
+// trusted there. Measure the widest word and shrink the line just enough to
+// fit it. Past that point the size tracks the width, so each zoom step holds
+// the same on-screen size instead of shrinking. No-op at every normal width;
+// no JS = the overflow-wrap fallback in components.css.
+
+function initGraffitiFit() {
+  const tags = document.querySelectorAll('.graffiti:not(.graffiti--marker)');
+  if (!tags.length) return;
+
+  function fit() {
+    tags.forEach((tag) => {
+      const text = tag.firstChild;
+      if (!text || text.nodeType !== Node.TEXT_NODE) return;
+
+      // Measure at the CSS size, words unbroken
+      tag.style.fontSize = '';
+      tag.style.overflowWrap = 'normal';
+      const range = document.createRange();
+      let widest = 0;
+      let start = 0;
+      text.textContent.split(' ').forEach((word) => {
+        range.setStart(text, start);
+        range.setEnd(text, start + word.length);
+        widest = Math.max(widest, range.getBoundingClientRect().width);
+        start += word.length + 1;
+      });
+
+      const cs = getComputedStyle(tag);
+      const room = tag.parentElement.clientWidth
+        - parseFloat(cs.marginLeft) - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (widest > room) {
+        tag.style.fontSize = `${parseFloat(cs.fontSize) * room / widest}px`;
+      }
+      tag.style.overflowWrap = '';
+    });
+  }
+
+  fit();
+  document.fonts.ready.then(fit);   // Rock Salt swaps in late; its widths are what count
+  let ticking = false;
+  window.addEventListener('resize', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      fit();
     });
   });
 }
@@ -734,6 +788,7 @@ function initNavScroll() {
 document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initGraffitiPlacement();
+  initGraffitiFit();
   initFooterBar();
   initRotationScrollAnchor();
   initNavScroll();
